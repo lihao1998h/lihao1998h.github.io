@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/47c93aa5802a.html"/>
+    <url>/2023/02/47c93aa5802a.html</url>
+    
+    <content type="html"><![CDATA[<hr><p>标题：test<br>日期：2023-02-11<br>分类：<br>标签：666</p><hr><p>aaaaa</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/57a6e32ff281.html"/>
+    <url>/2023/02/57a6e32ff281.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="U-Net结构"><a href="#U-Net结构" class="headerlink" title="U-Net结构"></a>U-Net结构</h1><p>upsample+add</p><h1 id="特征金字塔结构"><a href="#特征金字塔结构" class="headerlink" title="特征金字塔结构"></a>特征金字塔结构</h1><p>![[Pasted image 20230127135716.png]]</p><p>融合后通常要再加个3*3卷积</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/e306f9f8860c.html"/>
+    <url>/2023/02/e306f9f8860c.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h1><p>[[VOC12]]：有 20 类目标，这些目标包括人类、机动车类以及其他类，可用于目标类别或背景的分割</p><p>MSCOCO：是一个新的图像识别、分割和图像语义数据集，是一个大规模的图像识别、分割、标注数据集。它可以用于多种竞赛，与本领域最相关的是检测部分，因为其一部分是致力于解决分割问题的。该竞赛包含了超过80个物体类别</p><p>Cityscapes ：50 个城市的城市场景语义理解数据集</p><p>Stanford Background Dataset：至少有一个前景物体的一组户外场景。</p><p>Pascal Context：有 400 多类的室内和室外场景</p><h1 id="增量专用"><a href="#增量专用" class="headerlink" title="增量专用"></a>增量专用</h1><h2 id="增量小样本专用"><a href="#增量小样本专用" class="headerlink" title="增量小样本专用"></a>增量小样本专用</h2><p>[[Pascal-5i]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/d42e9f60b4b0.html"/>
+    <url>/2023/02/d42e9f60b4b0.html</url>
+    
+    <content type="html"><![CDATA[<p>PASCAL VOC 2012 增强数据集（PASCAL VOC 2012 Augmented Dataset）是目前语义分割和实例分割领域最常用、也是最基础的 benchmark 数据集，它是由VOC2012和SBD合二为一制作的，下面只针对分割任务进行说明：</p><p>PASCAL VOC 2012：用于分割任务中训练+验证的图像有 2913 张，用于测试的图像有 1456 张<br>Semantic Boundaries Dataset（SBD）：用于训练和验证分别有 8498 张和 2857 张<br>![[Pasted image 20221221203459.png]]<br>| 数据集 | 训练+验证（trainval） | 测试（test） | 类别数 |<br>| —— | ——————— | ———— | —— |<br>|PASCAL VOC 2012    |2913|    1456|    21<br>|SBD    |11355    |/    |21<br>|PASCAL VOC 2012 Augmented Dataset    |12031|    1456|    21|</p><p>下载地址： <a href="https://blog.csdn.net/qq_31347869/article/details/93742029/">https://blog.csdn.net/qq_31347869/article/details/93742029/</a></p><h1 id="download-bash"><a href="#download-bash" class="headerlink" title="download bash"></a>download bash</h1><p>wget <a href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar">http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar</a><br>tar -xf VOCtrainval_11-May-2012.tar<br>mkdir PascalVOC12<br>mv VOCdevkit/VOC2012/* PascalVOC12<br>cd PascalVOC12</p><p>wget <a href="http://cs.jhu.edu/~cxliu/data/SegmentationClassAug.zip">http://cs.jhu.edu/~cxliu/data/SegmentationClassAug.zip</a><br>wget <a href="http://cs.jhu.edu/~cxliu/data/SegmentationClassAug_Visualization.zip">http://cs.jhu.edu/~cxliu/data/SegmentationClassAug_Visualization.zip</a><br>wget <a href="http://cs.jhu.edu/~cxliu/data/list.zip">http://cs.jhu.edu/~cxliu/data/list.zip</a><br>unzip SegmentationClassAug.zip<br>unzip SegmentationClassAug_Visualization.zip<br>unzip list.zip</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/7411c7521421.html"/>
+    <url>/2023/02/7411c7521421.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="基本描述"><a href="#基本描述" class="headerlink" title="基本描述"></a>基本描述</h1><p>包括二十个对象类别：</p><p>Person ：person<br>Animal ：bird, cat, cow, dog, horse, sheep<br>Vehicle ：aeroplane, bicycle, boat, bus, car, motorbike, train<br>Indoor ：bottle, chair, dining table, potted plant, sofa, tv/monitor</p><p>有三个主要的对象识别竞赛：<strong>分类</strong> 、<strong>检测</strong> 和 <strong>分割</strong></p><h1 id="文件夹介绍"><a href="#文件夹介绍" class="headerlink" title="文件夹介绍"></a>文件夹介绍</h1><p>VOC 2012 文件夹下一共包括 5 个子文件夹：</p><ul><li>Annotations：图像信息</li><li>ImageSets：四类子数据集</li><li>JPEGImages：训练集和测试集一共 17125 张</li><li>SegmentationClass：语义分割标注掩模图</li><li>SegmentationObject：实例分割标注掩模图<h1 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h1><a href="https://blog.csdn.net/qq_39435411/article/details/127132007">https://blog.csdn.net/qq_39435411/article/details/127132007</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/5d5df8bfb08a.html"/>
+    <url>/2023/02/5d5df8bfb08a.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://paperswithcode.com/dataset/pascal-5i">https://paperswithcode.com/dataset/pascal-5i</a></p><p><a href="https://github.com/DeepTrial/pascal-5">https://github.com/DeepTrial/pascal-5</a> 官方实现有bug</p><p>用于小样本分割任务</p><p>20个类，分为四组，每组包含5类，3组训练，1组测试小样本分割性能。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/bba7f7dc3ec9.html"/>
+    <url>/2023/02/bba7f7dc3ec9.html</url>
+    
+    <content type="html"><![CDATA[<p>[[基于原型的小样本分割]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/5826699072d4.html"/>
+    <url>/2023/02/5826699072d4.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-基本组件"><a href="#1-基本组件" class="headerlink" title="1 基本组件"></a>1 基本组件</h1><h2 id="1-1-masked-average-pooling"><a href="#1-1-masked-average-pooling" class="headerlink" title="1.1 masked average pooling"></a>1.1 masked average pooling</h2><p><strong>为什么 masked average pooling 会有用？</strong></p><p>解释如下：全卷积网络（FCN）能够保留输入图像的中每个像素相对位置；所以通过将二值 mask 与提取到的特征图相乘就可以完全保留目标的特征信息，排除掉背景等无关类别的特征。</p><h1 id="2-只分割一类的"><a href="#2-只分割一类的" class="headerlink" title="2 只分割一类的"></a>2 只分割一类的</h1><h2 id="2-1-Prototype-Mixture-Models-for-Few-shot-Semantic-Segmentation-（ECCV-2020）"><a href="#2-1-Prototype-Mixture-Models-for-Few-shot-Semantic-Segmentation-（ECCV-2020）" class="headerlink" title="2.1 Prototype Mixture Models for Few-shot Semantic Segmentation （ECCV 2020）"></a>2.1 Prototype Mixture Models for Few-shot Semantic Segmentation （ECCV 2020）</h2><p><a href="https://zhuanlan.zhihu.com/p/508912133">解读</a><br><a href="https://arxiv.org/pdf/2008.03898.pdf">论文</a><br><a href="https://github.com/Yang-Bob/PMMs">代码</a><br>![[Pasted image 20221217170608.png]]</p><h2 id="2-2-CANet-CVPR-2019"><a href="#2-2-CANet-CVPR-2019" class="headerlink" title="2.2 CANet (CVPR 2019)"></a>2.2 CANet (CVPR 2019)</h2><p><a href="https://arxiv.org/abs/1903.02351">论文</a><br><a href="https://blog.csdn.net/qq_41997920/article/details/96307267">解读</a><br><a href="https://github.com/icoz69/CaNet">代码</a></p><p>接几个残差就是迭代了？</p><h2 id="2-3-SG-One-（IEEE-Transactions-on-Cybernetics-2020）"><a href="#2-3-SG-One-（IEEE-Transactions-on-Cybernetics-2020）" class="headerlink" title="2.3 SG-One （IEEE Transactions on Cybernetics 2020）"></a>2.3 SG-One （IEEE Transactions on Cybernetics 2020）</h2><p><a href="https://arxiv.org/abs/1810.09091">论文</a><br><a href="https://blog.csdn.net/qq_38932073/article/details/115305005">解读</a><br><a href="https://github.com/xiaomengyc/SG-One">代码</a></p><p><a href="https://blog.csdn.net/sinat_38974831/article/details/125996880">https://blog.csdn.net/sinat_38974831/article/details/125996880</a></p><h1 id="3-同时分割许多类的"><a href="#3-同时分割许多类的" class="headerlink" title="3 同时分割许多类的"></a>3 同时分割许多类的</h1><p>增量分割不得同时分割许多类吗！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/95ffeaff2677.html"/>
+    <url>/2023/02/95ffeaff2677.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-PLOP-2021CVPR"><a href="#1-PLOP-2021CVPR" class="headerlink" title="1 PLOP 2021CVPR"></a>1 PLOP 2021CVPR</h1><p>![[PLOP,CVPR2021.pdf]]<br><a href="https://github.com/arthurdouillard/CVPR2021_PLOP">code</a>:基于MiB</p><h1 id="2-MiB-2020CVPR"><a href="#2-MiB-2020CVPR" class="headerlink" title="2 MiB 2020CVPR"></a>2 MiB 2020CVPR</h1><p>![[Cermelli_Modeling_the_Background_for_Incremental_Learning_in_Semantic_Segmentation_CVPR_2020_paper.pdf]]</p><p><a href="https://github.com/fcdl94/MiB">code</a></p><h1 id="3-小样本增量分割"><a href="#3-小样本增量分割" class="headerlink" title="3 小样本增量分割"></a>3 小样本增量分割</h1><h2 id="3-1-师兄的-2022ACM-MM"><a href="#3-1-师兄的-2022ACM-MM" class="headerlink" title="3.1 师兄的 2022ACM MM"></a>3.1 师兄的 2022ACM MM</h2><p>![[sigconf ACM MM2022.pdf]]</p><p>![[Pasted image 20221217170857.png]]</p><p>迭代优化来自于CANet [[基于原型的小样本分割#1.2 CANet (CVPR 2019)]]</p><h2 id="3-2-nobody"><a href="#3-2-nobody" class="headerlink" title="3.2 nobody"></a>3.2 nobody</h2><p>![[2012.01415v2.pdf]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/34f40f5b951a.html"/>
+    <url>/2023/02/34f40f5b951a.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-ideas"><a href="#1-ideas" class="headerlink" title="1 ideas"></a>1 ideas</h1><p>idea确定时间：2022.9.30<br>![[pptv1.pptx]]<br>![[pptv2.pptx]]<br>![[pptv3.pptx]]<br>![[pptv3-2.pptx]]<br>![[pptv4.pptx]]<br>![[wordv1.docx]]<br>![[wordv2.docx]]<br>![[pptv5.pptx]]<br>![[wordv3.docx]]</p><h1 id="2-introduction"><a href="#2-introduction" class="headerlink" title="2 introduction"></a>2 introduction</h1><p>图像分割是计算机视觉的基本问题。现有图像分割方法基于CNN对训练数据集提供的类别能够很好的分割 [cites]。 但在一个更现实的场景，即Class Incremental Semantic Segmentation (CI-SS)，模型应当能够只根据新数据连续的学习新类，而不是重新训练整个模型。<br>增量图像分割目前受到少量的关注，其主要原因是其面临着两大挑战，即灾难性遗忘和语义漂移。灾难性遗忘指的是模型在学习新知识时会遗忘过去学到的知识[1]。语义漂移指的是背景类的语义随着时间会发生改变，这包含两方面含义，一方面指的是旧任务的背景类中可能包含新任务或未来任务中要学习的类，另一方面指的是新任务中的背景类可能包含旧任务中已经学习过的类。为此，许多研究[2-7]引入了知识蒸馏的方法来缓解灾难性遗忘，还有少量研究[8-9]通过构造伪标签来缓解语义漂移问题。<br>    然而，现有的增量图像分割方法往往要求新任务具有大量的训练数据，当其样本量少的时候性能急剧下降（需要实验证明），这是因为用小样本训练的模型很容易陷入对小样本的过拟合以及对新类语义的不完全学习。<br>    在本文中，我们将小样本增量图像分割构建为一个因果推理框架来主动解决上面提到的问题，该框架对新类、旧类、背景类及最终输出结果的因果关系进行建模，通过构建新类与旧类关联来解决语义不完全问题，并通过干预切断背景类与旧类之间的联系来解决语义漂移问题，具体来说，我们引入了原型学习保留旧类知识以缓解语义不完全问题，为了能够用少量新类样本学习完全的新类语义，我们需要借助旧类知识，对新类语义进行补全。不仅如此，我们通过因果推理中的前门调整公式，切断了背景类与旧类之间的联系，从而避免了模型对旧类的错误分割。</p><pre><code>我们的贡献可总结为：</code></pre><p>1、我们为小样本增量图像分割构建了一个因果推理框架，通过构建新类与旧类的依赖预测来解决不完全语义问题，并通过切断背景类与旧类之间的联系来解决语义漂移问题。</p><p>2、我们提出了一个原型修正模块，可以利用旧类知识来修正语义不完全的新类原型，以解决小样本场景导致的过拟合问题。</p><p>3、我们设计了一个旧类干预模块，通过因果推理中的前门调整公式约束了模型对旧类的错误分割，从而避免了语义漂移问题。</p><h1 id="3-related-work"><a href="#3-related-work" class="headerlink" title="3 related work"></a>3 related work</h1><p>[[语义分割]]<br>[[增量分割]]<br>[[基于原型的小样本分类]]</p><h1 id="4-代码逻辑"><a href="#4-代码逻辑" class="headerlink" title="4 代码逻辑"></a>4 代码逻辑</h1><p>以VOC12 task：19-1为例</p><h2 id="4-1-数据集的处理"><a href="#4-1-数据集的处理" class="headerlink" title="4.1 数据集的处理"></a>4.1 数据集的处理</h2><p>训练集和验证集使用官方[[VOC12_aug]]提供的划分</p><pre><code>筛选</code></pre><p>overlap<br>存在类是当前训练的新类即可，但未来类的mask被强制设置为0，即背景</p><p>disjoint<br>存在类是当前训练的新类，且所有类都得是学过的类或者是0和255（避免了出现未来类的可能）</p><pre><code>测试集的设置</code></pre><p>一种策略是test_on_val，即按比例从验证集中划出一部分作为测试集<br>另一种</p><h2 id="4-2-预训练（要不要，实验说话）"><a href="#4-2-预训练（要不要，实验说话）" class="headerlink" title="4.2 预训练（要不要，实验说话）"></a>4.2 预训练（要不要，实验说话）</h2><p>目的：获得好的初始backbone和head</p><p>输入的处理：输入为单类的图像和mask还有classid（不在论文中展示）</p><p>以VOC12为例，20个类<br>task:19-1</p><p>如果是补全的代码就是19个类train，1个类val<br>合理的做法应该是19个类train也在这19个类上val</p><p>训练集：19 train<br>验证集 19 val<br>test：19val</p><p>步骤：<br>1、通过backbone提取图像特征<br>2、然后通过map提取各类原型向量并扩展到特征图的大小，<br>3、与特征融合输入head。</p><p>batchsize=8，epoch=100，lr=0.007，polylr</p><p>论文中：写的是一个proto一个预测一个类后合并结果，而实验中简化，数据预处理为单类mask</p><h2 id="4-3-learn-base"><a href="#4-3-learn-base" class="headerlink" title="4.3 learn_base"></a>4.3 learn_base</h2><p>目的：学习基类，测试基类性能，并保留基类原型向量<br>1、读取预训练的backbone和head</p><h2 id="4-4-meta-train"><a href="#4-4-meta-train" class="headerlink" title="4.4 meta train"></a>4.4 meta train</h2><p>目的：元训练获得原型修正模块</p><p>2、提取并保存各类的原型向量（类的所有原型向量取平均）（todo模仿）<br>3、构造小样本增量分割元episode</p><p>接着构造episode<br>todo：</p><ul><li>融合各类输出</li><li>保存原型向量<h2 id="4-5-step-0"><a href="#4-5-step-0" class="headerlink" title="4.5 step 0"></a>4.5 step 0</h2>训练集：19 train<br>验证集 19 val<br>test：19val</li></ul><p>使用预训练的backbone和head为初始值</p><p>接着通过MAP提取原型向量，并输入到分割头输出结果，保留各类原型向量。</p><h2 id="4-6-step-1"><a href="#4-6-step-1" class="headerlink" title="4.6 step 1"></a>4.6 step 1</h2><h3 id="4-6-1-step-1-without-incremental"><a href="#4-6-1-step-1-without-incremental" class="headerlink" title="4.6.1 step 1 without incremental"></a>4.6.1 step 1 without incremental</h3><h3 id="4-6-2-step-1-with-few-shot-with-incremental"><a href="#4-6-2-step-1-with-few-shot-with-incremental" class="headerlink" title="4.6.2 step 1 with few shot with incremental"></a>4.6.2 step 1 with few shot with incremental</h3><h3 id="4-6-3-step-1-with-many-shot-with-incremental"><a href="#4-6-3-step-1-with-many-shot-with-incremental" class="headerlink" title="4.6.3 step 1 with many shot with incremental"></a>4.6.3 step 1 with many shot with incremental</h3><h3 id="4-6-4-our-step1"><a href="#4-6-4-our-step1" class="headerlink" title="4.6.4 our step1"></a>4.6.4 our step1</h3><h1 id="5-experiments"><a href="#5-experiments" class="headerlink" title="5 experiments"></a>5 experiments</h1><h2 id="5-1-datasets"><a href="#5-1-datasets" class="headerlink" title="5.1 datasets"></a>5.1 datasets</h2><p>[[VOC12_aug]]<br>19-1 15-5 15-1-1-1-1-1</p><h2 id="5-2-our-model"><a href="#5-2-our-model" class="headerlink" title="5.2 our model"></a>5.2 our model</h2><p>body:resnet101 （todo 换）<br>输出维度2048</p><p>head：(ours) DeepLab_with_proto（todo 换）输入特征与原型融合</p><p>1、对比试验与各种增量分割方法在小样本情况比（在大样本也可以试试）  （相比师兄的论文，是从小样本分割-&gt;小样本增量分割）</p><p>todo：测试下不用while，因为filter已经做好了</p><h2 id="5-3-对比方法"><a href="#5-3-对比方法" class="headerlink" title="5.3 对比方法"></a>5.3 对比方法</h2><p>简单的fine-tune</p><p>各种增量方法用于分割 在小样本情况的劣势<br>小样本增量分割方法</p><p>增量数据联合训练</p><h2 id="5-4-metrics"><a href="#5-4-metrics" class="headerlink" title="5.4 metrics"></a>5.4 metrics</h2><p>overlap vs disjoint：overlap就是图像可能包含未来类但是标记为背景，disjoint则图像中不会出现未来要学习的类。<br>1、各step的mIoU<br>以voc12的19-1task来说，要输出step 0 即训练完19之后对19的mIoU，在训练完1之后既要输出19的mIoU(这个PLOP缺少)，也要输出1的mIoU。<br>2、all表示所有step训练完后的mIoU<br>3、average表示每个step训练之后mIoU的平均</p><h2 id="5-5-results"><a href="#5-5-results" class="headerlink" title="5.5 results"></a>5.5 results</h2><h3 id="5-5-1-pretrain"><a href="#5-5-1-pretrain" class="headerlink" title="5.5.1 pretrain"></a>5.5.1 pretrain</h3><p>epoch now=29</p><p>![[Pasted image 20230204122618.png|175]]</p><p>INFO:Validation, Class Loss=0.11368785798549652, Reg Loss=0.0 (without scaling)<br>INFO:Done validation<br>INFO:End of Validation 31/100, Validation Loss=0.11368785798549652, Class Loss=0.11368785798549652, Reg Loss=0.0<br>INFO:<br>Total samples: 711.000000<br>Overall Acc: 0.954122<br>Mean Acc: 0.940762<br>FreqW Acc: 0.914056<br>Mean IoU: 0.882133<br>Class IoU:<br>        class 0: 0.9417315489533514<br>        class 1: 0.8225347702348145<br>        class 2: X<br>        class 3: X<br>        class 4: X<br>        class 5: X<br>        class 6: X<br>        class 7: X<br>        class 8: X<br>        class 9: X<br>        class 10: X<br>        class 11: X<br>        class 12: X<br>        class 13: X<br>        class 14: X<br>        class 15: X<br>        class 16: X<br>        class 17: X<br>        class 18: X<br>        class 19: X<br>        class 20: X<br>Class Acc:<br>        class 0: 0.9657040220511824<br>        class 1: 0.9158207919453918<br>        class 2: X<br>        class 3: X<br>        class 4: X<br>        class 5: X<br>        class 6: X<br>        class 7: X<br>        class 8: X<br>        class 9: X<br>        class 10: X<br>        class 11: X<br>        class 12: X<br>        class 13: X<br>        class 14: X<br>        class 15: X<br>        class 16: X<br>        class 17: X<br>        class 18: X<br>        class 19: X<br>        class 20: X</p><h1 id="6-tricks"><a href="#6-tricks" class="headerlink" title="6 tricks"></a>6 tricks</h1><ol><li>预训练在验证集上验证 </li></ol><h1 id="7-bugs"><a href="#7-bugs" class="headerlink" title="7 bugs"></a>7 bugs</h1><ol><li>voc gt mask 有些全0或全0和255的直接跳过训练了</li></ol><h1 id="8-reference"><a href="#8-reference" class="headerlink" title="8 reference"></a>8 reference</h1><p>[1] Michael McCloskey and Neal J Cohen. Catastrophic interference in connectionist networks: The sequential learning problem. In Psychology of learning and motivation, volume 24, pages 109–165. Elsevier, 1989.</p><p>[2] Gu, et al. Class-Incremental Instance Segmentation via Multi-Teacher Networks. AAAI, 2021.</p><p>[3] Umberto Michieli and Pietro Zanuttigh. 2021. Knowledge distillation for incremental learning in semantic segmentation. Comput. Vis. Image Underst. 205 (2021), 103167</p><p>[4] Firat Ozdemir, Philipp Fuernstahl, and Orcun Goksel. 2018. Learn the new, keep the old: Extending pretrained models with new anatomy and images. In International Conference on Medical Image Computing and Computer-Assisted Intervention(MICCAI).</p><p>[5] A Contrastive Distillation Approach for Incremental Semantic Segmentation in Aerial Images. ICIAP 2021</p><p>[6]Representation Compensation Networks for Continual Semantic Segmentation. CVPR 2022 改进PLOP的蒸馏和结构化重参</p><p>[7]Class Similarity Weighted Knowledge Distillation for Continual Semantic Segmentation. CVPR 2022 改进的蒸馏，考虑了与新类最相似的旧类，提醒不要忘了最相似的旧类</p><p>[8] Douillard, et al. PLOP: Learning without Forgetting for Continual Semantic Segmentation. CVPR, 2021.</p><p>[9] Cermelli, et al. Modeling the Background for Incremental Learning in Semantic Segmentation. CVPR, 2020.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/ef298713f4b3.html"/>
+    <url>/2023/02/ef298713f4b3.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.51cto.com/u_15357586/3791837">https://blog.51cto.com/u_15357586/3791837</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/2d9f1df2cef3.html"/>
+    <url>/2023/02/2d9f1df2cef3.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="改进上采样"><a href="#改进上采样" class="headerlink" title="改进上采样"></a>改进上采样</h1><h4 id="DUpsampling"><a href="#DUpsampling" class="headerlink" title="DUpsampling"></a>DUpsampling</h4><blockquote><p>Paper: 《Decoders Matter for Semantic Segmentation:Data-Dependent Decoding Enables Flexible Feature Aggregation》Accepted by CVPR 2019.文章解读：<a href="https://zhuanlan.zhihu.com/p/62508574">https://zhuanlan.zhihu.com/p/62508574</a></p></blockquote><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zj7UPotrsXE5qicjolQ9OCkAaEzKKLPel8zWuYjMx4UID4bRlgw0Eduw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><p>DUpsampling</p><p>先前绝大多数基于编解码架构的语义分割网络，解码器的上采样层通常依赖双线性插值操作，这种与数据无关的方法无法学习到有效的特征映射。该论文则提出一种数据相关型的上采样方法 <code>DUpsampling</code> 来替代双线性插值，大幅提升了模型的采样重构能力，在降低计算复杂度的同时提升分割精度。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/e296bb6de860.html"/>
+    <url>/2023/02/e296bb6de860.html</url>
+    
+    <content type="html"><![CDATA[<p>U-Net<br><a href="https://arxiv.org/abs/1505.04597v1">https://arxiv.org/abs/1505.04597v1</a></p><h4 id="Attention-U-Net"><a href="#Attention-U-Net" class="headerlink" title="Attention U-Net"></a>Attention U-Net</h4><blockquote><p>Paper: 《Attention U-Net: Learning Where to Look for the Pancreas》Accepted by MIDL 2018.文章解读：<a href="https://zhuanlan.zhihu.com/p/114471013">https://zhuanlan.zhihu.com/p/114471013</a></p></blockquote><h4 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net++"></a>U-Net++</h4><blockquote><p>Paper: 《UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation》Accepted by TMI 2019.文章解读：<a href="https://zhuanlan.zhihu.com/p/44958351">https://zhuanlan.zhihu.com/p/44958351</a></p></blockquote><h4 id="nnU-Net"><a href="#nnU-Net" class="headerlink" title="nnU-Net"></a>nnU-Net</h4><blockquote><p>Paper: 《nnU-Net: Self-Adapting Framework for U-Net-Based Medical Image Segmentation》文章解读：<a href="https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a">https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a</a></p></blockquote><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zKjFoJGOlE6frG7yQlxmOMHrtsHmicVE89eNiaenwrELlBR00uicIccoMg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><p>nnU-Net pipeline</p><p><code>nnU-Net</code> 是医学图像十项全能比赛的冠军，目前在医学图像分割领域有着不可撼动的地位，相信目前研究该领域的人员应该无人不知，无人不晓。<code>nnU-Net</code> 本身并不侧重于网络结构的创新，更多的是提出一个统一的框架，包括针对医学影响设设计的一系列丰富的预处理、后处理和训练 <code>tricks</code> 等。</p><h4 id="CPFNet"><a href="#CPFNet" class="headerlink" title="CPFNet"></a>CPFNet</h4><blockquote><p>Paper: 《CPFNet: Context Pyramid Fusion Network for Medical Image Segmentation》Accepted by TMI 2020.</p></blockquote><p>究极乱连<br><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zTZN5npnYlBd97vEK0a4tBILlmA4hTGfibTNbVzEpdpGufrFVetMo2JA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><p>CPFNet</p><p><code>CPFNet</code>，即上下文金字塔融合网络，基于<code>U-Net</code>架构并结合两个金字塔模块来融合全局的多尺度上下文信息。</p><ul><li>全局金字塔引导(GPG)模块：通过重构跳跃连接为解码器提供不同层次的全局上下文信息；</li><li>尺度感知金字塔融合(SAPF)模块：实现了多尺度上下文信息的动态高层次融合;</li></ul><p>实验结果表明，提出的方法在四个不同的挑战性任务，包括<strong>皮肤损伤的分割</strong>，<strong>视网膜线性损伤的分割</strong>，<strong>胸部器官的多分类分割</strong>和<strong>视网膜水肿损伤</strong>的分割任务上具有很强的竞争力。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/1618c040f1fa.html"/>
+    <url>/2023/02/1618c040f1fa.html</url>
+    
+    <content type="html"><![CDATA[<h4 id="FAT-Net"><a href="#FAT-Net" class="headerlink" title="FAT-Net"></a>FAT-Net</h4><blockquote><p>Paper: 《FAT-Net: Feature Adaptive Transformers for Automated Skin Lesion Segmentation》Accepted by MIA 2021.</p></blockquote><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zRlQl2fmUBerTjpbicvV0Zb5lI964WMEb4eNGCxXZatweUhb5b7jGicVA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><h4 id="SETR"><a href="#SETR" class="headerlink" title="SETR"></a>SETR</h4><blockquote><p>Paper: 《Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers》Accepted by CVPR 2021.文章解读：<a href="https://zhuanlan.zhihu.com/p/348418189">https://zhuanlan.zhihu.com/p/348418189</a></p></blockquote><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6z2kRkD2b7LTbzc1ufCLTTL6WjjjSibtnHpG2s1yibW8uRm5Yq4ZDZHjBw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><p>SETR</p><p><code>SETR</code> 记得没错的话应该是当时最早将 <code>ViT</code> 引入语义分割框架的代表型工作之一。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/895d1ca88fa3.html"/>
+    <url>/2023/02/895d1ca88fa3.html</url>
+    
+    <content type="html"><![CDATA[<p>FCN</p><p><a href="https://arxiv.org/abs/1411.4038">https://arxiv.org/abs/1411.4038</a><br><a href="https://blog.csdn.net/qq_41731861/article/details/120511148">https://blog.csdn.net/qq_41731861/article/details/120511148</a></p><h4 id="DeconvNet"><a href="#DeconvNet" class="headerlink" title="DeconvNet"></a>DeconvNet</h4><blockquote><p>Paper: 《Learning Deconvolution Network for Semantic Segmentation》Accepted by ICCV 2015.</p></blockquote><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6z9y5orWM1agoCVIzKLdRiahU5ozpC5Gs4WFYRs23XM4Lib9qBsiaghfTkg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p><p>DeconvNet</p><p><code>DeconvNet</code> 提出了深度反卷积结构，并首次应用到语义分割任务上。同时，结合目标检测技术，将训练好的网络应用到每个提议框上以获得实例级的分割结果；最后，再将这些单个分割的结果拼接起来以完成最终的语义分割推理，有效的解决了 <code>FCN</code> 网络无法有效处理细小目标的局限性。<br><strong>目标检测技术在哪呢？？</strong></p><h1 id="SegNet"><a href="#SegNet" class="headerlink" title="SegNet"></a>SegNet</h1><p><a href="https://arxiv.org/abs/1511.00561">https://arxiv.org/abs/1511.00561</a><br><a href="https://blog.csdn.net/qq_41997920/article/details/89071755">https://blog.csdn.net/qq_41997920/article/details/89071755</a><br><strong>主要贡献</strong></p><p>将最大池化指数转移至解码器中，改善了分割分辨率<br>![[Pasted image 20230127143602.png]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/e4d04281a467.html"/>
+    <url>/2023/02/e4d04281a467.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/m0_58770526/article/details/125873104">https://blog.csdn.net/m0_58770526/article/details/125873104</a></p><h1 id="DeepLab-v1-2014"><a href="#DeepLab-v1-2014" class="headerlink" title="DeepLab v1 (2014)"></a>DeepLab v1 (2014)</h1><p>![[Pasted image 20221130214015.png]]<br>创新点：</p><ol><li><p>空洞卷积（Atrous Conv）;<br>&lt;解决编码过程中信号不断被下采样，细节丢失的问题&gt;</p></li><li><p>全连接条件随机场（Fully-connected Conditional Random Field）。<br>&lt;由于conv层提取的特征具有平移不变性，这就限制了定位精度。因此引入全连接CRF来提高模型捕获结构信息的能力，解决精分割问题。&gt;</p><h1 id="DeepLab-v2-2016"><a href="#DeepLab-v2-2016" class="headerlink" title="DeepLab v2 (2016)"></a>DeepLab v2 (2016)</h1></li></ol><p><strong>与v1不同点：</strong></p><ol><li>空洞空间金字塔池化 ASPP（Atrous spatial pyramid pooling ）</li><li> 将v1使用的backbone VGG16替换成了 Resnet101<br>![[Pasted image 20221130214251.png]]</li></ol><p>ASPP可用于解决不同检测目标大小差异的问题：通过在给定的特征层上使用不同dilation的空洞卷积，可以有效的进行重采样。构建不同感受野的卷积核，用来获取多尺度物体信息。</p><h1 id="DeepLab-v3（2017）"><a href="#DeepLab-v3（2017）" class="headerlink" title="DeepLab v3（2017）"></a>DeepLab v3（2017）</h1><p><a href="https://arxiv.org/abs/1706.05587v3">paper</a></p><p>![[Pasted image 20230127151453.png]]</p><p>创新点：</p><p>改进了v2的ASPP([[卷积#2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)]])模块：</p><ol><li><p>加入了BN层；</p></li><li><p>将v2中的ASPP中尺寸3×3，dilation=24的空洞卷积替换成一个普通的1×1卷积，以保留滤波器中间部分的有效权重；（随着空洞率的增大，滤波器中有效权重的个数在减少）</p></li><li><p>增加了全局平均池化以便更好的捕捉全局信息。</p></li></ol><p>当图像分辨率较大时参考 <a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Yang_DenseASPP_for_Semantic_CVPR_2018_paper.pdf">DenseASPP for Semantic Segmentation in Street Scenes（CVPR2018）</a><br><a href="https://blog.csdn.net/qq_41997920/article/details/90903830">https://blog.csdn.net/qq_41997920/article/details/90903830</a></p><h1 id="Deep-Lab-v3-（2018）"><a href="#Deep-Lab-v3-（2018）" class="headerlink" title="Deep Lab v3+（2018）"></a>Deep Lab v3+（2018）</h1><p><a href="https://arxiv.org/pdf/1802.02611v3.pdf">https://arxiv.org/pdf/1802.02611v3.pdf</a><br><a href="https://zhuanlan.zhihu.com/p/62261970">https://zhuanlan.zhihu.com/p/62261970</a><br><a href="https://github.com/PaddlePaddle/PaddleSeg/blob/release/2.7/paddleseg/models/deeplab.py">code</a><br>天下没有免费的午餐，保持分辨率意味着较大的运算量，这是该架构的弊端。<br>![[Pasted image 20221202191809.png]]<br>DeepLabv3+模型的整体架构如图4所示，它的Encoder的主体是带有空洞卷积的DCNN，可以采用常用的分类网络如ResNet，然后是带有空洞卷积的空间金字塔池化模块（Atrous Spatial Pyramid Pooling, ASPP)），主要是为了引入多尺度信息；相比DeepLabv3，v3+引入了Decoder模块，其将底层特征与高层特征进一步融合，提升分割边界准确度。从某种意义上看，DeepLabv3+在DilatedFCN基础上引入了EcoderDecoder的思路。</p><p>![[Pasted image 20221202193735.png]]</p><p>encoder-decoder：左u-net结构，右DeepLabv3+结构</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/1c23a6a3311b.html"/>
+    <url>/2023/02/1c23a6a3311b.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[计算机视觉]]</p><p>包括：<br>[[(new work)基于因果推理的增量小样本图像分割]]</p><p>heads：<br>[[DeepLab系列]]</p><p>datasets：<br>[[VOC12]]<br>[[VOC12_aug]]</p><p>综述类文章：<br><a href="https://mp.weixin.qq.com/s/pDPKh8Aps2VjtCBozyjshg">https://mp.weixin.qq.com/s/pDPKh8Aps2VjtCBozyjshg</a><br><a href="https://blog.csdn.net/qq_41997920/article/details/96479243">https://blog.csdn.net/qq_41997920/article/details/96479243</a></p><h1 id="老方法"><a href="#老方法" class="headerlink" title="老方法"></a>老方法</h1><p>灰度分割<br>[[命名实体识别#条件随机场 CRF]]</p><h1 id="深度学习方法"><a href="#深度学习方法" class="headerlink" title="深度学习方法"></a>深度学习方法</h1><p>[[FCN结构]]</p><p>[[U-Net系列]]<br><a href="https://zhuanlan.zhihu.com/p/118540575">FCN和U-Net的区别</a></p><p>[[Deeplab系列]]</p><p>DenseASPP</p><h1 id="几个坑"><a href="#几个坑" class="headerlink" title="几个坑"></a>几个坑</h1><p>mask要用png格式保存<br><a href="https://zhuanlan.zhihu.com/p/457847520">https://zhuanlan.zhihu.com/p/457847520</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/c04d3dc65daa.html"/>
+    <url>/2023/02/c04d3dc65daa.html</url>
+    
+    <content type="html"><![CDATA[<p>医学智能预测<br>![[Pasted image 20230127120506.png]]</p><p>遥感领域</p><p>虚拟背景</p><p>自动驾驶</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/6a8e7f8d20cd.html"/>
+    <url>/2023/02/6a8e7f8d20cd.html</url>
+    
+    <content type="html"><![CDATA[<p>IOU:用于评估语义分割算法性能的标准指标是平均 IOU（Intersection Over Union，交并比），IoU 定义如下：</p><p>这样的评价指标可以判断目标的捕获程度（使预测标签与标注尽可能重合），也可以判断模型的精确程度（使并集尽可能重合）。</p><p>IoU一般都是基于类进行计算的，也有基于图片计算的。一定要看清数据集的评价标准。</p><p>基于类进行计算的IoU就是将每一类的IoU计算之后累加，再进行平均，得到的就是基于全局的评价，所以我们求的IoU其实是取了均值的IoU，也就是均交并比（mean IoU）</p><p>pixcal-accuracy （PA，像素精度）：基于像素的精度计算是评估指标中最为基本也最为简单的指标，从字面上理解就可以知道，PA是指预测正确的像素占总像素的比例.</p><p>VOC12<br>![[Pasted image 20230204152741.png]]</p><p>CityScape<br>![[Pasted image 20230204152802.png]]</p><table><thead><tr><th>method</th><th>dataset</th><th>mIoU</th><th></th><th></th></tr></thead><tbody><tr><td>SegNet</td><td>VOC12</td><td>59.9</td><td></td><td></td></tr><tr><td>FCN</td><td>VOC12</td><td>62.2</td><td></td><td></td></tr><tr><td>DeepLab v2</td><td>VOC12</td><td>79.7</td><td></td><td></td></tr><tr><td>RefineNet</td><td>VOC12</td><td>84.2</td><td></td><td></td></tr><tr><td>DeepLab v3</td><td>VOC12</td><td>85.7</td><td></td><td></td></tr><tr><td>DeepLab v3 pretrain on JFT</td><td>VOC12</td><td>86.9</td><td></td><td></td></tr><tr><td>Deeplabv3+（Xception）+COCO-Pre-training</td><td>VOC12</td><td>87.8</td><td></td><td></td></tr><tr><td>Deeplabv3+（Xception-JFT）+COCO+JFT-pre-training</td><td>VOC12</td><td>89.0</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/e45d12b1196a.html"/>
+    <url>/2023/02/e45d12b1196a.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/422764914">DOTAv2遥感图像旋转目标检测竞赛经验分享 Swin Transformer + Anchor free/based方案</a><br><a href="https://zhuanlan.zhihu.com/p/102817180"># 目标检测比赛中的tricks（已更新更多代码解析）</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/ef02a4c91f4c.html"/>
+    <url>/2023/02/ef02a4c91f4c.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="相关领域"><a href="#相关领域" class="headerlink" title="相关领域"></a>相关领域</h1><p>[[关键点检测]]</p><h1 id="子领域"><a href="#子领域" class="headerlink" title="子领域"></a>子领域</h1><p>[[行人检测]]</p><h2 id="其它概念"><a href="#其它概念" class="headerlink" title="其它概念"></a>其它概念</h2><h3 id="Anchor-Box"><a href="#Anchor-Box" class="headerlink" title="Anchor Box"></a>Anchor Box</h3><p>![[Anchor box.png]]</p><ul><li>一个对象分配到多个Anchor Box</li><li>处理对象出现在同一个格子里的情况</li></ul><h2 id="分支领域"><a href="#分支领域" class="headerlink" title="分支领域"></a>分支领域</h2><h3 id="姿势估计Pose-Estimation"><a href="#姿势估计Pose-Estimation" class="headerlink" title="姿势估计Pose Estimation"></a>姿势估计Pose Estimation</h3><ul><li>Metrics<ul><li>Object Keypoint Similarity (OKS)</li></ul></li><li>SOTA<ul><li>HRNET<ul><li>Sun, K. , Xiao, B. , Liu, D. , and Wang, J: Deep High-Resolution Representation Learning for Human Pose Estimation, in CVPR, 2019.</li></ul></li><li>EMpose<ul><li>Li X, Zhong Z, Wu J, et al: Expectation-maximization attention networks for semantic segmentation, in ICCV, 2019.</li></ul></li><li>CIposeNet<ul><li>HRNET+因果干预</li><li>ACPR’21</li></ul></li></ul></li></ul><h3 id="行人检测"><a href="#行人检测" class="headerlink" title="行人检测"></a>行人检测</h3><h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><h3 id="MSCOCO"><a href="#MSCOCO" class="headerlink" title="MSCOCO"></a>MSCOCO</h3><ul><li>包含超过200000张图片以及超过250000个人类实例</li><li>3种标注类型<ul><li>object instances（目标实例）,</li><li>object keypoints（目标上的关键点）,</li><li>和image captions（看图说话）</li><li><a href="https://zhuanlan.zhihu.com/p/29393415">https://zhuanlan.zhihu.com/p/29393415</a></li></ul></li><li>Lin T Y, Maire M, Belongie S, et al: Microsoft coco: Common objects in context, in CVPR, 2014.</li><li>2017<ul><li>COCO train2017<ul><li>57K images</li><li>150K person instances<br>  ![[Pasted image 20221127223044.png]]</li></ul></li><li>val2017<ul><li>5000 images<br>  ![[Pasted image 20221127223051.png]]</li></ul></li><li><a href="https://blog.csdn.net/u012505617/article/details/106517073/">https://blog.csdn.net/u012505617/article/details/106517073/</a></li></ul></li><li>COCO处理<ul><li><a href="https://blog.csdn.net/donkey_1993/article/details/106279988">https://blog.csdn.net/donkey_1993/article/details/106279988</a></li></ul></li><li>annotation<ul><li><a href="https://zhuanlan.zhihu.com/p/29393415">https://zhuanlan.zhihu.com/p/29393415</a></li></ul></li></ul><h3 id="the-PASCAL-VOC-data-sets"><a href="#the-PASCAL-VOC-data-sets" class="headerlink" title="the PASCAL VOC data sets"></a>the PASCAL VOC data sets</h3><ul><li>M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The PASCAL Visual Object Classes (VOC) Challenge,” Int’l J. Computer Vision, vol. 88, no. 2, pp. 303-338, June 2010.</li><li><a href="https://blog.csdn.net/mzpmzk/article/details/88065416">https://blog.csdn.net/mzpmzk/article/details/88065416</a></li><li>1.VOC2007 总共：9963 test： 4952 trainval：5011（train： 2501 ; val： 2510）</li></ul><p>2.VOC2012 trainval： 11540 ( train：5717 ; val：5823) 只是有11540张用于检测任务，下载VOC数据集中JPEGImages文件夹存储了17125张图片，没有全部用到检测</p><ul><li>数据下载<ul><li><a href="https://pjreddie.com/projects/pascal-voc-dataset-mirror/">https://pjreddie.com/projects/pascal-voc-dataset-mirror/</a></li></ul></li></ul><h3 id="OpenImages"><a href="#OpenImages" class="headerlink" title="OpenImages"></a>OpenImages</h3><ul><li><a href="https://blog.csdn.net/u010167269/article/details/52717394/">https://blog.csdn.net/u010167269/article/details/52717394/</a></li><li><a href="https://research.googleblog.com/2016/09/introducing-open-images-dataset.html">https://research.googleblog.com/2016/09/introducing-open-images-dataset.html</a></li></ul><h2 id="相关库"><a href="#相关库" class="headerlink" title="相关库"></a>相关库</h2><h3 id="MMDetection"><a href="#MMDetection" class="headerlink" title="MMDetection"></a>MMDetection</h3><h3 id="https-github-com-tensorflow-models-tree-master-research-object-detection"><a href="#https-github-com-tensorflow-models-tree-master-research-object-detection" class="headerlink" title="https://github.com/tensorflow/models/tree/master/research/object_detection"></a><a href="https://github.com/tensorflow/models/tree/master/research/object_detection">https://github.com/tensorflow/models/tree/master/research/object_detection</a></h3><h2 id="物体位置检测"><a href="#物体位置检测" class="headerlink" title="物体位置检测"></a>物体位置检测</h2><h3 id="检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。"><a href="#检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。" class="headerlink" title="检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。"></a>检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。</h3><p>![[Pasted image 20221127223318.png]]</p><h3 id="输出y"><a href="#输出y" class="headerlink" title="输出y"></a>输出y</h3><ul><li>bounding box<ul><li>[bx,by,bh,bw]</li><li>bx,by对应中心点坐标<ul><li>左上角为（0,0）</li></ul></li><li>bh，bw<ul><li>高和宽</li></ul></li></ul></li><li>[c1,c2,c3,…]<ul><li>分类信息</li></ul></li><li>pc<ul><li>图像中有物体的概率</li></ul></li></ul><h2 id="分类及算法"><a href="#分类及算法" class="headerlink" title="分类及算法"></a>分类及算法</h2><h3 id="传统算法"><a href="#传统算法" class="headerlink" title="传统算法"></a>传统算法</h3><ul><li>暴力检测/滑动窗口<ul><li>for window in windows: patchs = get_patch(image, window) results = detector(patchs)</li><li>从左到右，从上到下</li><li>计算量太大</li></ul></li><li>Viola Jones检测器<ul><li>18年前，P. Viola和M. Jones在没有任何约束(如肤色分割)的情况下首次实现了人脸的实时检测<a href="#">8</a>。他们所设计的检测器在一台配备700MHz Pentium III CPU的电脑上运行，在保持同等检测精度的条件下的运算速度是其他算法的数十甚至数百倍。这种检测算法以共同作者的名字命名为“Viola-Jones (VJ) 检测器”以纪念他们的重大贡献。</li><li>VJ检测器采用最直接的检测方法，即滑动窗口(slide window)：查看一张图像中所有可能的窗口尺寸和位置并判断是否有窗口包含人脸。这一过程虽然听上去简单，但它背后所需的计算量远远超出了当时计算机的算力。VJ检测器结合了 “ 积分图像 ”、“ 特征选择 ” 和 “ 检测级联 ” 三种重要技术，大大提高了检测速度。</li><li>1）积分图像：这是一种计算方法，以加快盒滤波或卷积过程。与当时的其他目标检测算法一样[10]，在VJ检测器中使用Haar小波作为图像的特征表示。积分图像使得VJ检测器中每个窗口的计算复杂度与其窗口大小无关。</li><li>2）特征选择：作者没有使用一组手动选择的Haar基过滤器，而是使用Adaboost算法从一组巨大的随机特征池 (大约18万维) 中选择一组对人脸检测最有帮助的小特征。</li><li>3）检测级联：在VJ检测器中引入了一个多级检测范例 ( 又称“检测级联”，detection cascades )，通过减少对背景窗口的计算，而增加对人脸目标的计算，从而减少了计算开销。</li></ul></li><li>HOG 检测器  DalalN, Triggs B. Histograms of Oriented Gradients for Human Detection [C].IEEEComputer Society Conference on Computer Vision &amp; Pattern Recognition.IEEEComputer Society, 2005:886-893. 3</li><li>Harr  P.Viola and M.Jones. Rapid object detection using a boosted cascade of simple features. In Proceedings IEEE Conf. on Computer Vision and Pattern Recognition, 2001</li><li>基于可变形部件的模型(DPM)<ul><li>DPM作为voco -07、-08、-09届检测挑战赛的优胜者，它曾是传统目标检测方法的巅峰。DPM最初是由P. Felzenszwalb提出的[12]，于2008年作为HOG检测器的扩展，之后R. Girshick进行了各种改进<a href="#">13</a>。<ul><li>P. F. Felzenszwalb, R. B. Girshick, D. McAllester, and D. Ramanan. Object detection with discriminatively trained part based models. IEEE Transactions on Pattern Analysis and Machine Intelligence, 32(9):1627–1645, 2010</li></ul></li><li>DPM遵循“分而治之”的检测思想，训练可以简单地看作是学习一种正确的分解对象的方法，推理可以看作是对不同对象部件的检测的集合。例如，检测“汽车”的问题可以看作是检测它的窗口、车身和车轮。工作的这一部分，也就是“star model”由P.Felzenszwalb等人完成。后来，R. Girshick进一步将star model扩展到 “ 混合模型 ”，以处理更显著变化下的现实世界中的物体。</li><li>一个典型的DPM检测器由一个根过滤器（root-filter）和一些零件滤波器（part-filters）组成。该方法不需要手动设定零件滤波器的配置（如尺寸和位置），而是在开发了一种弱监督学习方法并使用到了DPM中，所有零件滤波器的配置都可以作为潜在变量自动学习。R. Girshick将这个过程进一步表述为一个多实例学习的特殊案例，同时还应用了“困难负样本挖掘（hard-negative mining）”、“边界框回归”、“语境启动”等重要技术以提高检测精度。而为了加快检测速度，Girshick开发了一种技术，将检测模型“ 编译 ”成一个更快的模型，实现了级联结构，在不牺牲任何精度的情况下实现了超过10倍的加速。</li><li>虽然今天的目标探测器在检测精度方面已经远远超过了DPM，但仍然受到DPM的许多有价值的见解的影响，如混合模型、困难负样本挖掘、边界框回归等。2010年，P. Felzenszwalb和R. Girshick被授予PASCAL VOC的 “终身成就奖”。</li></ul></li></ul><h3 id="非极大值抑制（Non-max-suppression-algorithm-算法"><a href="#非极大值抑制（Non-max-suppression-algorithm-算法" class="headerlink" title="非极大值抑制（Non-max suppression algorithm)算法"></a>非极大值抑制（Non-max suppression algorithm)算法</h3><ul><li>首先选择最大概率为目标的框，让它高亮，并删除和它高交并比的框，重复选择和删除即可。</li><li>直到所有边界框被选择</li><li>用于筛选边界框</li></ul><h3 id="子主题-5"><a href="#子主题-5" class="headerlink" title="子主题 5"></a>子主题 5</h3><ul><li>RPN (NeurIPS’2015)</li><li>Fast R-CNN (ICCV’2015)</li><li>Faster R-CNN (NeurIPS’2015)</li><li>Mask R-CNN (ICCV’2017)</li><li>Cascade R-CNN (CVPR’2018)</li><li>Cascade Mask R-CNN (CVPR’2018)</li><li>SSD (ECCV’2016)</li><li>RetinaNet (ICCV’2017)</li><li>GHM (AAAI’2019)</li><li>Mask Scoring R-CNN (CVPR’2019)</li><li>Double-Head R-CNN (CVPR’2020)</li><li>Hybrid Task Cascade (CVPR’2019)</li><li>Libra R-CNN (CVPR’2019)</li><li>Guided Anchoring (CVPR’2019)</li><li>FCOS (ICCV’2019)</li><li>RepPoints (ICCV’2019)</li><li>Foveabox (TIP’2020)</li><li>FreeAnchor (NeurIPS’2019)</li><li>NAS-FPN (CVPR’2019)</li><li>ATSS (CVPR’2020)</li><li>FSAF (CVPR’2019)</li><li>PAFPN (CVPR’2018)</li><li>Dynamic R-CNN (ECCV’2020)</li><li>PointRend (CVPR’2020)</li><li>CARAFE (ICCV’2019)</li><li>DCNv2 (CVPR’2019)</li><li>Group Normalization (ECCV’2018)</li><li>Weight Standardization (ArXiv’2019)</li><li>OHEM (CVPR’2016)</li><li>Soft-NMS (ICCV’2017)</li><li>Generalized Attention (ICCV’2019)</li><li>GCNet (ICCVW’2019)</li><li>Mixed Precision (FP16) Training (ArXiv’2017)</li><li>InstaBoost (ICCV’2019)</li><li>GRoIE (ICPR’2020)</li><li>DetectoRS (ArXiv’2020)</li><li>Generalized Focal Loss (NeurIPS’2020)</li><li>CornerNet (ECCV’2018)</li><li>Side-Aware Boundary Localization (ECCV’2020)</li><li>YOLOv3 (ArXiv’2018)</li><li>PAA (ECCV’2020)</li><li>YOLACT (ICCV’2019)</li><li>CentripetalNet (CVPR’2020)</li><li>VFNet (ArXiv’2020)</li><li>DETR (ECCV’2020)</li><li>Deformable DETR (ICLR’2021)</li><li>CascadeRPN (NeurIPS’2019)</li><li>SCNet (AAAI’2021)</li><li>AutoAssign (ArXiv’2020)</li><li>YOLOF (CVPR’2021)</li><li>Seasaw Loss (CVPR’2021)</li><li>CenterNet (CVPR’2019)</li><li>YOLOX (ArXiv’2021)</li><li>SOLO (ECCV’2020)</li></ul><h2 id="难题"><a href="#难题" class="headerlink" title="难题"></a>难题</h2><h3 id="目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。"><a href="#目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。" class="headerlink" title="目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。"></a>目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。</h3><h3 id="而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向"><a href="#而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向" class="headerlink" title="而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向"></a>而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/4a85df63b553.html"/>
+    <url>/2023/02/4a85df63b553.html</url>
+    
+    <content type="html"><![CDATA[<p>先生成了可能包含物体的候选区域Region Proposal 再对这个候选区域做进一步的分类和校准，得到最终的检测结果</p><ul><li>R-CNN，2014  R-CNN即Region-based Convolutional Neural Networks，是一种结合区域提名（Region Proposal）和卷积神经网络（CNN）的目标检测方法。<ul><li>实现细节<ul><li>选择检测窗口<ul><li>J. R. R. Uijlings在2012年提出了selective search方法，这种方法其实是利用了经典的图像分割方法Graphcut，首先对图像做初始分割，然后通过分层分组方法对分割的结果做筛选和归并，最终输出所有可能位置，将候选区域缩小到2000个左右ROI (region of interest) , 感兴趣区域。<ul><li>首先通过将图像进行过分割得到若干等区域组成区域的集合S，这是一个初始化的集合；</li><li>然后利用颜色、纹理、尺寸和空间交叠等特征，计算区域集里每个相邻区域的相似度； 找出相似度最高的两个区域，将其合并为新集并从区域集合中删除原来的两个子集。重复以上的迭代过程，直到最开始的集合S为空，得到了图像的分割结果，得到候选的区域边界，也就是初始框。</li><li>不过，selective search方案仍然有计算量过大的问题。</li><li><a href="https://www.koen.me/research/selectivesearch/">https://www.koen.me/research/selectivesearch/</a></li><li>Van dS K E A, Uijlings J R R, Gevers T, et al. Segmentation as SelectiveSearch forObject Recognition [C]. Proceedings IEEE International Conference onComputerVision. 2011:1879-1886.</li></ul></li></ul></li><li>用在ImageNet数据集上进行学习的参数对神经网络进行预处理，解决了在目标检测训练过程中标注数据不足的问题。<ul><li>即仅用预训练-微调得到的最后一层特征向量来训练SVM</li><li>Pre-train<ul><li>使用ILVCR 2012数据集及简化版的Hinton 2012年在Image Net上的分类网络来进行预训练。(全连接层提取特征4096维，再使用全连接(4096-&gt;1000)实现1000类分类)。</li></ul></li><li>Fine-tune<ul><li>替换Pre-train的最后输出层，换为(4096-&gt;21)21分类的输出层，使用数据集PASCAL VOC 2007来训练网络。此处训练的正负样本的标定：IOU&gt;0.5则为正样本。</li></ul></li></ul></li><li>这里有一个注意点，即正负样本如何确定（CNN 和SVM 都需要有监督的样本）。这里，也是采用了groundtruth（GT）和SS 的proposal 之间的IoU 来进行确定。如果一个proposal 和某个类别的GT 的IoU 大于某个阈值，那么，这个proposal 的样本就被视为该类别的正样本。</li><li>利用非极大值抑制(Non-Maximun Suppresion) 方法，对最终得到的bbox 进行筛选。</li><li>通过线性回归模型对边框进行校准，减少图像中的背景空白，得到更精确的定位。</li></ul></li><li>网络框架</li><li>缺陷。<ul><li>其一是冗余计算，因为R-CNN的方法是先生成候选区域，再对区域进行卷积，其中候选区域会有一定程度的重叠，因为selective search方法仍然不够好，导致CNN对相同区域进行重复卷积提取特征。而且R-CNN方法将提取后的特征存储下来，然后使用传统的SVM分类器进行分类，导致需要很大的存储空间。</li><li>其二是候选区域的尺度缩放问题，因为R-CNN方法将所有区域缩放到同一尺度进行网络训练，而实际selective search选取的目标框有各种尺寸，这可能导致目标的变形，无论是剪裁还是缩放都不能解决这个问题。<ul><li>之所以要对图像进行缩放到固定的尺度，是因为全连接层的存在。全连接层的输入需要固定的大小，所以要使用不同大小的图片，就必须在输入全连接层之前进行统一变换。</li><li>会使图片信息发生丢失</li></ul></li><li>训练需要几个阶段</li><li>每个region的都需要经过模型去提取，并存放至磁盘；</li></ul></li><li>伪代码<ul><li>ROIs = region_proposal(image) for ROI in ROIs patch = get_patch(image, ROI) results = detector(patch)</li></ul></li><li>K. E. Van de Sande, J. R. Uijlings, T. Gevers, and A. W. Smeulders, “Segmentation as selective search for object recognition,” in Computer Vision (ICCV), 2011 IEEE International Conference on. IEEE, 2011, pp. 1879–1886.</li><li>Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5)</li></ul></li><li>SPP-Net  空间金字塔池化网络( Spatial Pyramid Pooling Networks，SPPNet)<ul><li>K. He, X. Zhang, S. Ren, and J. Sun, “Spatial pyramid pooling in deep convolutional networks for visualrecognition,” in European conference on computer vision. Springer, 2014, pp. 346–361.</li><li>其主要思想是去掉了原始图像上的crop/warp等操作，换成了在卷积特征上的空间金字塔池化层（Spatial Pyramid Pooling，SPP）<ul><li>SPP层<ul><li><ol start="3"><li>SPP 对于特定的CNN网络设计和结构是独立的。(也就是说，只要把SPP放在最后一层卷积层后面，对网络的结构是没有影响的， 它只是替换了原来的pooling层)</li></ol></li><li><ol start="4"><li>不仅可以用于图像分类而且可以用来目标检测</li></ol></li><li>这样就是固定的256+16+1维度的fc层输入了</li></ul></li></ul></li><li>利用SPPNet进行目标检测时，只对整个图像进行一次特征映射计算，然后生成任意区域的定长表示以训练检测器，避免了卷积特征的重复计算。SPPNet的速度是R-CNN的20多倍，并且没有牺牲任何检测精度</li><li>不足<ul><li>训练仍然是多阶段的</li><li>SPPNet只对其全连接层进行微调，而忽略了之前的所有层。</li></ul></li></ul></li><li>fast R-CNN，2015<ul><li>在VOC07数据集上，Fast RCNN将mAP从58.5%( RCNN)提高到70.0%，检测速度是R-CNN的200多倍。</li><li>改进<ul><li>卷积生成特征图，只需要提取一次特征就能完成操作</li><li>提出ROI pooling layer，采用单层金字塔结构，其实就是在特征层只使用一个金字塔max-pooling，进一步简化了regions对应特征层的映射关系。</li><li>提出梯度传递方法，实现整个网络网络结构的全部训练。</li><li>在两层全连接中加入SVD降维，加快训练速度。</li><li>输出使用两个softmax，一个用于class分类，一个用于bounding box回归。</li></ul></li><li>ROI pooling layer<ul><li>使用 ROI 池化将其转化为固定大小的特征图块</li></ul></li><li>流程图</li><li>伪代码<ul><li>feature_maps = process(image) ROIs = region_proposal(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) results = detector2(patch)</li></ul></li><li>R. Girshick, “Fast r-cnn,” in Proceedings of the IEEE international conference on computer vision, 2015, pp. 1440–1448.</li><li>我们能用CNN模型生成对象提案吗?</li></ul></li><li>Faster R-CNN，2015<ul><li>R-CNN，SPPNet，Fast R-CNN都没有解决一个问题，就是selective search方法低效率的滑动窗口选择问题，它仍然生成了大量无效区域，多了造成算力的浪费，少了则导致漏检。</li><li>提出RPN(Region Proposal Networks)区域生成网络，使用神经网络生成regions，充分利用了feature maps的价值，代替RCNN中的Selective Search方法。节省regions proposal的时间。基本实现end to end训练。</li><li>  流程图，仅SS变成RPN</li><li>![[Pasted image 20221127223135.png]]</li><li>  RPN</li><li>![[Pasted image 20221127223141.png]]</li><li>准确率<ul><li>(COCO mAP@.5=42.7%，COCO mAP@[.5，.95]=21.9%， VOC07 mAP=73.2%，VOC12 mAP=70.4%)</li></ul></li><li>速度<ul><li>Faster R-CNN 在 PASCAL VOC 2007 测试集上每秒处理 7 帧的图像（7 FPS）</li></ul></li><li>伪代码<ul><li>feature_maps = process(image) ROIs = rpn(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) class_scores, box = detector(patch) class_probabilities = softmax(class_scores)</li></ul></li><li>虽然Faster RCNN突破了Fast RCNN的速度瓶颈，但是在后续的检测阶段仍然存在计算冗余。后来提出了多种改进方案，包括RFCN和 Light head RCNN。</li><li>RenS, He K, Girshick R, et al. Faster R-CNN: Towards Real-Time ObjectDetectionwith Region Proposal Networks [OL]. arXiv:1506.01497, 2015.</li></ul></li><li>R-FCN<ul><li>R-FCN 通过减少每个 ROI 所需的工作量实现加速。上面基于区域的特征图与 ROI 是独立的，可以在每个 ROI 之外单独计算。剩下的工作就比较简单了，因此 R-FCN 的速度比 Faster R-CNN 快。</li><li>  流程图</li><li>![[Pasted image 20221127223151.png]]</li><li>伪代码<ul><li>feature_maps = process(image) ROIs = region_proposal(feature_maps) score_maps = compute_score_map(feature_maps) for ROI in ROIs V = region_roi_pool(score_maps, ROI) class_scores, box = average(V) # Much simpler! class_probabilities = softmax(class_scores)</li></ul></li><li>  DaiJ, Li Y, He K, et al. R-FCN: Object Detection via Region-basedFullyConvolutional Networks [OL]. arXiv: 1605.06409, 2016.</li></ul></li></ul><h2 id="Feature-Pyramid-Networks（FPN）"><a href="#Feature-Pyramid-Networks（FPN）" class="headerlink" title="Feature Pyramid Networks（FPN）"></a>Feature Pyramid Networks（FPN）</h2><p>论文：feature pyramid networks for object detection<br>论文链接：<a href="https://arxiv.org/abs/1612.03144">https://arxiv.org/abs/1612.03144</a></p><pre><code>-   2017年，T.-Y.Lin等人基于Faster RCNN提出了特征金字塔网络(FPN)[21]。在FPN之前，大多数基于深度学习的检测器只在网络的顶层进行检测。虽然CNN较深层的特征有利于分类识别，但不利于对象的定位。为此，开发了具有横向连接的自顶向下体系结构，用于在所有级别构建高级语义。由于CNN通过它的正向传播，自然形成了一个特征金字塔，FPN在检测各种尺度的目标方面显示出了巨大的进步。在基础的Faster RCNN系统中使用FPN骨架可在无任何修饰的条件下在MS-COCO数据集上以单模型实现state-of-the-art 的效果(COCO mAP@.5=59.1%，COCO mAP@[.5，.95]= 36.2%)。FPN现在已经成为许多最新探测器的基本组成部分。    </code></pre><ul><li>  Mask R-CNN</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/9dca2c4dc2b6.html"/>
+    <url>/2023/02/9dca2c4dc2b6.html</url>
+    
+    <content type="html"><![CDATA[<p>单阶段检测算法直接给出最终的检测结果，没有经过生成候选区域的步骤</p><ul><li>YOLO系列<ul><li>You Only Look Once (YOLO)v1，2016<ul><li>思想<ul><li>仅把目标检测看做一个回归问题</li><li>将一幅图像分成SxS个网格(grid cell), 如果某个object的中心落在这个网格中，则这个网格 就负责预测这个object。</li><li>每个bounding box要预测(x, y, w, h)和confidence共5个值，每个网格还要预测一个类别信 息，记为C类。则SxS个网格, 每个网格要预测B个bounding box还要预测C个categories。 输出就是Sx S x (5*B+ C)的一-个tensor。<ul><li>confidence</li></ul></li></ul></li><li>实现细节<ul><li>resize到448x448</li><li>每个grid有30维，这30维中，8维是回归box的坐标，2维是box的confidence,还有20维是类别。</li><li>S=7，B=2</li><li>其中坐标的x,y用对应网格的offset归-一化到0-1之间，w,h用图像的width和height归-一化到0-1之间。</li><li>YOLO检测网络包括24个卷积层和2个全连接层,卷积层用来提取图像特征，全连接层用来预测图像位置和类别概率值。<ul><li>网络输出7_7_30</li></ul></li><li>预训练<ul><li>imagenet</li></ul></li><li>在实现中，最主要的就是怎么设计损失函数，让这个三个方面得到很好的平衡。作者简单粗暴的全部采用了sum-squared error loss来做这件事。<ul><li>不足<ul><li>第一，8维的localization error和20维的classification error同等重要显然是不合理的;</li><li>第二，如果一个网格中没有object (一幅图中这种网格很多)， 那么就会将这些网格中的box的confidence push到0，相比于较少的有object的网格,这种做法是overpowering的，这会导致网络不稳定甚至发散。</li></ul></li></ul></li><li>先使用NMS，然后再确定各个box的类别</li></ul></li><li>缺点<ul><li>YOLO对相互靠的很近的物体，还有很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一-类。</li><li>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱。</li><li>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</li></ul></li><li>YOLO非常快：YOLO的一个快速版本运行速度为155fps, VOC07 mAP=52.7%，而它的增强版本运行速度为45fps, VOC07 mAP=63.4%， VOC12 mAP=57.9%。<ul><li>fast YOLO，它只有9个卷积层和2个全连接层。</li></ul></li><li>必须指出的是，尽管与双级探测器相比YOLO的探测速度有了很大的提高，但它的定位精度有所下降，特别是对于一些小目标而言。YOLO的后续版本及在它之后提出的SSD更关注这个问题。</li><li>后来R. Joseph在 YOLO 的基础上进行了一系列改进，其中包括以路径聚合网络（Path aggregation Network, PAN）取代FPN，定义新的损失函数等，陆续提出了其 v2、v3及v4版本(截止本文的2020年7月，Ultralytics发布了“YOLO v5”，但并没有得到官方承认)，在保持高检测速度的同时进一步提高了检测精度。</li><li>Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified,Real-TimeObject Detection [OL]. arXiv: 1506.02640, 2016.<ul><li>论文下载：<a href="http://arxiv.org/abs/1506.02640">http://arxiv.org/abs/1506.02640</a></li></ul></li><li>解读<ul><li><a href="https://blog.csdn.net/xiaohu2022/article/details/79211732/">https://blog.csdn.net/xiaohu2022/article/details/79211732/</a></li></ul></li><li>Yolo在PASCAL VOC 2007上与其他算法的对比</li></ul></li><li>YOLO9000/v2，2016<ul><li>论文<ul><li>Joseph Redmon, Ali Farhadi. YOLO9000: Better, Faster, Stronger. arXiv:1612.08242<ul><li><a href="https://arxiv.org/abs/1612.08242">https://arxiv.org/abs/1612.08242</a></li></ul></li></ul></li><li>Yolov2和Yolo9000算法内核相同，区别是训练方式不同：Yolov2用coco数据集训练后，可以识别80个种类。而Yolo9000可以使用coco数据集 + ImageNet数据集联合训练，可以识别9000多个种类。</li><li>Better<ul><li>BN</li><li>High Resolution Classifier（分类网络高分辨率预训练）</li><li>更多的Anchor box</li></ul></li><li>YOLO9000的训练策略<ul><li>联合训练方法思路简单清晰，Yolo v2中物体矩形框生成，不依赖于物理类别预测，二者同时独立进行。当输入是检测数据集时，标注信息有类别、有位置，那么对整个loss函数计算loss，进行反向传播；当输入图片只包含分类信息时，loss函数只计算分类loss，其余部分loss为零。当然，一般的训练策略为，先在检测数据集上训练一定的epoch，待预测框的loss基本稳定后，再联合分类数据集、检测数据集进行交替训练，同时为了分类、检测数据量平衡，作者对coco数据集进行了上采样，使得coco数据总数和ImageNet大致相同。</li></ul></li></ul></li><li>YOLOv3，2018<ul><li>[14] Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement. arXiv:1804.02767<ul><li><a href="https://arxiv.org/pdf/1804.02767.pdf">https://arxiv.org/pdf/1804.02767.pdf</a></li></ul></li></ul></li><li>codes<ul><li><a href="https://github.com/pjreddie/darknet">https://github.com/pjreddie/darknet</a></li><li><a href="https://github.com/AlexeyAB/darknet">https://github.com/AlexeyAB/darknet</a><ul><li>解读<ul><li><a href="https://www.cnblogs.com/xieqi/p/9818056.html">https://www.cnblogs.com/xieqi/p/9818056.html</a></li><li><a href="https://blog.csdn.net/luoying_ontheroad/article/details/81136973">https://blog.csdn.net/luoying_ontheroad/article/details/81136973</a></li><li><a href="https://blog.csdn.net/ning_yi/article/details/119385309">https://blog.csdn.net/ning_yi/article/details/119385309</a></li></ul></li><li>C写的</li></ul></li><li><a href="https://github.com/eriklindernoren/PyTorch-YOLOv3">https://github.com/eriklindernoren/PyTorch-YOLOv3</a><ul><li>不能检测视频</li><li>简化版本</li></ul></li><li><a href="https://github.com/ultralytics/yolov3">https://github.com/ultralytics/yolov3</a><ul><li>最好的</li></ul></li></ul></li></ul></li><li>Single Shot MultiBox Detector (SSD),ECCV2016<ul><li>YOLO的做法是速度快，但是会有许多漏检，尤其是小的目标。所以SSD就在 YOLO的基础上添加了Faster R-CNN的Anchor 概念，并融合不同卷积层的特征做出预测。虽然YOLO和SSD系列的方法没有了region proposal的提取，速度更快，但是必定会损失信息和精度。</li><li>SSD由W. Liu等人于2015年提出[23]。这是深度学习时代的第二款单级探测器。SSD的主要贡献是引入了多参考和多分辨率检测技术，这大大提高了单级检测器的检测精度，特别是对于一些小目标。SSD在检测速度和准确度上都有优势(VOC07 mAP=76.8%，VOC12 mAP=74.9%， COCO mAP@.5=46.5%，mAP@[.5，.95]=26.8%，快速版本运行速度为59fps) 。SSD与其他的检测器的主要区别在于，前者在网络的不同层检测不同尺度的对象，而后者仅在其顶层运行检测。</li><li>Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, and Alexander C.Berg. SSD: Single shot multibox detector. In ECCV, 2016</li></ul></li><li>RetinaNet<ul><li>  单级检测器有速度快、结构简单的优点，但在精度上多年来一直落后于双级检测器。T.-Y.Lin等人发现了背后的原因，并在2017年提出了RetinaNet[24]。他们的观点为精度不高的原因是在密集探测器训练过程中极端的前景-背景阶层不平衡（the extreme foreground-background class imbalance）现象。为此，他们在RetinaNet中引入了一个新的损失函数 “ 焦点损失（focal loss）”，通过对标准交叉熵损失的重构，使检测器在训练过程中更加关注难分类的样本。焦损耗使得单级检测器在保持很高的检测速度的同时，可以达到与双级检测器相当的精度。(COCO mAP@.5=59.1%，mAP@[.5, .95]=39.1% )。</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/5319be07cf86.html"/>
+    <url>/2023/02/5319be07cf86.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/50126479">https://zhuanlan.zhihu.com/p/50126479</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/3f074b983978.html"/>
+    <url>/2023/02/3f074b983978.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="mAP"><a href="#mAP" class="headerlink" title="mAP"></a>mAP</h1><h3 id="边界框"><a href="#边界框" class="headerlink" title="边界框"></a>边界框</h3><ul><li>IoU（intersection over union）交并比<ul><li>计算两个边界框交集和并集之比</li><li>一般大于等于0.5就是正确</li></ul></li></ul><h3 id="mAP-1"><a href="#mAP-1" class="headerlink" title="mAP"></a>mAP</h3><ul><li>  <a href="https://www.cnblogs.com/makefile/p/metrics-mAP.html">https://www.cnblogs.com/makefile/p/metrics-mAP.html</a></li></ul><table><thead><tr><th>Method</th><th>dataset</th><th>mAP@.5</th><th>mAP@[.5, .95]</th></tr></thead><tbody><tr><td>[[two-stage models#Feature Pyramid Networks（FPN）]]</td><td>COCO</td><td>59.1</td><td>36.2</td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/aa926de53269.html"/>
+    <url>/2023/02/aa926de53269.html</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/dcb867ece58d.html"/>
+    <url>/2023/02/dcb867ece58d.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="Incremental-Few-Shot-Instance-Segmentation（CVPR-2021"><a href="#Incremental-Few-Shot-Instance-Segmentation（CVPR-2021" class="headerlink" title="Incremental Few-Shot Instance Segmentation（CVPR 2021)"></a>Incremental Few-Shot Instance Segmentation（CVPR 2021)</h1><p>![[2105.05312v1.pdf]]</p><p>评价：在增量小样本实例分割上确实比较新颖，但和增量学习的思想不一致，居然不微调mask predictor，感觉更像是一篇叫做增量小样本目标检测。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/8c0ccf74cc62.html"/>
+    <url>/2023/02/8c0ccf74cc62.html</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/477dacfe6935.html"/>
+    <url>/2023/02/477dacfe6935.html</url>
+    
+    <content type="html"><![CDATA[<p>![[2106.05517.pdf]]</p><p>![[NIPS-2017-prototypical-networks-for-few-shot-learning-Paper.pdf]]</p><h1 id="原型补全网络"><a href="#原型补全网络" class="headerlink" title="原型补全网络"></a>原型补全网络</h1><p>![[原型补全.pdf]]</p><p><a href="https://github.com/zhangbq-research/Prototype_Completion_for_FSL">code</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/52be89de33c1.html"/>
+    <url>/2023/02/52be89de33c1.html</url>
+    
+    <content type="html"><![CDATA[<p>通常用于小样本分类任务</p><p>miniImageNet包含100类共60000张彩色图片，其中每类有600个样本。通常而言,这个数据集的训练集和测试集的类别划分为：80 : 20。相比于CIFAR10数据集，miniImageNet数据集更加复杂，但更适合进行原型设计和实验研究。</p><p>训练:验证 = 64：16=8:2</p><p>code<br>![[mini_imagenet.py]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/876fc8d3b1f6.html"/>
+    <url>/2023/02/876fc8d3b1f6.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>常用的做法是使用one-hot对真实标签进行编码，然后用预测概率去拟合one-hot的真实概率。但是这样会带来两个问题：</p><p>无法保证模型的泛化能力，使网络过于自信会导致过拟合；<br>全概率和0概率鼓励所属类别和其他类别之间的差距尽可能加大，而由梯度有界可知，这种情况很难adapt。会造成模型过于相信预测的类别。<br>标签平滑可以缓解这个问题，可以有两个角度理解这件事。</p><h1 id="方法1：与均匀分布叠加"><a href="#方法1：与均匀分布叠加" class="headerlink" title="方法1：与均匀分布叠加"></a>方法1：与均匀分布叠加</h1><p>![[Pasted image 20221202112830.png]]</p><h1 id="方法2：与Dirac函数叠加"><a href="#方法2：与Dirac函数叠加" class="headerlink" title="方法2：与Dirac函数叠加"></a>方法2：与Dirac函数叠加</h1><p>$((1-\epsilon) * onehotlabel) + (\epsilon / classnum)$</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">smoothed_one_hot = smoothed_one_hot * (<span class="number">1</span> - opts.eps) + (<span class="number">1</span> - smoothed_one_hot) * opts.eps / (train_way - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/ec4a1a6f6d3f.html"/>
+    <url>/2023/02/ec4a1a6f6d3f.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="相关竞赛"><a href="#相关竞赛" class="headerlink" title="相关竞赛"></a>相关竞赛</h1><p><a href="https://www.kaggle.com/competitions/happy-whale-and-dolphin/overview/evaluation">https://www.kaggle.com/competitions/happy-whale-and-dolphin/overview/evaluation</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/9439352b11dc.html"/>
+    <url>/2023/02/9439352b11dc.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="线性分类器-LinearClassifier"><a href="#线性分类器-LinearClassifier" class="headerlink" title="线性分类器 LinearClassifier"></a>线性分类器 LinearClassifier</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># LinearClassifier</span></span><br><span class="line"><span class="keyword">if</span> opt.pre_head == <span class="string">&#x27;LinearNet&#x27;</span>:  </span><br><span class="line">    pre_head = LinearClassifier(in_dim=fea_dim, n_classes=n_classes).cuda()  </span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinearClassifier</span>(nn.Module):  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_dim, n_classes</span>):  </span><br><span class="line">        <span class="built_in">super</span>().__init__()  </span><br><span class="line">        <span class="comment"># self.dropout = nn.Dropout(p=0.2)  </span></span><br><span class="line">        self.linear = nn.Linear(in_dim, n_classes, bias=<span class="literal">True</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):  </span><br><span class="line">        <span class="comment"># x = self.dropout(x)  </span></span><br><span class="line">        <span class="keyword">return</span> self.linear(x)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">emb = embedding_net(data)  </span><br><span class="line">logit = pre_head(emb)</span><br></pre></td></tr></table></figure><h1 id="LinearRotateNet"><a href="#LinearRotateNet" class="headerlink" title="LinearRotateNet"></a>LinearRotateNet</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># LinearRotateNet</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> opt.pre_head == <span class="string">&#x27;LinearRotateNet&#x27;</span>:  </span><br><span class="line">    pre_head = LinearRotateHead(in_dim=fea_dim, n_classes=n_classes).cuda()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinearRotateHead</span>(nn.Module):  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_dim=<span class="number">512</span>, n_classes=<span class="number">100</span></span>):  </span><br><span class="line">        <span class="built_in">super</span>(LinearRotateHead, self).__init__()  </span><br><span class="line">  </span><br><span class="line">        self.rotate_classifier = nn.Sequential(  </span><br><span class="line">            nn.Linear(in_dim, <span class="number">4</span>)  </span><br><span class="line">        )  </span><br><span class="line">        self.cls_classifier = nn.Sequential(  </span><br><span class="line">            nn.Linear(in_dim, n_classes)  </span><br><span class="line">        )  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, use_cls=<span class="literal">True</span></span>):  </span><br><span class="line">        <span class="keyword">if</span> use_cls:  </span><br><span class="line">            out = self.cls_classifier(x)  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            out = self.rotate_classifier(x)  </span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">x_ = []  </span><br><span class="line">y_ = []  </span><br><span class="line">a_ = []  </span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(data.shape[<span class="number">0</span>]):  </span><br><span class="line">    x90 = data[j].transpose(<span class="number">2</span>, <span class="number">1</span>).flip(<span class="number">1</span>)  </span><br><span class="line">    x180 = x90.transpose(<span class="number">2</span>, <span class="number">1</span>).flip(<span class="number">1</span>)  </span><br><span class="line">    x270 = x180.transpose(<span class="number">2</span>, <span class="number">1</span>).flip(<span class="number">1</span>)  </span><br><span class="line">    x_ += [data[j], x90, x180, x270]  </span><br><span class="line">    y_ += [labels[j] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>)]  </span><br><span class="line">    a_ += [torch.tensor(<span class="number">0</span>), torch.tensor(<span class="number">1</span>), torch.tensor(<span class="number">2</span>), torch.tensor(<span class="number">3</span>)]  </span><br><span class="line">  </span><br><span class="line">x_ = Variable(torch.stack(x_, <span class="number">0</span>)).cuda()  </span><br><span class="line">y_ = Variable(torch.stack(y_, <span class="number">0</span>)).cuda()  </span><br><span class="line">a_ = Variable(torch.stack(a_, <span class="number">0</span>)).cuda()  </span><br><span class="line">emb = embedding_net(x_)  </span><br><span class="line"><span class="comment"># print(emb.shape)  </span></span><br><span class="line">logit = pre_head(emb, use_cls=<span class="literal">True</span>)  </span><br><span class="line">logit_rotate = pre_head(emb, use_cls=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">loss = -(smoothed_one_hot * log_prb).<span class="built_in">sum</span>(dim=<span class="number">1</span>)  </span><br><span class="line">rloss = F.cross_entropy(<span class="built_in">input</span>=logit_rotate, target=a_)  </span><br><span class="line"></span><br><span class="line">loss = <span class="number">0.5</span> * loss + <span class="number">0.5</span> * rloss</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/b77b757e4943.html"/>
+    <url>/2023/02/b77b757e4943.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="模型输出转-logit-prob"><a href="#模型输出转-logit-prob" class="headerlink" title="模型输出转 logit/prob"></a>模型输出转 logit/prob</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line">F.log_softmax(logit.reshape(-<span class="number">1</span>, train_way), dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><h1 id="acc"><a href="#acc" class="headerlink" title="acc"></a>acc</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count_accuracy</span>(<span class="params">logits, label</span>):  </span><br><span class="line">    pred = torch.argmax(logits, dim=<span class="number">1</span>).view(-<span class="number">1</span>)  </span><br><span class="line">    label = label.view(-<span class="number">1</span>)  </span><br><span class="line">    accuracy = <span class="number">100</span> * pred.eq(label).<span class="built_in">float</span>().mean()  </span><br><span class="line">    <span class="keyword">return</span> accuracy</span><br></pre></td></tr></table></figure><h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss = -(smoothed_one_hot * log_prb).<span class="built_in">sum</span>(dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><h1 id="batch-loss-处理"><a href="#batch-loss-处理" class="headerlink" title="batch loss 处理"></a>batch loss 处理</h1><p>batch loss取平均</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/b6ab1446bb66.html"/>
+    <url>/2023/02/b6ab1446bb66.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="交叉熵损失"><a href="#交叉熵损失" class="headerlink" title="交叉熵损失"></a>交叉熵损失</h1><p>nn.CrossEntropyLoss()</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/b692b1c01421.html"/>
+    <url>/2023/02/b692b1c01421.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="ppt"><a href="#ppt" class="headerlink" title="ppt"></a>ppt</h1><p>![[因果推理 in CV.pptx]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/956e3e0700b9.html"/>
+    <url>/2023/02/956e3e0700b9.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="相关竞赛"><a href="#相关竞赛" class="headerlink" title="相关竞赛"></a>相关竞赛</h1><p><a href="https://www.datafountain.cn/competitions/519/datasets">https://www.datafountain.cn/competitions/519/datasets</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/216b0547a0eb.html"/>
+    <url>/2023/02/216b0547a0eb.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="竞赛经验"><a href="#竞赛经验" class="headerlink" title="竞赛经验"></a>竞赛经验</h1><p><a href="https://zhuanlan.zhihu.com/p/68677880?from=timeline">https://zhuanlan.zhihu.com/p/68677880?from=timeline</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/59671f3da833.html"/>
+    <url>/2023/02/59671f3da833.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="属于"><a href="#属于" class="headerlink" title="属于:"></a>属于:</h1><p>[[video]]</p><h1 id="metric"><a href="#metric" class="headerlink" title="metric"></a>metric</h1><p>![[Pasted image 20221128223338.png]]</p><h1 id="相关竞赛"><a href="#相关竞赛" class="headerlink" title="相关竞赛"></a>相关竞赛</h1><ul><li><a href="https://tianchi.aliyun.com/competition/entrance/531962/introduction">天池江苏气象AI算法挑战赛-AI助力强对流天气预报</a></li></ul><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="竞赛来的思路"><a href="#竞赛来的思路" class="headerlink" title="竞赛来的思路"></a>竞赛来的思路</h2><ol><li><p>视频to视频转化为图像to图像，按时间维度合并输入channel，模型采用unet。</p></li><li><p>![[Pasted image 20221128221640.png]]</p></li><li><p> ![[Pasted image 20221128221710.png]]<br>![[Pasted image 20221128222338.png]]</p></li><li><p>![[Pasted image 20221128221827.png]]</p></li><li><p>![[Pasted image 20221128222154.png]]</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/613b3a505b0f.html"/>
+    <url>/2023/02/613b3a505b0f.html</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/5c39819e8c1e.html"/>
+    <url>/2023/02/5c39819e8c1e.html</url>
+    
+    <content type="html"><![CDATA[<p>分类、分割任务</p><p>交叉熵：<br><a href="https://blog.csdn.net/weixin_45665708/article/details/111299919">https://blog.csdn.net/weixin_45665708/article/details/111299919</a></p><p>交叉熵损失：<br>注意！与交叉熵不同。<br><a href="https://blog.csdn.net/songhuangong123/article/details/125502262">https://blog.csdn.net/songhuangong123/article/details/125502262</a></p><p>损失的输入：<br>GT：（batch_size, 1）<br>predict: (batch_size, class_num)  分别表示各个类的logit</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/aca397a48dbe.html"/>
+    <url>/2023/02/aca397a48dbe.html</url>
+    
+    <content type="html"><![CDATA[<p>OCR-master</p><h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>竞赛类型：</p><ul><li><p>普通文档识别与场景文字识别</p></li><li><p>倾斜、水平文字识别</p></li></ul><p>算法：</p><ul><li>二阶段，检测+识别<ul><li>检测</li><li>识别：CTC、ACE、Attention<ul><li>根据网上分享, 只用ACE loss可能存在收敛困难等问题, 而ACE loss结合CTC loss一起训练, 相较于CTC loss可以获得额外的提升</li><li><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221113184114245.png" alt="image-20221113184114245"></li></ul></li><li>水平文字检测个人认为比较好的算法是2016 ECCV乔宇老师团队的CTPN，倾斜文字检测个人比较喜欢的方法是2017 CVPR的EAST和Seglink、PixelLink</li><li>语义不连续的文本可以考虑不用RNN，直接DenseNet分类</li></ul></li><li>end-to-end<ul><li>FOTS</li><li>SVTR：PaddleOCR的PP-OCRv3（2022）钦定模型, 模型小, 效果好。主要就是利用Transformer替代了RNN, 得益于self-attention机制, 这样面对不规则文本图像的时候应该有更好的信息抽取能力, 可以更好的抽取有序后验概率矩阵.</li></ul></li></ul><p>metric:</p><ul><li>编辑距离</li></ul><p>且样本严重不均衡，使用Center loss约束类内类间关系，使用Focal loss缓解样本不均问题，并实现难样本挖掘；</p><ul><li>IoU+F1-score</li></ul><p>trick：</p><ul><li>文字类别不均衡<ul><li>极不均衡的类别分布使得端到端的文字检测识别性能极差。因此，本团队采用了先检测文字，后识别的方案框架。</li></ul></li><li>数据增强方案<ul><li>经典图像增强</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/26148f9ec5bf.html"/>
+    <url>/2023/02/26148f9ec5bf.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-直接推理"><a href="#1-直接推理" class="headerlink" title="1 直接推理"></a>1 直接推理</h1><h2 id="1-1-model-zoo"><a href="#1-1-model-zoo" class="headerlink" title="1.1 model zoo"></a>1.1 model zoo</h2><p><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/models_list.md#%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/models_list.md#%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B</a><br>首先下载预训练的推理模型，</p><h2 id="1-2-推理"><a href="#1-2-推理" class="headerlink" title="1.2 推理"></a>1.2 推理</h2><p>然后用predict_system推理</p><p>参数解释如下：<br><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/inference_args.md">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/inference_args.md</a></p><h1 id="2-fine-tune方法"><a href="#2-fine-tune方法" class="headerlink" title="2 fine-tune方法"></a>2 fine-tune方法</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/f28e24fb2066.html"/>
+    <url>/2023/02/f28e24fb2066.html</url>
+    
+    <content type="html"><![CDATA[<p>[[models]]通常需要分为文本检测和文本识别两个部分<br>[[技术栈/人工智能/计算机视觉/图像分类/metrics]]<br>[[datasets]]</p><h1 id="SOTA"><a href="#SOTA" class="headerlink" title="SOTA"></a>SOTA</h1><p><a href="https://arxiv.org/pdf/2205.00159v2.pdf">https://arxiv.org/pdf/2205.00159v2.pdf</a><br><a href="https://paperswithcode.com/task/scene-text-detection">https://paperswithcode.com/task/scene-text-detection</a><br><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/algorithm_overview.md">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/algorithm_overview.md</a></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><a href="https://github.com/PaddlePaddle/PaddleOCR">Paddle Paddle</a> &gt; <a href="https://github.com/open-mmlab/mmocr">MMOCR</a><br><a href="https://www.paddlepaddle.org.cn/">https://www.paddlepaddle.org.cn/</a><br><a href="https://github.com/frotms/PaddleOCR2Pytorch">https://github.com/frotms/PaddleOCR2Pytorch</a> 没必要，大厂出品必属精品</p><h1 id="垂直应用"><a href="#垂直应用" class="headerlink" title="垂直应用"></a>垂直应用</h1><p><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/applications/%E6%89%8B%E5%86%99%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB.md">手写文字识别</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/03d736fdd0a4.html"/>
+    <url>/2023/02/03d736fdd0a4.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-文本检测-文本识别"><a href="#1-文本检测-文本识别" class="headerlink" title="1 文本检测+文本识别"></a>1 文本检测+文本识别</h1><h2 id="1-1-CRNN-CTC-2006"><a href="#1-1-CRNN-CTC-2006" class="headerlink" title="1.1 CRNN-CTC(2006)"></a>1.1 CRNN-CTC(2006)</h2><p><a href="https://static.aminer.org/pdf/PDF/000/334/929/connectionist_temporal_classification_labelling_unsegmented_sequence_data_with_recurrent_neural.pdf">Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks</a></p><p>CTC:<br><a href="https://zhuanlan.zhihu.com/p/43534801">https://zhuanlan.zhihu.com/p/43534801</a></p><ul><li>电话面试中如何跟面试官阐述CTC loss是什么？</li><li>主要说清楚几点：</li></ul><p>1.loss的背景</p><p>2.ctc是如何简化问题的<br>CTC提出一种对不需要对齐的Loss计算方法</p><p>3.ctc的path 优化，forward和backward的大致过程</p><p>4.最终的结果的形式.</p><h2 id="1-2-DenseNet-CTC"><a href="#1-2-DenseNet-CTC" class="headerlink" title="1.2 DenseNet + CTC"></a>1.2 DenseNet + CTC</h2><ul><li>  文本检测：CTPN<br><a href="https://zhuanlan.zhihu.com/p/34757009">https://zhuanlan.zhihu.com/p/34757009</a></li><li>  文本识别：DenseNet + CTC<br><a href="https://github.com/eragonruan/text-detection-ctpn">https://github.com/eragonruan/text-detection-ctpn</a> no<br><a href="https://github.com/YCG09/chinese_ocr">https://github.com/YCG09/chinese_ocr</a> failed ctpn</li></ul><p><a href="https://github.com/opconty/pytorch_ctpn">https://github.com/opconty/pytorch_ctpn</a> failed</p><p><a href="https://github.com/yizt/keras-ctpn">https://github.com/yizt/keras-ctpn</a> failed</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/0fecfe3fb8c2.html"/>
+    <url>/2023/02/0fecfe3fb8c2.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="CTC-loss"><a href="#CTC-loss" class="headerlink" title="CTC loss"></a>CTC loss</h1><p>criterion = nn.CTCLoss(blank=blank_label, reduction=’mean’, zero_infinity=True)</p><h1 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h1><p>![[Pasted image 20221211223141.png]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/3a17dbafd341.html"/>
+    <url>/2023/02/3a17dbafd341.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h1><h2 id="繁体"><a href="#繁体" class="headerlink" title="繁体"></a>繁体</h2><h3 id="TCSynth-TC-STR-7k-word-不带框"><a href="#TCSynth-TC-STR-7k-word-不带框" class="headerlink" title="TCSynth+TC-STR 7k-word (不带框)"></a>TCSynth+TC-STR 7k-word (不带框)</h3><p>generated over 20 million synthetic data + collected over 7,000 manually labeled data<br><a href="https://github.com/esun-ai/traditional-chinese-text-recogn-dataset">https://github.com/esun-ai/traditional-chinese-text-recogn-dataset</a></p><h1 id="简体"><a href="#简体" class="headerlink" title="简体"></a>简体</h1><p><a href="https://github.com/YCG09/chinese_ocr">https://github.com/YCG09/chinese_ocr</a> (带框)<br>数据集：<a href="https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw">https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw</a> (密码：lu7m)</p><p><a href="https://github.com/FudanVI/benchmarking-chinese-text-recognition">https://github.com/FudanVI/benchmarking-chinese-text-recognition</a> (带框，但不需要检测，已经是小块的了)</p><h1 id="英文"><a href="#英文" class="headerlink" title="英文"></a>英文</h1><h2 id="Synth"><a href="#Synth" class="headerlink" title="Synth"></a>Synth</h2><p><a href="https://github.com/Belval/TextRecognitionDataGenerator">https://github.com/Belval/TextRecognitionDataGenerator</a><br><a href="https://cloud.tencent.com/developer/article/1759567?from=15425">https://cloud.tencent.com/developer/article/1759567?from=15425</a></p><h1 id="文本检测"><a href="#文本检测" class="headerlink" title="文本检测"></a>文本检测</h1><p>ICDAR2015<br><a href="https://zhuanlan.zhihu.com/p/60459597">https://zhuanlan.zhihu.com/p/60459597</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/675aa8a3cf31.html"/>
+    <url>/2023/02/675aa8a3cf31.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="相关竞赛"><a href="#相关竞赛" class="headerlink" title="相关竞赛"></a>相关竞赛</h1><p><a href="https://tianchi.aliyun.com/competition/entrance/531945/introduction">https://tianchi.aliyun.com/competition/entrance/531945/introduction</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/eb78ddb1bcac.html"/>
+    <url>/2023/02/eb78ddb1bcac.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：</p><ul><li>[[人工智能]]<br>包括：</li><li>[[目标检测]]</li><li>[[语义分割]]<br>应用：</li><li>[[图像审核]]</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/93bf85745a1c.html"/>
+    <url>/2023/02/93bf85745a1c.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="backbone"><a href="#backbone" class="headerlink" title="backbone"></a>backbone</h1><ul><li>conv 转 resnet</li><li>conv 转空洞卷积</li><li></li><li><h1 id="model"><a href="#model" class="headerlink" title="model"></a>model</h1>unet+空间注意力</li></ul><h1 id="amp"><a href="#amp" class="headerlink" title="amp"></a>amp</h1><p>AMP：Automatic mixed precision，自动混合精度，可以在神经网络推理过程中，针对不同的层，采用不同的数据精度进行计算，从而实现节省显存和加快速度的目的。在Pytorch 1.5版本及以前，通过NVIDIA提供的apex库可以实现amp功能。但是在使用过程中会伴随着一些版本兼容和奇怪的报错问题。从1.6版本开始，Pytorch原生支持自动混合精度训练，并已进入稳定阶段，AMP 训练能在 Tensor Core GPU 上实现更高的性能并节省多达 50％ 的内存。<br><a href="https://zhuanlan.zhihu.com/p/348554267">https://zhuanlan.zhihu.com/p/348554267</a></p><h1 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h1><h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><p>《Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift》<br>资料：<br><a href="https://zhuanlan.zhihu.com/p/24810318">https://zhuanlan.zhihu.com/p/24810318</a><br><a href="https://zhuanlan.zhihu.com/p/435507061">https://zhuanlan.zhihu.com/p/435507061</a> 👍<br>![[Pasted image 20221202183350.png]]<br>![[Pasted image 20221202190522.png]]<br>作用：</p><ol><li>加快模型的收敛速度</li><li>在一定程度上缓解了<a href="https://so.csdn.net/so/search?q=%E6%B7%B1%E5%BA%A6&spm=1001.2101.3001.7020">深度</a>网络中的“梯度弥散”问题，从而使得训练深层网络模型更加容易和稳定。</li><li>网络一旦train起来，那么参数就要发生更新，除了输入层的数据外(因为输入层数据，我们已经人为的为每个样本归一化)，后面网络每一层的输入数据分布是一直在发生变化的，因为在训练的时候，前面层训练参数的更新将导致后面层输入数据分布的变化。我们把网络中间层在训练过程中，数据分布的改变称之为：“Internal Covariate Shift”。BN的提出，就是要解决在训练过程中，中间层数据分布发生改变的情况。</li><li><ul><li>  可以选择比较大的初始学习率，<strong>加快网络的收敛</strong>。实验结果表明，就算你使用小的学习率，<a href="https://www.zhihu.com/search?q=%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22435507061%22%7D">收敛速度</a>也会很快。</li></ul></li></ol><ul><li>  减少正则化参数的Dropout、L2正则项参数的选择问题，<strong>BN具有提高网络泛化能力的特性</strong>。</li><li>  不需要使用局部响应归一化层（局部响应归一化是Alexnet网络用到的方法），因为BN本身就是一个<strong>归一化<a href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E5%B1%82&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22435507061%22%7D">网络层</a>。</strong></li><li><strong>可以把训练数据彻底打乱</strong>，防止每批训练的时候，某一个样本经常被挑选到，在ImageNet上提高1%的精度。</li><li><strong>BN的核心思想</strong>不是为了防止梯度消失或者防止过拟合，其核心是通过对系统参数搜索空间进行约束来增加系统鲁棒性，这种约束压缩了搜索空间，约束也改善了系统的结构合理性，这会带来一系列的性能改善，比如加速收敛，保证梯度，缓解过拟合等。</li></ul><p>BN在训练过程中主要分为4步：</p><ol><li>求每一个训练批次数据的均值</li><li>求每一个训练批次数据的方差</li><li>使用求得的均值和方差对该批次的训练数据做归一化，获得0-1分布。其中ε是为了避免除数为0时所使用的微小正数。</li><li>尺度变换和偏移：将xi乘以γ调整数值大小，再加上β增加偏移后得到yi，这里的γ是尺度因子，β是平移因子。这一步是BN的精髓，由于归一化后的xi基本会被限制在正态分布下，使得网络的表达能力下降。为解决该问题，我们引入两个新的参数：γ,β。 γ和β是在训练时网络自己学习得到的。</li></ol><h1 id="bad-tricks"><a href="#bad-tricks" class="headerlink" title="bad tricks"></a>bad tricks</h1><ol><li>预训练过程根据目标设定验证集，并选择在验证集上最好的模型，参考[[原型补全.pdf]]</li></ol><h1 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h1><p><a href="https://zhuanlan.zhihu.com/p/591958176">https://zhuanlan.zhihu.com/p/591958176</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/8c4ae31aabc9.html"/>
+    <url>/2023/02/8c4ae31aabc9.html</url>
+    
+    <content type="html"><![CDATA[<p>attention map 可视化<br><a href="https://blog.csdn.net/qq_34914551/article/details/100927668">https://blog.csdn.net/qq_34914551/article/details/100927668</a></p><h1 id="显存管理"><a href="#显存管理" class="headerlink" title="显存管理"></a>显存管理</h1><p>print(torch.cuda.memory_allocated(0))</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/6e327664e57e.html"/>
+    <url>/2023/02/6e327664e57e.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[计算机视觉]]</p><h1 id="参加过的"><a href="#参加过的" class="headerlink" title="参加过的"></a>参加过的</h1><table><thead><tr><th>时间</th><th>赛事名</th><th>排名</th><th>描述</th><th></th></tr></thead><tbody><tr><td>2022.9-10</td><td><a href="https://challenge.xfyun.cn/topic/info?type=people-gather">科大讯飞人员聚集识别挑战赛</a></td><td>👍Rank18</td><td>任务：人群计数，由于训练数据没给密度图和框，只给了label，我们采用了两种思路，一种是单纯的图像分类，另一种是用预训练的人群计数sota模型直接预测，后者效果比较好。</td><td></td></tr><tr><td>2022.10</td><td><a href="https://challenge.xfyun.cn/topic/info?type=helmet-wear">科大讯飞安全帽佩戴位置识别挑战赛</a></td><td>None</td><td>[[目标检测]]任务，用的MMDet下的YOLOX</td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/5d6f6c461212.html"/>
+    <url>/2023/02/5d6f6c461212.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="搜索工具"><a href="#搜索工具" class="headerlink" title="搜索工具"></a>搜索工具</h1><p><a href="https://magi.com/">https://magi.com/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/9fe1edcd380c.html"/>
+    <url>/2023/02/9fe1edcd380c.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[自然语言处理]]<br>包括：</p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><a href="https://neo4j.com/">https://neo4j.com/</a></p><h1 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h1><p><a href="https://github.com/SimmerChan/KG-demo-for-movie">https://github.com/SimmerChan/KG-demo-for-movie</a></p><p><a href="https://github.com/chizhu/KGQA_HLM">https://github.com/chizhu/KGQA_HLM</a></p><p><a href="https://mp.weixin.qq.com/s/3ayuQ9KewtirI2Zq1pBZYg">https://mp.weixin.qq.com/s/3ayuQ9KewtirI2Zq1pBZYg</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/68de79f026ef.html"/>
+    <url>/2023/02/68de79f026ef.html</url>
+    
+    <content type="html"><![CDATA[<p>20年，[[OpenAI]]推出了1750亿参数量的屠榜‘杀器’GPT-3，但基于大模型至今悬而未决的伦理和社会风险以及商业盈利等因素的考量，[[OpenAI]]将GPT-3以付费API的形式向公众开放。通过调用GPT-3的API，问答、语义检索、翻译、数学推理、创作小说等诸多玩法被玩家及尽探索。<br>在有3000亿单词的语料上预训练拥有1750亿参数的模型（ 训练语料的60%来自于 2016 - 2019 的 C4 + 22% 来自于 WebText2 + 16% 来自于Books + 3%来自于Wikipedia）</p><p>[[ChatGPT]]</p><p>![[Pasted image 20230114191925.png]]</p><h1 id="1-GPT-3下的文本模型"><a href="#1-GPT-3下的文本模型" class="headerlink" title="1 GPT-3下的文本模型"></a>1 GPT-3下的文本模型</h1><p>![[Pasted image 20230114173721.png]]<br>text-davinci-003：目前最好的模型，又快又好。付费API进行调用（1000词收费0.02美元）</p><h1 id="2-GPT-3发展史"><a href="#2-GPT-3发展史" class="headerlink" title="2 GPT-3发展史"></a>2 GPT-3发展史</h1><p><a href="https://baijiahao.baidu.com/s?id=1752806597140118817&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1752806597140118817&amp;wfr=spider&amp;for=pc</a></p><h2 id="2-1-初代GPT-3展示了三个重要能力"><a href="#2-1-初代GPT-3展示了三个重要能力" class="headerlink" title="2.1 初代GPT-3展示了三个重要能力"></a>2.1 初代GPT-3展示了三个重要能力</h2><ul><li><strong>语言生成</strong>：遵循提示词（prompt），然后生成补全提示词的句子 (completion)。这也是今天人类与语言模型最普遍的交互方式。</li><li><strong>上下文学习 (in-context learning)</strong>: 遵循给定任务的几个示例，然后为新的测试用例生成解决方案。很重要的一点是，GPT-3虽然是个语言模型，但它的论文几乎没有谈到“语言建模” (language modeling) —— 作者将他们全部的写作精力都投入到了对上下文学习的愿景上，这才是 GPT-3的真正重点。</li><li>  **世界知识 (world knowledge)**：包括事实性知识 (factual knowledge) 和常识 (commonsense)。</li></ul><h2 id="2-2-从davinci–002开始与人类对齐"><a href="#2-2-从davinci–002开始与人类对齐" class="headerlink" title="2.2 从davinci–002开始与人类对齐"></a>2.2 从davinci–002开始与人类对齐</h2><ul><li>指令微调<strong>不会为模型注入新的能力</strong> —— 所有的能力都已经存在了。指令微调的作用是<strong>解锁 / 激发这些能力</strong>。这主要是因为指令微调的数据量比预训练数据量少几个数量级（基础的能力是通过预训练注入的）。</li><li>指令微调将 GPT-3.5 的分化到不同的技能树。有些更擅长上下文学习，如text-davinci-003，有些更擅长对话，如ChatGPT。</li><li>  指令微调<strong>通过牺牲性能换取与人类的对齐（alignment）</strong>。OpenAI 的作者在他们的指令微调论文[12] 中称其为 “对齐税” (alignment tax)。许多论文[13] 都报道了code-davinci-002在基准测试中实现了最佳性能（但模型不一定符合人类期望）。在code-davinci-002上进行指令微调后，模型可以生成更加符合人类期待的反馈（或者说模型与人类对齐），例如：零样本问答、生成安全和公正的对话回复、拒绝超出模型它知识范围的问题。</li></ul><h2 id="2-3-text-davinci-003-和-ChatGPT，基于人类反馈的强化学习-Reinforcement-Learning-from-Human-Feedback-RLHF-的威力"><a href="#2-3-text-davinci-003-和-ChatGPT，基于人类反馈的强化学习-Reinforcement-Learning-from-Human-Feedback-RLHF-的威力" class="headerlink" title="2.3 text-davinci-003 和 ChatGPT，基于人类反馈的强化学习(Reinforcement Learning from Human Feedback, RLHF) 的威力"></a>2.3 text-davinci-003 和 ChatGPT，基于人类反馈的强化学习(Reinforcement Learning from Human Feedback, RLHF) 的威力</h2><ul><li>所有三个模型都经过<strong>指令微调</strong>。</li><li><strong>text-davinci-002</strong> 是一个经过<strong>监督学习指令微调</strong> (supervised instruction tuning) 的模型</li><li>  <strong>text-davinci-003 和 ChatGPT</strong> 是<strong>基于人类反馈的强化学习的指令微调</strong> (Instruction tuning with Reinforcement Learning from Human Feedback RLHF)。这是它们之间最显着的区别。</li></ul><h1 id="3-不能做什么"><a href="#3-不能做什么" class="headerlink" title="3 不能做什么"></a>3 不能做什么</h1><h2 id="3-1-形式推理"><a href="#3-1-形式推理" class="headerlink" title="3.1 形式推理"></a>3.1 形式推理</h2><ul><li><p><strong>形式推理</strong>：GPT-3.5系列不能在数学或一阶逻辑等形式严格的系统中进行推理：</p></li><li><p>在自然语言处理的文献中， “推理” 一词的定义很多时候不太明确。但如果我们从模糊性的角度来看，例如一些问题 (a) 非常模棱两可，没有推理；(b) 有点儿逻辑在里面，但有些地方也可以模糊；(c) 非常严谨，不能有任何歧义。那么，</p></li><li><p>模型可以很好地进行 (b) 类的带模糊性的推理，例子有：</p></li><li><p>生成如何做豆腐脑的方法。做豆腐脑的时候，中间很多步骤模糊一点是可以接受的，比如到底是做咸的还是做甜的。只要整体步骤大致正确，做出来的豆腐脑儿就能吃。</p></li><li><p>数学定理的证明思路。证明思路是用语言表达的非正式的逐步解法，其中每一步的严格推导可以不用太具体。证明思路经常被用到数学教学：只要老师给一个大致正确的整体步骤，学生就可以大概明白。然后老师把具体的证明细节作为作业布置给学生，答案略。</p></li><li><p>GPT-3.5 不能进行类型 (c) 的推理（推理不能容忍歧义）。</p></li><li><p>一个例子是严格的数学证明，要求中间步骤中不能跳，不能模糊，不能错。</p></li><li><p>  但这种严格推理到底是应该让语言模型做还是让符号系统做还有待讨论。一个例子是，与其努力让 GPT 做三位数加法，不如直接调 Python。</p></li></ul><h2 id="3-2-从互联网进行检索：GPT-3-5-系列（暂时）不能直接搜索互联网"><a href="#3-2-从互联网进行检索：GPT-3-5-系列（暂时）不能直接搜索互联网" class="headerlink" title="3.2 从互联网进行检索：GPT-3.5 系列（暂时）不能直接搜索互联网"></a>3.2 <strong>从互联网进行检索</strong>：GPT-3.5 系列（暂时）不能直接搜索互联网</h2><ul><li>  但是有一篇 WebGPT [35] 论文发表于2021年12月，里面就让 GPT 调用了搜索引擎。所以检索的能力已经在 OpenAI 内部进行了测试。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/e1a0bef515e7.html"/>
+    <url>/2023/02/e1a0bef515e7.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="条件随机场-CRF"><a href="#条件随机场-CRF" class="headerlink" title="条件随机场 CRF"></a>条件随机场 CRF</h1><p>CRF是一种用于结构化预测的统计建模方法。与离散分类器不同，CRF可以在进行预测之前考虑“相邻上下文”，比如像素之间的关系。</p><p>适用场景：[[语义分割]]、[[命名实体识别]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/1b2b638c24b5.html"/>
+    <url>/2023/02/1b2b638c24b5.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="相关比赛"><a href="#相关比赛" class="headerlink" title="相关比赛"></a>相关比赛</h1><p><a href="https://www.flyai.com/d/305">https://www.flyai.com/d/305</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/dc8c1bab9cc9.html"/>
+    <url>/2023/02/dc8c1bab9cc9.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[人工智能]]<br>包括：</p><ul><li>[[知识图谱]]</li><li>[[命名实体识别]]</li><li>[[]]</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/241dab66cc11.html"/>
+    <url>/2023/02/241dab66cc11.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-中文分词"><a href="#1-中文分词" class="headerlink" title="1 中文分词"></a>1 中文分词</h1><p><a href="https://zhuanlan.zhihu.com/p/146792308">https://zhuanlan.zhihu.com/p/146792308</a></p><h2 id="1-1-zh中文分词工具"><a href="#1-1-zh中文分词工具" class="headerlink" title="1.1 zh中文分词工具"></a>1.1 zh中文分词工具</h2><p>[[#1.1.1 jieba]]、HanLP、snownlp、FoolNLTK、LTP、THULAC</p><h3 id="1-1-1-jieba"><a href="#1-1-1-jieba" class="headerlink" title="1.1.1 jieba"></a>1.1.1 jieba</h3><p><a href="https://blog.csdn.net/lys_828/article/details/110070519">https://blog.csdn.net/lys_828/article/details/110070519</a><br>seg_list = jieba.cut(“我来到北京清华大学”, cut_all=True)<br>print(“Full Mode: “ + “/ “.join(seg_list)) # 全模式  </p><p>Full Mode: 我/ 来到/ 北京/ 清华/ 清华大学/ 华大/ 大学</p><p>seg_list = jieba.cut(“我来到北京清华大学”, cut_all=False)<br>print(“Default Mode: “ + “/ “.join(seg_list)) # 精确模式<br>Default Mode: 我/ 来到/ 北京/ 清华大学</p><p>seg_list = jieba.cut(“他来到了网易杭研大厦”) # 默认是精确模式<br>print(“, “.join(seg_list))<br>他, 来到, 了, 网易, 杭研, 大厦</p><p>seg_list = jieba.cut_for_search(“小明硕士毕业于中国科学院计算所，后在日本京都大学深造”) # 搜索引擎模式<br>print(“, “.join(seg_list))<br>小明, 硕士, 毕业, 于, 中国, 科学, 学院, 科学院, 中国科学院, 计算, 计算所, ，, 后, 在, 日本, 京都, 大学, 日本京都大学, 深造</p><p>jieba词性标注<br>![[Pasted image 20221209155231.png]]</p><p>![[Pasted image 20221209155243.png]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/944f0b910549.html"/>
+    <url>/2023/02/944f0b910549.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://pytorch.org/vision/stable/index.html">document</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/f65232daa795.html"/>
+    <url>/2023/02/f65232daa795.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://pytorch.org/">官网</a><br><a href="https://pytorch.org/docs/stable/index.html">document</a></p><h1 id="1-需要记住的操作"><a href="#1-需要记住的操作" class="headerlink" title="1 需要记住的操作"></a>1 需要记住的操作</h1><ul><li>tensor reshape的时候要.contiguous()<br><a href="https://blog.csdn.net/qq_40374812/article/details/122090570">https://blog.csdn.net/qq_40374812/article/details/122090570</a></li></ul><h2 id="1-1-并行计算"><a href="#1-1-并行计算" class="headerlink" title="1.1 并行计算"></a>1.1 并行计算</h2><p>原本的model子部分都需要重新表示为model.module</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/a5d90880cdf9.html"/>
+    <url>/2023/02/a5d90880cdf9.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://keras.io/api/">https://keras.io/api/</a><br><a href="https://keras.io/zh/">https://keras.io/zh/</a> # 中文文档</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/7301e97151ef.html"/>
+    <url>/2023/02/7301e97151ef.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-常规卷积"><a href="#1-常规卷积" class="headerlink" title="1 常规卷积"></a>1 常规卷积</h1><p>![[Pasted image 20221130204019.png]]</p><p>nn.Conv2d<br><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=nn+conv2d#torch.nn.Conv2d">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=nn+conv2d#torch.nn.Conv2d</a></p><h2 id="1-1-特殊性质"><a href="#1-1-特殊性质" class="headerlink" title="1.1 特殊性质"></a>1.1 特殊性质</h2><ul><li> 7 x 7 的卷积层的正则等效于 3 个 3 x 3 的卷积层的叠加。</li><li>能够对连续特征很好的提取。<br>![[Pasted image 20221130222516.png]]</li></ul><h2 id="1-2-存在的问题"><a href="#1-2-存在的问题" class="headerlink" title="1.2 存在的问题"></a>1.2 存在的问题</h2><ul><li>  Up-sampling / pooling layer (e.g. bilinear interpolation) is deterministic. (a.k.a. not learnable)</li><li>  内部<a href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:323880412%7D">数据结构</a>丢失；空间层级化信息丢失。</li><li>  小物体信息无法重建 (假设有四个pooling layer 则 任何小于 2^4 = 16 pixel 的物体信息将理论上无法重建。)<br>在这样问题的存在下，语义分割问题一直处在瓶颈期无法再明显提高精度， 而 dilated convolution 的设计就良好的避免了这些问题。<h1 id="2-空洞卷积"><a href="#2-空洞卷积" class="headerlink" title="2 空洞卷积"></a>2 空洞卷积</h1><a href="https://www.zhihu.com/question/54149221">https://www.zhihu.com/question/54149221</a><br>![[Pasted image 20221130224255.png]]<h2 id="2-1-Hybrid-Dilated-Convolution-HDC"><a href="#2-1-Hybrid-Dilated-Convolution-HDC" class="headerlink" title="2.1 Hybrid Dilated Convolution (HDC)"></a>2.1 Hybrid Dilated Convolution (HDC)</h2>即常规卷积与空洞卷积的混合</li></ul><h2 id="2-2-多尺度分割的另类解：Atrous-Spatial-Pyramid-Pooling-ASPP"><a href="#2-2-多尺度分割的另类解：Atrous-Spatial-Pyramid-Pooling-ASPP" class="headerlink" title="2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)"></a>2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)</h2><p>并行融合各种尺度的空洞卷积</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ASPP_module</span>(nn.Module):  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_channels, out_channels</span>):  </span><br><span class="line">        <span class="built_in">super</span>(ASPP_module, self).__init__()  </span><br><span class="line">        <span class="comment"># 定义空洞率，根据图示空洞率为1 6 12 18 ，说明：当空洞率为1时为普通卷积  </span></span><br><span class="line">        dilations = [<span class="number">1</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">18</span>]  </span><br><span class="line">  </span><br><span class="line">        self.Aspp1 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), padding=<span class="number">0</span>,  </span><br><span class="line">                      dilation=dilations[<span class="number">0</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU())  </span><br><span class="line">  </span><br><span class="line">        self.Aspp2 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      <span class="comment"># padding与dilation相同原因：当原始卷积核为3x3时，使输入输出尺寸大小相同，计算见3中说明。  </span></span><br><span class="line">                      padding=dilations[<span class="number">1</span>], dilation=dilations[<span class="number">1</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.Aspp3 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      padding=dilations[<span class="number">2</span>], dilation=dilations[<span class="number">2</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.Aspp4 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      padding=dilations[<span class="number">3</span>], dilation=dilations[<span class="number">3</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.global_avg_pool = nn.Sequential(  </span><br><span class="line">            nn.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>)),  </span><br><span class="line">            <span class="comment"># 输入通道2048，原因：deeplab v3+ 在进去ASPP前为2048  </span></span><br><span class="line">            nn.Conv2d(<span class="number">2048</span>, <span class="number">256</span>, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), stride=<span class="number">1</span>, bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        <span class="comment"># concat后通道为1280，用1x1卷积改变通道数  </span></span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">1280</span>, <span class="number">256</span>, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), bias=<span class="literal">False</span>)  </span><br><span class="line">        self.bn1 = nn.BatchNorm2d(<span class="number">256</span>)  </span><br><span class="line">        <span class="comment"># 初始化卷积核权重  </span></span><br><span class="line">        self._init_weight()  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):  </span><br><span class="line">        x1 = self.Aspp1(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X1.shape&quot;</span>, x1.size())  </span><br><span class="line">        x2 = self.Aspp2(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X2.shape&quot;</span>, x2.size())  </span><br><span class="line">        x3 = self.Aspp3(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X3.shape&quot;</span>, x3.size())  </span><br><span class="line">        x4 = self.Aspp4(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X4.shape&quot;</span>, x4.size())  </span><br><span class="line">        x5 = self.global_avg_pool(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;x5.shape&#x27;</span>, x5.size())  </span><br><span class="line">        <span class="comment"># 利用双线性插值恢复x5的尺寸，再进行concat  </span></span><br><span class="line">        x5 = F.interpolate(x5, size=x4.size()[<span class="number">2</span>:], mode=<span class="string">&#x27;bilinear&#x27;</span>, align_corners=<span class="literal">True</span>)  </span><br><span class="line">        cat = torch.cat((x1, x2, x3, x4, x5), dim=<span class="number">1</span>);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;cat.shape&#x27;</span>, cat.size())  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 此处的output，包含后面1x1卷积进行的通道数调整  </span></span><br><span class="line">        output = self.conv1(cat)  </span><br><span class="line">        output = self.bn1(output);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;output.shape&#x27;</span>, output.size())  </span><br><span class="line">        <span class="keyword">return</span> output  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_init_weight</span>(<span class="params">self</span>):  </span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> self.modules():  </span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">isinstance</span>(m, nn.Conv2d):  </span><br><span class="line">                n = m.kernel_size[<span class="number">0</span>] * m.kernel_size[<span class="number">1</span>] * m.out_channels  </span><br><span class="line">                m.weight.data.normal_(<span class="number">0</span>, math.sqrt(<span class="number">2.</span> / n))  <span class="comment"># 初始化卷积核方式  </span></span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.BatchNorm2d):  </span><br><span class="line">                m.weight.data.fill_(<span class="number">1</span>)  </span><br><span class="line">                m.bias.data.zero_()  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  </span><br><span class="line">    <span class="comment"># 测试输出尺寸使用  </span></span><br><span class="line">    aspp = ASPP_module(<span class="number">2048</span>, <span class="number">256</span>)  </span><br><span class="line">    <span class="built_in">input</span> = torch.randn(<span class="number">2</span>, <span class="number">2048</span>, <span class="number">176</span>, <span class="number">240</span>);  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;input_size:&#x27;</span>, <span class="built_in">input</span>.size())  </span><br><span class="line">    out = aspp(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/243856db583c.html"/>
+    <url>/2023/02/243856db583c.html</url>
+    
+    <content type="html"><![CDATA[<p>![[Pasted image 20221130202754.png]]</p><p>![[resnet.py]]</p><p>官方实现：<br><a href="https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py">https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py</a></p><p>dilated版本（deeplab出品，用于分割任务）：<br><a href="https://github.com/speedinghzl/Pytorch-Deeplab/blob/master/deeplab/model.py">https://github.com/speedinghzl/Pytorch-Deeplab/blob/master/deeplab/model.py</a></p><p>但最好参考这个，比较新，缺点就是不好用torchvision的预训练模型，需要改模块的名字<br><a href="https://github.com/arthurdouillard/CVPR2021_PLOP/blob/main/models/resnet.py">https://github.com/arthurdouillard/CVPR2021_PLOP/blob/main/models/resnet.py</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/cc236feb250b.html"/>
+    <url>/2023/02/cc236feb250b.html</url>
+    
+    <content type="html"><![CDATA[<p> 为了提供非线性<br>Sigmoid、tanh、Relu</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/395f399d5910.html"/>
+    <url>/2023/02/395f399d5910.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-我的模块化代码"><a href="#1-我的模块化代码" class="headerlink" title="1 我的模块化代码"></a>1 我的模块化代码</h1><h2 id="1-1-超参数"><a href="#1-1-超参数" class="headerlink" title="1.1 超参数"></a>1.1 超参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_args</span>():  </span><br><span class="line">    parser = argparse.ArgumentParser()  </span><br><span class="line">    parser.add_argument(<span class="string">&#x27;--num-epoch&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">100</span>, <span class="built_in">help</span>=<span class="string">&#x27;number of training epochs&#x27;</span>)</span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    args = parser.parse_args()  </span><br><span class="line"><span class="keyword">return</span> args</span><br><span class="line"></span><br><span class="line">opt = parse_args()</span><br></pre></td></tr></table></figure><h2 id="1-2-随机种子设置"><a href="#1-2-随机种子设置" class="headerlink" title="1.2 随机种子设置"></a>1.2 随机种子设置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">seed_torch</span>(<span class="params">seed=<span class="number">21</span></span>):  </span><br><span class="line">    os.environ[<span class="string">&#x27;PYTHONHASHSEED&#x27;</span>] = <span class="built_in">str</span>(seed)  </span><br><span class="line">    random.seed(seed)  </span><br><span class="line">    np.random.seed(seed)  </span><br><span class="line">    torch.manual_seed(seed)  </span><br><span class="line">    torch.cuda.manual_seed(seed)  </span><br><span class="line">    torch.cuda.manual_seed_all(seed)  </span><br><span class="line">    torch.backends.cudnn.deterministic = <span class="literal">True</span>  </span><br><span class="line">    torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">seed_torch(opt.seed)</span><br></pre></td></tr></table></figure><h2 id="1-3-cuda"><a href="#1-3-cuda" class="headerlink" title="1.3 cuda"></a>1.3 cuda</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">set_gpu</span>(<span class="params">x</span>):  </span><br><span class="line">    os.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = x  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;using gpu:&#x27;</span>, x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">device = torch.device(<span class="string">&quot;cuda:0&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定某个GPU</span></span><br><span class="line">os.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICE&#x27;</span>]=<span class="string">&#x27;1&#x27;</span></span><br><span class="line">model.cuda()</span><br><span class="line"><span class="comment">#如果是多GPU</span></span><br><span class="line">os.environment[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1,2,3&#x27;</span></span><br><span class="line">device_ids = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">net  = torch.nn.Dataparallel(net, device_ids =device_ids)</span><br><span class="line">net  = torch.nn.Dataparallel(net) <span class="comment"># 默认使用所有的device_ids </span></span><br><span class="line">net = net.cuda()</span><br></pre></td></tr></table></figure><h2 id="并行训练"><a href="#并行训练" class="headerlink" title="并行训练"></a>并行训练</h2><p><a href="https://zhuanlan.zhihu.com/p/450912044">https://zhuanlan.zhihu.com/p/450912044</a><br>平时一直使用<strong>nn.parallel</strong>，虽然简单只需要一行代码，但是实际的效率却不忍直视，因为每个GPU的负载不均衡，甚至出现多个GPU比单个GPU的训练时间更长的问题，于是决心花时间使用<strong>DistributedDataParallel</strong>进行单机多卡分布式训练，期间遇坑无数，也不是每个问题都能在网上查到，最终花了一天时间才顺利解决，从单卡6个小时一个epoch降低到2块GPU2个小时一个epoch（DistributedDataParallel <strong>yyds</strong>!ヽ(✿ﾟ▽ﾟ)ノ），下面将步骤记录下来并且贴上踩坑记录，希望能帮助更多人。</p><h3 id="步骤一：在args里面加上local-rank参数："><a href="#步骤一：在args里面加上local-rank参数：" class="headerlink" title="步骤一：在args里面加上local_rank参数："></a>步骤一：在args里面加上local_rank参数：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">&quot;--local_rank&quot;</span>, default=os.getenv(<span class="string">&#x27;LOCAL_RANK&#x27;</span>, -<span class="number">1</span>), <span class="built_in">type</span>=<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure><p>这个参数表示前进程对应的GPU号，系统会自动识别，一定要加哦</p><h3 id="步骤二：进行初始化："><a href="#步骤二：进行初始化：" class="headerlink" title="步骤二：进行初始化："></a>步骤二：进行初始化：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> args.local_rank != -<span class="number">1</span>:</span><br><span class="line">    torch.cuda.set_device(args.local_rank)</span><br><span class="line">    device=torch.device(<span class="string">&quot;cuda&quot;</span>, args.local_rank)</span><br><span class="line">    torch.distributed.init_process_group(backend=<span class="string">&quot;nccl&quot;</span>, init_method=<span class="string">&#x27;env://&#x27;</span>)</span><br></pre></td></tr></table></figure><p>步骤二中我们获得了device用于后续使用</p><h3 id="步骤三：将创建好的模型放在GPU上，并且使用DistributedDataParallel"><a href="#步骤三：将创建好的模型放在GPU上，并且使用DistributedDataParallel" class="headerlink" title="步骤三：将创建好的模型放在GPU上，并且使用DistributedDataParallel"></a>步骤三：将创建好的模型放在GPU上，并且使用DistributedDataParallel</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model.to(device)</span><br><span class="line">num_gpus = torch.cuda.device_count()</span><br><span class="line"><span class="keyword">if</span> num_gpus &gt; <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;use &#123;&#125; gpus!&#x27;</span>.<span class="built_in">format</span>(num_gpus))</span><br><span class="line">    model = nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],</span><br><span class="line">                                                output_device=args.local_rank)</span><br><span class="line">        </span><br></pre></td></tr></table></figure><p>记住要先放在device上再进行DistributedDataParallel哦，不然会报错</p><h3 id="步骤四：改动数集dataloader的输入"><a href="#步骤四：改动数集dataloader的输入" class="headerlink" title="步骤四：改动数集dataloader的输入"></a><strong>步骤四：改动数集dataloader的输入</strong></h3><p>在定义dataloader的时候将数据集的sampler从RandomSampler改成DistributedSampler哦，然后dataloader的pin_memory设置为True就行啦！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data.distributed <span class="keyword">import</span> DistributedSampler</span><br><span class="line">train_datasets = ...<span class="comment">#自己定义的Dataset子类</span></span><br><span class="line">train_sampler = DistributedSampler(train_datasets)</span><br><span class="line">train_dataloader = DataLoader(train_datasets, sampler=train_sampler, batch_size=args.train_batch_size,</span><br><span class="line">                                  num_workers=args.num_workers, pin_memory=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure><p>到这里py文件里面的代码就基本上ok啦，后面的代码和 nn.parallel 一样正常使用不需要改变</p><h3 id="步骤五：在dataloader中加入打乱顺序（shuffle）的操作（可加）"><a href="#步骤五：在dataloader中加入打乱顺序（shuffle）的操作（可加）" class="headerlink" title="步骤五：在dataloader中加入打乱顺序（shuffle）的操作（可加）"></a>步骤五：在dataloader中加入打乱顺序（<strong>shuffle</strong>）的操作（可加）</h3><p>这个也是参考别人的，在分布式模式下，需要在每个 epoch 开始时调用set_epoch()方法，然后再创建 DataLoader 迭代器，以使shuffle 操作能够在多个 epoch 中正常工作。 否则，dataloader迭代器产生的数据将始终使用相同的顺序，使得每个epoch在每个GPU上分割的数据集都是一样的。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> epochs:</span><br><span class="line">        train_sampler.set_epoch(epoch) <span class="comment">#shuffle</span></span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> train_dataloader :</span><br><span class="line">            ...</span><br></pre></td></tr></table></figure><h3 id="步骤六：启动程序"><a href="#步骤六：启动程序" class="headerlink" title="步骤六：启动程序"></a>步骤六：启动程序</h3><p>启动程序的指令和一般情况的不一样，例如启动main.py文件</p><p>一般情况：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure><p>分布式启动需要加额外指令：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m torch.distributed.launch --nproc_per_node=<span class="number">2</span> main.py</span><br></pre></td></tr></table></figure><p>这里“nproc_per_node=2”是指我这个节点使用2块GPU</p><p>到此运行程序就可以了</p><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>伪代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> (DataLoader, Dataset)</span><br><span class="line"><span class="keyword">from</span> torch.utils.data.distributed <span class="keyword">import</span> DistributedSampler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment">#步骤一：定义local_rank</span></span><br><span class="line">    parser = argparse.ArgumentParser()</span><br><span class="line">    ...</span><br><span class="line">    parser.add_argument(<span class="string">&quot;--local_rank&quot;</span>, default=os.getenv(<span class="string">&#x27;LOCAL_RANK&#x27;</span>, -<span class="number">1</span>), <span class="built_in">type</span>=<span class="built_in">int</span>)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#步骤二：初始化</span></span><br><span class="line">    <span class="keyword">if</span> args.local_rank != -<span class="number">1</span>:</span><br><span class="line">        torch.cuda.set_device(args.local_rank)</span><br><span class="line">        device=torch.device(<span class="string">&quot;cuda&quot;</span>, args.local_rank)</span><br><span class="line">        torch.distributed.init_process_group(backend=<span class="string">&quot;nccl&quot;</span>, init_method=<span class="string">&#x27;env://&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#步骤三：模型分布式处理</span></span><br><span class="line">    model = MODEL()<span class="comment">#创建模型</span></span><br><span class="line">    model.to(device)</span><br><span class="line">    num_gpus = torch.cuda.device_count()</span><br><span class="line">    <span class="keyword">if</span> num_gpus &gt; <span class="number">1</span>:</span><br><span class="line">        logger.info(<span class="string">&#x27;use &#123;&#125; gpus!&#x27;</span>.<span class="built_in">format</span>(num_gpus))</span><br><span class="line">        model = nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],</span><br><span class="line">                                                output_device=args.local_rank)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#步骤四：定义数据集</span></span><br><span class="line">    train_datasets = ...<span class="comment">#自己定义的Dataset子类</span></span><br><span class="line">    train_sampler = DistributedSampler(train_datasets)</span><br><span class="line">    train_dataloader = DataLoader(train_datasets, sampler=train_sampler, batch_size=args.train_batch_size,</span><br><span class="line">                                  num_workers=args.num_workers, pin_memory=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> epochs:</span><br><span class="line">         <span class="comment">#步骤五：打乱顺序</span></span><br><span class="line">        train_sampler.set_epoch(epoch)</span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> train_dataloader :</span><br><span class="line">            loss = model(batch.cuda())</span><br><span class="line">            loss.backward()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line">    </span><br></pre></td></tr></table></figure><h3 id="最后，运行中可能出现的问题："><a href="#最后，运行中可能出现的问题：" class="headerlink" title="最后，运行中可能出现的问题："></a>最后，运行中可能出现的问题：</h3><p>**1.**如果出现GPU忙碌或者无法获得：CUDA error: all CUDA-capable devices are busy or unavailable：需要获得步骤二的device并且在步骤三中将model放在device上就行</p><p>**2.**torch.distributed.init_process_group(backend=”nccl”, init_method=’env://‘) 出现错误 Address already in use，告知地址无效或者地址被占用：这里只需要在启动命令加一个指令 <strong>–master_port 29501</strong>即可：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m torch.distributed.launch --nproc_per_node=<span class="number">2</span> --master_port <span class="number">29501</span> main.py</span><br></pre></td></tr></table></figure><p><strong>3.<strong>如果出现inplace操作问题，如：one of the variables needed for gradient computation has been modified by an inplace operation，并且出现在batchnorm方法中(</strong><em>如果不知道错误在哪，可以往下看</em><strong>），只需要将DistributedDataParallel的</strong>broadcast_buffers</strong>参数改为<strong>False</strong>即可，如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.to(device)</span><br><span class="line">num_gpus = torch.cuda.device_count()</span><br><span class="line"><span class="keyword">if</span> num_gpus &gt; <span class="number">1</span>:</span><br><span class="line">    logger.info(<span class="string">&#x27;use &#123;&#125; gpus!&#x27;</span>.<span class="built_in">format</span>(num_gpus))</span><br><span class="line">    model = nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],</span><br><span class="line">                                                output_device=args.local_rank, broadcast_buffers=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure><p>如果不是batchnorm出现的，看看代码中是否有x+=y或者Relu(inpalce=True)的操作，需要改成x=x+y以及Relu(inpalce=False)</p><p>或者使用**torch.autograd.set_detect_anomaly(True)**放在前向传播代码前（即训练模型的代码前），运行程序的时候遇到错误会自动打印详细的错误路径，方便查找哦</p><p>**4.**保存模型的时候，在每一层的名字中， 多卡会比单卡 多一个“module”， 所以保存的是model.module而不是model。即torch.save(model.module, “模型名字”)就行啦。当然保存model也可以，只要下次加载也是在多卡上就行。</p><p><strong>5.<strong>模型在 nn.parallel.DistributedDataParallel出现“</strong>Socket Timeout</strong>”问题 ，评论区的同学通过升级pytorch1.7以上的版本成功运行了，<a href="https://link.zhihu.com/?target=https://github.com/pytorch/pytorch/issues/25767">https://github.com/pytorch/pytorch/issues/25767</a> 也有人表示升级NCCL版本。这个问题可能是版本的问题导致了通信错误。</p><ol start="6"><li>若出现<strong>RuntimeError: Expected to have finished reduction in the prior iteration before starting a new one.</strong>…则<br>在DistributedDataParallel 中加入find_unused_parameters=True</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/80fa6397f621.html"/>
+    <url>/2023/02/80fa6397f621.html</url>
+    
+    <content type="html"><![CDATA[<ul><li>  <strong>Two-stage优化：</strong> 冻结模型部分层，调整损失函数权重，调低学习率，进行模型参数微调，提高强回波/降水的预测技能评分</li><li>  <strong>模型集成：</strong> 针对降水预测，融合U2Net与PhyDNet预测，提升模型泛化能力和稳定性</li><li><strong>偏差订正：</strong> 考虑了预测能力的时间衰减和阈值的影响，对模型预测进行偏差订正，提高强回波/降水的预测技能评分   <strong>乘权重maybe</strong></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/911053410a48.html"/>
+    <url>/2023/02/911053410a48.html</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/37bd1f957ec7.html"/>
+    <url>/2023/02/37bd1f957ec7.html</url>
+    
+    <content type="html"><![CDATA[<p><strong>数据清洗：</strong> 去除雷达回波低值伪影以及异常降水值。<br><strong>样本重采样和降采样：</strong> 由于数据分布不平衡问题，根据各要素阈值区间分布情况对样本进行重采样和降采样，以平衡不同强度样本占比。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/566609377274.html"/>
+    <url>/2023/02/566609377274.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[人工智能]]</p><h1 id="经验帖"><a href="#经验帖" class="headerlink" title="经验帖"></a>经验帖</h1><p>根据不同分表的用电趋势，使用移动平均值算法将电量时间序列分解为周期分量、趋势分量以及残差分量，然后对周期分量和趋势分量分别建模预测。同时使用节假日调休信息对周期数值进行动态调整，使用梯度提升决策树(GBDT)对未来一段时间内的用能趋势进行精准预测。最终实现该算法在测试集A榜平均误差为1.84%，B榜平均误差6.78%的好成绩。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/ce3635813d32.html"/>
+    <url>/2023/02/ce3635813d32.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[时间序列预测]]</p><h1 id="参加过的"><a href="#参加过的" class="headerlink" title="参加过的"></a>参加过的</h1><table><thead><tr><th>时间</th><th>赛事名</th><th>排名</th><th>描述</th><th></th></tr></thead><tbody><tr><td>2022.5-6</td><td><a href="https://tianchi.aliyun.com/competition/entrance/531962/introduction">天池江苏气象AI算法挑战赛-AI助力强对流天气预报</a></td><td>👍初赛Top 5%. 赛季1:95/1784</td><td>任务：气象方向的[[视频预测]]任务， 有大风/雷达回波/降水三种类型的气象图像， 我们一方面找了视频预测的经典方法，即unet+lstm的方法，另一方面我们尝试了视频预测的方法SimVP，由于设备限制没成功，另外我们设计了一种按照数值大小加权的损失函数。</td><td></td></tr><tr><td>2022.8-9</td><td><a href="https://challenge.xfyun.cn/topic/info?type=electric-car">科大讯飞电动汽车永磁同步电机温度预测挑战赛</a></td><td>👍top10</td><td>气温时序预测任务，不提供未来特征，要求预测未来12个时刻的温度，这个任务我们用滑动窗口法构造训练数据，接着用lgb和5折交叉验证进行时序预测</td><td></td></tr><tr><td>2022.8-9</td><td><a href="https://challenge.xfyun.cn/topic/info?type=regional-temperature-forecast">科大讯飞地区温度预测挑战赛</a></td><td>👍rank3</td><td>气温时序预测任务，提供了未来特征，根据降水量、气温、湿球空气温度、露点空气温度、蒸气压、相对湿度等温度特征预测未来时刻的空气温度，我们首先学习了一些空气热力学知识，接着根据这些知识构造出了一些强力特征，使用LGB树模型和5折交叉验证进行时序预测</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/cb14ad87cb2c.html"/>
+    <url>/2023/02/cb14ad87cb2c.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-torch-nn"><a href="#1-torch-nn" class="headerlink" title="1 torch.nn"></a>1 torch.nn</h1><p>GRU/LSTM</p><h2 id="1-1-参数"><a href="#1-1-参数" class="headerlink" title="1.1 参数"></a>1.1 参数</h2><ul><li><strong>input_size</strong> – The number of expected features in the input x</li><li><strong>hidden_size</strong> – The number of features in the hidden state h</li><li><strong>num_layers</strong> – Number of recurrent layers. E.g., setting <code>num_layers=2</code> would mean stacking two GRUs together to form a stacked GRU, with the second GRU taking in outputs of the first GRU and computing the final results. Default: 1</li><li><strong>bias</strong> – If <code>False</code>, then the layer does not use bias weights b_ih and b_hh. Default: <code>True</code></li><li><strong>batch_first</strong> – If <code>True</code>, then the input and output tensors are provided as (batch, seq, feature) instead of (seq, batch, feature). Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details. Default: <code>False</code></li><li><strong>dropout</strong> – If non-zero, introduces a Dropout layer on the outputs of each GRU layer except the last layer, with dropout probability equal to <code>dropout</code>. Default: 0</li><li>  <strong>bidirectional</strong> – If <code>True</code>, becomes a bidirectional GRU. Default: <code>False</code><h2 id="1-2-input"><a href="#1-2-input" class="headerlink" title="1.2 input"></a>1.2 input</h2>(seq_len, batch_size, input_size)<br>若batch_first=True，则交换前俩输出的位置。</li></ul><p>seq_len：在文本处理中，如果一个句子有7个单词，则seq_len=7；在时间序列预测中，假设我们用前24个小时的负荷来预测下一时刻负荷，则seq_len=24。<br>batch_size：一次性输入LSTM中的样本个数。在文本处理中，可以一次性输入很多个句子；在时间序列预测中，也可以一次性输入很多条数据。<br>input_size：单词的embedding</p><h2 id="1-3-output（output-h-n-c-n-）"><a href="#1-3-output（output-h-n-c-n-）" class="headerlink" title="1.3 output（output, (h_n, c_n)）"></a>1.3 output（output, (h_n, c_n)）</h2><p>output:<br>(seq_len,batch_size,hidden_size)<br>若batch_first=True，则交换前俩输出的位置。</p><p>h_n:<br>（num_layers，batch_size，hidden_size）<br>GRU没有c_n，h_0和c_0的shape一致</p><h2 id="1-4-计算过程"><a href="#1-4-计算过程" class="headerlink" title="1.4 计算过程"></a>1.4 计算过程</h2><h1 id="2-RNN-Attention"><a href="#2-RNN-Attention" class="headerlink" title="2 RNN-Attention"></a>2 RNN-Attention</h1><p><a href="https://zhuanlan.zhihu.com/p/410031664">https://zhuanlan.zhihu.com/p/410031664</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/4f36a66aa0a9.html"/>
+    <url>/2023/02/4f36a66aa0a9.html</url>
+    
+    <content type="html"><![CDATA[<p>属于:<br>[[人工智能]]</p><p>包括：<br>[[]]</p><p>相关技术：<br>[[知识图谱]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/789383425ede.html"/>
+    <url>/2023/02/789383425ede.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：<br>[[人工智能]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/bddd871dfcc0.html"/>
+    <url>/2023/02/bddd871dfcc0.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://toloka.ai/challenges/wsdm2023/">https://toloka.ai/challenges/wsdm2023/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/115a1690cbd6.html"/>
+    <url>/2023/02/115a1690cbd6.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-竞赛平台"><a href="#1-竞赛平台" class="headerlink" title="1 竞赛平台"></a>1 竞赛平台</h1><ol><li><a href="https://tianchi.aliyun.com/competition/gameList/activeList">天池</a></li><li><a href="https://challenge.xfyun.cn/">科大讯飞</a></li><li><a href="https://aistudio.baidu.com/aistudio/competition">百度AI Studio</a></li><li><a href="https://www.kaggle.com/competitions">kaggle</a></li><li><a href="https://coggle.club/">coggle</a></li><li><a href="https://www.heywhale.com/home/competition">heywhale</a></li><li><a href="https://god.yanxishe.com/">AI研习社(凉)</a></li><li><a href="https://www.datafountain.cn/competitions">datafountain</a></li><li><a href="https://www.flyai.com/">flyai(凉)</a></li><li><a href="https://developer.huawei.com/consumer/cn/activity/digixActivity/digixList">华为开发者大赛</a></li><li><a href="https://dev.ehualu.com/dev/home/competition/index">开发者社区</a></li><li><a href="https://jdata.jd.com/html/list.html">京东JDATA</a></li><li><a href="https://www.biendata.xyz/">biendata</a></li><li><a href="https://algo.qq.com/index.html?htarget=DataAndProblem">腾讯广告算法大赛</a></li><li><a href="https://algo.weixin.qq.com/">微信大数据挑战赛</a></li><li><a href="https://www.drivendata.org/">DrivenData</a></li><li><a href="https://www.dcic-china.com/">DCIC</a></li><li><a href="https://www.aicrowd.com/challenges">AIcrowd</a></li><li><a href="https://www.ikcest.org/index.htm">IKCEST(每年9月)</a></li><li><a href="https://cvmart.net/race">极市开发者平台</a></li><li><a href="http://contest.aicubes.cn/#/topics">同花顺挑战平台</a></li><li><a href="https://www.atecup.cn/greenComputingContest">ATEC</a></li></ol><h1 id="2-进行中"><a href="#2-进行中" class="headerlink" title="2 进行中"></a>2 进行中</h1><h2 id="2-1-2022中国华录杯数据湖算法大赛—OCR识别赛道"><a href="#2-1-2022中国华录杯数据湖算法大赛—OCR识别赛道" class="headerlink" title="2.1 2022中国华录杯数据湖算法大赛—OCR识别赛道"></a>2.1 <a href="https://dev.ehualu.com/dev/home/competition/competitionDetail?competitionId=195018023">2022中国华录杯数据湖算法大赛—OCR识别赛道</a></h2><p>任务: [[OCR]]</p><h2 id="2-2-生活用纸抗张强度预测"><a href="#2-2-生活用纸抗张强度预测" class="headerlink" title="2.2 生活用纸抗张强度预测"></a>2.2 <a href="https://www.datafountain.cn/competitions/614">生活用纸抗张强度预测</a></h2><p>任务：似乎是回归</p><p><strong>赛题赛程</strong><br>2022年10月28日00:00 发布初赛赛题、训练数据，选手可登录大赛官网报名。<br>2022年12月31日24:00 截止报名及组队。<br>2023年01月01日00:00 发布A榜测试数据，开启A榜提交及评测。<br>2023年03月06日24:00 结束A榜提交及评测<br>2023年03月10日00:00 发布B榜测试数据，开启B榜提交及评测。<br>2023年03月10日24:00 结束B榜提交及评测。<br>2023年03月11日00:00 公布B榜评测结果。<br>2023年03月中下旬 对排行榜前排候选晋级团队进行作品代码复现审核。<br>2023年4月中下旬 举办决赛评审、颁奖典礼。</p><h2 id="2-3-The-BioMassters"><a href="#2-3-The-BioMassters" class="headerlink" title="2.3 The BioMassters"></a>2.3 <a href="https://www.drivendata.org/competitions/99/biomass-estimation/">The BioMassters</a></h2><p>任务：似乎是图像回归任务<br>![[Pasted image 20221129130153.png]]</p><h1 id="3-待开始"><a href="#3-待开始" class="headerlink" title="3 待开始"></a>3 待开始</h1><h1 id="4-找方案"><a href="#4-找方案" class="headerlink" title="4 找方案"></a>4 找方案</h1><p><a href="https://github.com/datawhalechina/competition-baseline">https://github.com/datawhalechina/competition-baseline</a><br><a href="https://github.com/geekinglcq/CDCS">https://github.com/geekinglcq/CDCS</a></p><p><a href="https://paperswithcode.com/">https://paperswithcode.com/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/0a9c88d0f6ba.html"/>
+    <url>/2023/02/0a9c88d0f6ba.html</url>
+    
+    <content type="html"><![CDATA[<p>数据库搜索：<br><a href="https://datasetsearch.research.google.com/">https://datasetsearch.research.google.com/</a></p><p>wandb:<br><a href="https://wandb.ai/hhu_lh">https://wandb.ai/hhu_lh</a><br><a href="https://blog.csdn.net/sinat_29957455/article/details/126091479">https://blog.csdn.net/sinat_29957455/article/details/126091479</a><br>wandb全称Weights &amp; Biases，用来帮助我们跟踪机器学习的项目，通过wandb可以记录模型训练过程中指标的变化情况以及超参的设置，还能够将输出的结果进行可视化的比对，帮助我们更好的分析模型在训练过程中的问题，同时我们还可以通过它来进行团队协作</p><p>wandb会将训练过程中的参数，上传到服务器上，然后通过登录wandb来进行实时过程模型训练过程中参数和指标的变化</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/395e1aac00ef.html"/>
+    <url>/2023/02/395e1aac00ef.html</url>
+    
+    <content type="html"><![CDATA[<p>属于：</p><p>包括：</p><ul><li>[[计算机视觉]]</li><li>[[机器学习]]</li><li>[[自然语言处理]]</li></ul><h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>弱人工智能<br>[[主动智能]]<br>强人工智能</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/02/89aee67bb43b.html"/>
+    <url>/2023/02/89aee67bb43b.html</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/IAM8jCQIII7JP92cyPX7iw">OPPO「小布」的主动式智能进化</a></p><p>例如：[[ChatGPT]]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2023/02/f6c8874c48d1.html"/>
+    <url>/2023/02/f6c8874c48d1.html</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
