@@ -277,7 +277,7 @@
 <p>无法保证模型的泛化能力，使网络过于自信会导致过拟合；<br>全概率和0概率鼓励所属类别和其他类别之间的差距尽可能加大，而由梯度有界可知，这种情况很难adapt。会造成模型过于相信预测的类别。<br>标签平滑可以缓解这个问题，可以有两个角度理解这件事。</p>
 <h1 id="方法1：与均匀分布叠加"><a href="#方法1：与均匀分布叠加" class="headerlink" title="方法1：与均匀分布叠加"></a>方法1：与均匀分布叠加</h1><p>![[Pasted image 20221202112830.png]]</p>
 <h1 id="方法2：与Dirac函数叠加"><a href="#方法2：与Dirac函数叠加" class="headerlink" title="方法2：与Dirac函数叠加"></a>方法2：与Dirac函数叠加</h1><p>$((1-\epsilon) * onehotlabel) + (\epsilon / classnum)$</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">smoothed_one_hot = smoothed_one_hot * (<span class="number">1</span> - opts.eps) + (<span class="number">1</span> - smoothed_one_hot) * opts.eps / (train_way - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">  <br>smoothed_one_hot = smoothed_one_hot * (<span class="hljs-number">1</span> - opts.eps) + (<span class="hljs-number">1</span> - smoothed_one_hot) * opts.eps / (train_way - <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
                 
               </div>
             
