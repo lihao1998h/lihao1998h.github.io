@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 ideasidea确定时间：2022.9.30![[pptv1.pptx]]![[pptv2.pptx]]![[pptv3.pptx]]![[pptv3-2.pptx]]![[pptv4.pptx]]![[wordv1.docx]]![[wordv2.docx]]![[pptv5.pptx]]![[wordv3.docx]] 2 introduction图像分割是计算机视觉的基本问题。现有图像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/34f40f5b951a.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 ideasidea确定时间：2022.9.30![[pptv1.pptx]]![[pptv2.pptx]]![[pptv3.pptx]]![[pptv3-2.pptx]]![[pptv4.pptx]]![[wordv1.docx]]![[wordv2.docx]]![[pptv5.pptx]]![[wordv3.docx]] 2 introduction图像分割是计算机视觉的基本问题。现有图像">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-11T09:45:54.865Z">
+<meta property="article:modified_time" content="2023-02-10T05:33:42.318Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机视觉/语义分割/增量分割/(new work)基于因果推理的增量小样本图像分割" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/34f40f5b951a.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.865Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-ideas"><a href="#1-ideas" class="headerlink" title="1 ideas"></a>1 ideas</h1><p>idea确定时间：2022.9.30<br>![[pptv1.pptx]]<br>![[pptv2.pptx]]<br>![[pptv3.pptx]]<br>![[pptv3-2.pptx]]<br>![[pptv4.pptx]]<br>![[wordv1.docx]]<br>![[wordv2.docx]]<br>![[pptv5.pptx]]<br>![[wordv3.docx]]</p>
+<h1 id="2-introduction"><a href="#2-introduction" class="headerlink" title="2 introduction"></a>2 introduction</h1><p>图像分割是计算机视觉的基本问题。现有图像分割方法基于CNN对训练数据集提供的类别能够很好的分割 [cites]。 但在一个更现实的场景，即Class Incremental Semantic Segmentation (CI-SS)，模型应当能够只根据新数据连续的学习新类，而不是重新训练整个模型。<br>增量图像分割目前受到少量的关注，其主要原因是其面临着两大挑战，即灾难性遗忘和语义漂移。灾难性遗忘指的是模型在学习新知识时会遗忘过去学到的知识[1]。语义漂移指的是背景类的语义随着时间会发生改变，这包含两方面含义，一方面指的是旧任务的背景类中可能包含新任务或未来任务中要学习的类，另一方面指的是新任务中的背景类可能包含旧任务中已经学习过的类。为此，许多研究[2-7]引入了知识蒸馏的方法来缓解灾难性遗忘，还有少量研究[8-9]通过构造伪标签来缓解语义漂移问题。<br>    然而，现有的增量图像分割方法往往要求新任务具有大量的训练数据，当其样本量少的时候性能急剧下降（需要实验证明），这是因为用小样本训练的模型很容易陷入对小样本的过拟合以及对新类语义的不完全学习。<br>    在本文中，我们将小样本增量图像分割构建为一个因果推理框架来主动解决上面提到的问题，该框架对新类、旧类、背景类及最终输出结果的因果关系进行建模，通过构建新类与旧类关联来解决语义不完全问题，并通过干预切断背景类与旧类之间的联系来解决语义漂移问题，具体来说，我们引入了原型学习保留旧类知识以缓解语义不完全问题，为了能够用少量新类样本学习完全的新类语义，我们需要借助旧类知识，对新类语义进行补全。不仅如此，我们通过因果推理中的前门调整公式，切断了背景类与旧类之间的联系，从而避免了模型对旧类的错误分割。</p>
+<pre><code>我们的贡献可总结为：
+</code></pre>
+<p>1、我们为小样本增量图像分割构建了一个因果推理框架，通过构建新类与旧类的依赖预测来解决不完全语义问题，并通过切断背景类与旧类之间的联系来解决语义漂移问题。</p>
+<p>2、我们提出了一个原型修正模块，可以利用旧类知识来修正语义不完全的新类原型，以解决小样本场景导致的过拟合问题。</p>
+<p>3、我们设计了一个旧类干预模块，通过因果推理中的前门调整公式约束了模型对旧类的错误分割，从而避免了语义漂移问题。</p>
+<h1 id="3-related-work"><a href="#3-related-work" class="headerlink" title="3 related work"></a>3 related work</h1><p>[[语义分割]]<br>[[增量分割]]<br>[[基于原型的小样本分类]]</p>
+<h1 id="4-代码逻辑"><a href="#4-代码逻辑" class="headerlink" title="4 代码逻辑"></a>4 代码逻辑</h1><p>以VOC12 task：19-1为例</p>
+<h2 id="4-1-数据集的处理"><a href="#4-1-数据集的处理" class="headerlink" title="4.1 数据集的处理"></a>4.1 数据集的处理</h2><p>训练集和验证集使用官方[[VOC12_aug]]提供的划分</p>
+<pre><code>筛选
+</code></pre>
+<p>overlap<br>存在类是当前训练的新类即可，但未来类的mask被强制设置为0，即背景</p>
+<p>disjoint<br>存在类是当前训练的新类，且所有类都得是学过的类或者是0和255（避免了出现未来类的可能）</p>
+<pre><code>测试集的设置
+</code></pre>
+<p>一种策略是test_on_val，即按比例从验证集中划出一部分作为测试集<br>另一种</p>
+<h2 id="4-2-预训练（要不要，实验说话）"><a href="#4-2-预训练（要不要，实验说话）" class="headerlink" title="4.2 预训练（要不要，实验说话）"></a>4.2 预训练（要不要，实验说话）</h2><p>目的：获得好的初始backbone和head</p>
+<p>输入的处理：输入为单类的图像和mask还有classid（不在论文中展示）</p>
+<p>以VOC12为例，20个类<br>task:19-1</p>
+<p>如果是补全的代码就是19个类train，1个类val<br>合理的做法应该是19个类train也在这19个类上val</p>
+<p>训练集：19 train<br>验证集 19 val<br>test：19val</p>
+<p>步骤：<br>1、通过backbone提取图像特征<br>2、然后通过map提取各类原型向量并扩展到特征图的大小，<br>3、与特征融合输入head。</p>
+<p>batchsize=8，epoch=100，lr=0.007，polylr</p>
+<p>论文中：写的是一个proto一个预测一个类后合并结果，而实验中简化，数据预处理为单类mask</p>
+<h2 id="4-3-learn-base"><a href="#4-3-learn-base" class="headerlink" title="4.3 learn_base"></a>4.3 learn_base</h2><p>目的：学习基类，测试基类性能，并保留基类原型向量<br>1、读取预训练的backbone和head</p>
+<h2 id="4-4-meta-train"><a href="#4-4-meta-train" class="headerlink" title="4.4 meta train"></a>4.4 meta train</h2><p>目的：元训练获得原型修正模块</p>
+<p>2、提取并保存各类的原型向量（类的所有原型向量取平均）（todo模仿）<br>3、构造小样本增量分割元episode</p>
+<p>接着构造episode<br>todo：</p>
+<ul>
+<li>融合各类输出</li>
+<li>保存原型向量<h2 id="4-5-step-0"><a href="#4-5-step-0" class="headerlink" title="4.5 step 0"></a>4.5 step 0</h2>训练集：19 train<br>验证集 19 val<br>test：19val</li>
+</ul>
+<p>使用预训练的backbone和head为初始值</p>
+<p>接着通过MAP提取原型向量，并输入到分割头输出结果，保留各类原型向量。</p>
+<h2 id="4-6-step-1"><a href="#4-6-step-1" class="headerlink" title="4.6 step 1"></a>4.6 step 1</h2><h3 id="4-6-1-step-1-without-incremental"><a href="#4-6-1-step-1-without-incremental" class="headerlink" title="4.6.1 step 1 without incremental"></a>4.6.1 step 1 without incremental</h3><h3 id="4-6-2-step-1-with-few-shot-with-incremental"><a href="#4-6-2-step-1-with-few-shot-with-incremental" class="headerlink" title="4.6.2 step 1 with few shot with incremental"></a>4.6.2 step 1 with few shot with incremental</h3><h3 id="4-6-3-step-1-with-many-shot-with-incremental"><a href="#4-6-3-step-1-with-many-shot-with-incremental" class="headerlink" title="4.6.3 step 1 with many shot with incremental"></a>4.6.3 step 1 with many shot with incremental</h3><h3 id="4-6-4-our-step1"><a href="#4-6-4-our-step1" class="headerlink" title="4.6.4 our step1"></a>4.6.4 our step1</h3><h1 id="5-experiments"><a href="#5-experiments" class="headerlink" title="5 experiments"></a>5 experiments</h1><h2 id="5-1-datasets"><a href="#5-1-datasets" class="headerlink" title="5.1 datasets"></a>5.1 datasets</h2><p>[[VOC12_aug]]<br>19-1 15-5 15-1-1-1-1-1</p>
+<h2 id="5-2-our-model"><a href="#5-2-our-model" class="headerlink" title="5.2 our model"></a>5.2 our model</h2><p>body:resnet101 （todo 换）<br>输出维度2048</p>
+<p>head：(ours) DeepLab_with_proto（todo 换）输入特征与原型融合</p>
+<p>1、对比试验与各种增量分割方法在小样本情况比（在大样本也可以试试）  （相比师兄的论文，是从小样本分割-&gt;小样本增量分割）</p>
+<p>todo：测试下不用while，因为filter已经做好了</p>
+<h2 id="5-3-对比方法"><a href="#5-3-对比方法" class="headerlink" title="5.3 对比方法"></a>5.3 对比方法</h2><p>简单的fine-tune</p>
+<p>各种增量方法用于分割 在小样本情况的劣势<br>小样本增量分割方法</p>
+<p>增量数据联合训练</p>
+<h2 id="5-4-metrics"><a href="#5-4-metrics" class="headerlink" title="5.4 metrics"></a>5.4 metrics</h2><p>overlap vs disjoint：overlap就是图像可能包含未来类但是标记为背景，disjoint则图像中不会出现未来要学习的类。<br>1、各step的mIoU<br>以voc12的19-1task来说，要输出step 0 即训练完19之后对19的mIoU，在训练完1之后既要输出19的mIoU(这个PLOP缺少)，也要输出1的mIoU。<br>2、all表示所有step训练完后的mIoU<br>3、average表示每个step训练之后mIoU的平均</p>
+<h2 id="5-5-results"><a href="#5-5-results" class="headerlink" title="5.5 results"></a>5.5 results</h2><h3 id="5-5-1-pretrain"><a href="#5-5-1-pretrain" class="headerlink" title="5.5.1 pretrain"></a>5.5.1 pretrain</h3><p>epoch now=29</p>
+<p>![[Pasted image 20230204122618.png|175]]</p>
+<p>INFO:Validation, Class Loss=0.11368785798549652, Reg Loss=0.0 (without scaling)<br>INFO:Done validation<br>INFO:End of Validation 31/100, Validation Loss=0.11368785798549652, Class Loss=0.11368785798549652, Reg Loss=0.0<br>INFO:<br>Total samples: 711.000000<br>Overall Acc: 0.954122<br>Mean Acc: 0.940762<br>FreqW Acc: 0.914056<br>Mean IoU: 0.882133<br>Class IoU:<br>        class 0: 0.9417315489533514<br>        class 1: 0.8225347702348145<br>        class 2: X<br>        class 3: X<br>        class 4: X<br>        class 5: X<br>        class 6: X<br>        class 7: X<br>        class 8: X<br>        class 9: X<br>        class 10: X<br>        class 11: X<br>        class 12: X<br>        class 13: X<br>        class 14: X<br>        class 15: X<br>        class 16: X<br>        class 17: X<br>        class 18: X<br>        class 19: X<br>        class 20: X<br>Class Acc:<br>        class 0: 0.9657040220511824<br>        class 1: 0.9158207919453918<br>        class 2: X<br>        class 3: X<br>        class 4: X<br>        class 5: X<br>        class 6: X<br>        class 7: X<br>        class 8: X<br>        class 9: X<br>        class 10: X<br>        class 11: X<br>        class 12: X<br>        class 13: X<br>        class 14: X<br>        class 15: X<br>        class 16: X<br>        class 17: X<br>        class 18: X<br>        class 19: X<br>        class 20: X</p>
+<h1 id="6-tricks"><a href="#6-tricks" class="headerlink" title="6 tricks"></a>6 tricks</h1><ol>
+<li>预训练在验证集上验证 </li>
+</ol>
+<h1 id="7-bugs"><a href="#7-bugs" class="headerlink" title="7 bugs"></a>7 bugs</h1><ol>
+<li>voc gt mask 有些全0或全0和255的直接跳过训练了</li>
+</ol>
+<h1 id="8-reference"><a href="#8-reference" class="headerlink" title="8 reference"></a>8 reference</h1><p>[1] Michael McCloskey and Neal J Cohen. Catastrophic interference in connectionist networks: The sequential learning problem. In Psychology of learning and motivation, volume 24, pages 109–165. Elsevier, 1989.</p>
+<p>[2] Gu, et al. Class-Incremental Instance Segmentation via Multi-Teacher Networks. AAAI, 2021.</p>
+<p>[3] Umberto Michieli and Pietro Zanuttigh. 2021. Knowledge distillation for incremental learning in semantic segmentation. Comput. Vis. Image Underst. 205 (2021), 103167</p>
+<p>[4] Firat Ozdemir, Philipp Fuernstahl, and Orcun Goksel. 2018. Learn the new, keep the old: Extending pretrained models with new anatomy and images. In International Conference on Medical Image Computing and Computer-Assisted Intervention(MICCAI).</p>
+<p>[5] A Contrastive Distillation Approach for Incremental Semantic Segmentation in Aerial Images. ICIAP 2021</p>
+<p>[6]Representation Compensation Networks for Continual Semantic Segmentation. CVPR 2022 改进PLOP的蒸馏和结构化重参</p>
+<p>[7]Class Similarity Weighted Knowledge Distillation for Continual Semantic Segmentation. CVPR 2022 改进的蒸馏，考虑了与新类最相似的旧类，提醒不要忘了最相似的旧类</p>
+<p>[8] Douillard, et al. PLOP: Learning without Forgetting for Continual Semantic Segmentation. CVPR, 2021.</p>
+<p>[9] Cermelli, et al. Modeling the Background for Incremental Learning in Semantic Segmentation. CVPR, 2020.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/34f40f5b951a.html" data-id="cldzsk2as003sd8nc4dnn3ajl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/95ffeaff2677.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/ef298713f4b3.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

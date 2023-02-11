@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机视觉/语义分割/tricks/边缘细化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/ef298713f4b3.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.861Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15357586/3791837">https://blog.51cto.com/u_15357586/3791837</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/ef298713f4b3.html" data-id="cldzsk2ar003qd8nc15s1d12e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/tricks/tricks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/2d9f1df2cef3.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.859Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="改进上采样"><a href="#改进上采样" class="headerlink" title="改进上采样"></a>改进上采样</h1><h4 id="DUpsampling"><a href="#DUpsampling" class="headerlink" title="DUpsampling"></a>DUpsampling</h4><blockquote>
+<p>Paper: 《Decoders Matter for Semantic Segmentation:Data-Dependent Decoding Enables Flexible Feature Aggregation》Accepted by CVPR 2019.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62508574">https://zhuanlan.zhihu.com/p/62508574</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zj7UPotrsXE5qicjolQ9OCkAaEzKKLPel8zWuYjMx4UID4bRlgw0Eduw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>DUpsampling</p>
+<p>先前绝大多数基于编解码架构的语义分割网络，解码器的上采样层通常依赖双线性插值操作，这种与数据无关的方法无法学习到有效的特征映射。该论文则提出一种数据相关型的上采样方法 <code>DUpsampling</code> 来替代双线性插值，大幅提升了模型的采样重构能力，在降低计算复杂度的同时提升分割精度。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/2d9f1df2cef3.html" data-id="cldzsk2ar003od8ncbc2u4b8o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/heads/U-Net系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/e296bb6de860.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.855Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>U-Net<br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1505.04597v1">https://arxiv.org/abs/1505.04597v1</a></p>
+<h4 id="Attention-U-Net"><a href="#Attention-U-Net" class="headerlink" title="Attention U-Net"></a>Attention U-Net</h4><blockquote>
+<p>Paper: 《Attention U-Net: Learning Where to Look for the Pancreas》Accepted by MIDL 2018.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114471013">https://zhuanlan.zhihu.com/p/114471013</a></p>
+</blockquote>
+<h4 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net++"></a>U-Net++</h4><blockquote>
+<p>Paper: 《UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation》Accepted by TMI 2019.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44958351">https://zhuanlan.zhihu.com/p/44958351</a></p>
+</blockquote>
+<h4 id="nnU-Net"><a href="#nnU-Net" class="headerlink" title="nnU-Net"></a>nnU-Net</h4><blockquote>
+<p>Paper: 《nnU-Net: Self-Adapting Framework for U-Net-Based Medical Image Segmentation》文章解读：<a target="_blank" rel="noopener" href="https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a">https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zKjFoJGOlE6frG7yQlxmOMHrtsHmicVE89eNiaenwrELlBR00uicIccoMg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>nnU-Net pipeline</p>
+<p><code>nnU-Net</code> 是医学图像十项全能比赛的冠军，目前在医学图像分割领域有着不可撼动的地位，相信目前研究该领域的人员应该无人不知，无人不晓。<code>nnU-Net</code> 本身并不侧重于网络结构的创新，更多的是提出一个统一的框架，包括针对医学影响设设计的一系列丰富的预处理、后处理和训练 <code>tricks</code> 等。</p>
+<h4 id="CPFNet"><a href="#CPFNet" class="headerlink" title="CPFNet"></a>CPFNet</h4><blockquote>
+<p>Paper: 《CPFNet: Context Pyramid Fusion Network for Medical Image Segmentation》Accepted by TMI 2020.</p>
+</blockquote>
+<p>究极乱连<br><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zTZN5npnYlBd97vEK0a4tBILlmA4hTGfibTNbVzEpdpGufrFVetMo2JA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>CPFNet</p>
+<p><code>CPFNet</code>，即上下文金字塔融合网络，基于<code>U-Net</code>架构并结合两个金字塔模块来融合全局的多尺度上下文信息。</p>
+<ul>
+<li>全局金字塔引导(GPG)模块：通过重构跳跃连接为解码器提供不同层次的全局上下文信息；</li>
+<li>尺度感知金字塔融合(SAPF)模块：实现了多尺度上下文信息的动态高层次融合;</li>
+</ul>
+<p>实验结果表明，提出的方法在四个不同的挑战性任务，包括<strong>皮肤损伤的分割</strong>，<strong>视网膜线性损伤的分割</strong>，<strong>胸部器官的多分类分割</strong>和<strong>视网膜水肿损伤</strong>的分割任务上具有很强的竞争力。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/e296bb6de860.html" data-id="cldzsk2aq003md8nc0gfkgmvo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/heads/Transformer结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/1618c040f1fa.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.854Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="FAT-Net"><a href="#FAT-Net" class="headerlink" title="FAT-Net"></a>FAT-Net</h4><blockquote>
+<p>Paper: 《FAT-Net: Feature Adaptive Transformers for Automated Skin Lesion Segmentation》Accepted by MIA 2021.</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zRlQl2fmUBerTjpbicvV0Zb5lI964WMEb4eNGCxXZatweUhb5b7jGicVA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h4 id="SETR"><a href="#SETR" class="headerlink" title="SETR"></a>SETR</h4><blockquote>
+<p>Paper: 《Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers》Accepted by CVPR 2021.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348418189">https://zhuanlan.zhihu.com/p/348418189</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6z2kRkD2b7LTbzc1ufCLTTL6WjjjSibtnHpG2s1yibW8uRm5Yq4ZDZHjBw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>SETR</p>
+<p><code>SETR</code> 记得没错的话应该是当时最早将 <code>ViT</code> 引入语义分割框架的代表型工作之一。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/1618c040f1fa.html" data-id="cldzsk2aq003kd8nc8vaaf5pg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/heads/FCN结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/895d1ca88fa3.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.852Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>FCN</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1411.4038">https://arxiv.org/abs/1411.4038</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41731861/article/details/120511148">https://blog.csdn.net/qq_41731861/article/details/120511148</a></p>
+<h4 id="DeconvNet"><a href="#DeconvNet" class="headerlink" title="DeconvNet"></a>DeconvNet</h4><blockquote>
+<p>Paper: 《Learning Deconvolution Network for Semantic Segmentation》Accepted by ICCV 2015.</p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6z9y5orWM1agoCVIzKLdRiahU5ozpC5Gs4WFYRs23XM4Lib9qBsiaghfTkg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>DeconvNet</p>
+<p><code>DeconvNet</code> 提出了深度反卷积结构，并首次应用到语义分割任务上。同时，结合目标检测技术，将训练好的网络应用到每个提议框上以获得实例级的分割结果；最后，再将这些单个分割的结果拼接起来以完成最终的语义分割推理，有效的解决了 <code>FCN</code> 网络无法有效处理细小目标的局限性。<br><strong>目标检测技术在哪呢？？</strong></p>
+<h1 id="SegNet"><a href="#SegNet" class="headerlink" title="SegNet"></a>SegNet</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1511.00561">https://arxiv.org/abs/1511.00561</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41997920/article/details/89071755">https://blog.csdn.net/qq_41997920/article/details/89071755</a><br><strong>主要贡献</strong></p>
+<p>将最大池化指数转移至解码器中，改善了分割分辨率<br>![[Pasted image 20230127143602.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/895d1ca88fa3.html" data-id="cldzsk2ap003id8ncfjdf1ctt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/heads/DeepLab系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/e4d04281a467.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.850Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_58770526/article/details/125873104">https://blog.csdn.net/m0_58770526/article/details/125873104</a></p>
+<h1 id="DeepLab-v1-2014"><a href="#DeepLab-v1-2014" class="headerlink" title="DeepLab v1 (2014)"></a>DeepLab v1 (2014)</h1><p>![[Pasted image 20221130214015.png]]<br>创新点：</p>
+<ol>
+<li><p>空洞卷积（Atrous Conv）;<br>&lt;解决编码过程中信号不断被下采样，细节丢失的问题&gt;</p>
+</li>
+<li><p>全连接条件随机场（Fully-connected Conditional Random Field）。<br>&lt;由于conv层提取的特征具有平移不变性，这就限制了定位精度。因此引入全连接CRF来提高模型捕获结构信息的能力，解决精分割问题。&gt;</p>
+<h1 id="DeepLab-v2-2016"><a href="#DeepLab-v2-2016" class="headerlink" title="DeepLab v2 (2016)"></a>DeepLab v2 (2016)</h1></li>
+</ol>
+<p><strong>与v1不同点：</strong></p>
+<ol>
+<li>空洞空间金字塔池化 ASPP（Atrous spatial pyramid pooling ）</li>
+<li> 将v1使用的backbone VGG16替换成了 Resnet101<br>![[Pasted image 20221130214251.png]]</li>
+</ol>
+<p>ASPP可用于解决不同检测目标大小差异的问题：通过在给定的特征层上使用不同dilation的空洞卷积，可以有效的进行重采样。构建不同感受野的卷积核，用来获取多尺度物体信息。</p>
+<h1 id="DeepLab-v3（2017）"><a href="#DeepLab-v3（2017）" class="headerlink" title="DeepLab v3（2017）"></a>DeepLab v3（2017）</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.05587v3">paper</a></p>
+<p>![[Pasted image 20230127151453.png]]</p>
+<p>创新点：</p>
+<p>改进了v2的ASPP([[卷积#2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)]])模块：</p>
+<ol>
+<li><p>加入了BN层；</p>
+</li>
+<li><p>将v2中的ASPP中尺寸3×3，dilation=24的空洞卷积替换成一个普通的1×1卷积，以保留滤波器中间部分的有效权重；（随着空洞率的增大，滤波器中有效权重的个数在减少）</p>
+</li>
+<li><p>增加了全局平均池化以便更好的捕捉全局信息。</p>
+</li>
+</ol>
+<p>当图像分辨率较大时参考 <a target="_blank" rel="noopener" href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Yang_DenseASPP_for_Semantic_CVPR_2018_paper.pdf">DenseASPP for Semantic Segmentation in Street Scenes（CVPR2018）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41997920/article/details/90903830">https://blog.csdn.net/qq_41997920/article/details/90903830</a></p>
+<h1 id="Deep-Lab-v3-（2018）"><a href="#Deep-Lab-v3-（2018）" class="headerlink" title="Deep Lab v3+（2018）"></a>Deep Lab v3+（2018）</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1802.02611v3.pdf">https://arxiv.org/pdf/1802.02611v3.pdf</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62261970">https://zhuanlan.zhihu.com/p/62261970</a><br><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleSeg/blob/release/2.7/paddleseg/models/deeplab.py">code</a><br>天下没有免费的午餐，保持分辨率意味着较大的运算量，这是该架构的弊端。<br>![[Pasted image 20221202191809.png]]<br>DeepLabv3+模型的整体架构如图4所示，它的Encoder的主体是带有空洞卷积的DCNN，可以采用常用的分类网络如ResNet，然后是带有空洞卷积的空间金字塔池化模块（Atrous Spatial Pyramid Pooling, ASPP)），主要是为了引入多尺度信息；相比DeepLabv3，v3+引入了Decoder模块，其将底层特征与高层特征进一步融合，提升分割边界准确度。从某种意义上看，DeepLabv3+在DilatedFCN基础上引入了EcoderDecoder的思路。</p>
+<p>![[Pasted image 20221202193735.png]]</p>
+<p>encoder-decoder：左u-net结构，右DeepLabv3+结构</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/e4d04281a467.html" data-id="cldzsk2ap003gd8ncc7xthb8j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/语义分割" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/1c23a6a3311b.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.847Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于：<br>[[计算机视觉]]</p>
+<p>包括：<br>[[(new work)基于因果推理的增量小样本图像分割]]</p>
+<p>heads：<br>[[DeepLab系列]]</p>
+<p>datasets：<br>[[VOC12]]<br>[[VOC12_aug]]</p>
+<p>综述类文章：<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pDPKh8Aps2VjtCBozyjshg">https://mp.weixin.qq.com/s/pDPKh8Aps2VjtCBozyjshg</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41997920/article/details/96479243">https://blog.csdn.net/qq_41997920/article/details/96479243</a></p>
+<h1 id="老方法"><a href="#老方法" class="headerlink" title="老方法"></a>老方法</h1><p>灰度分割<br>[[命名实体识别#条件随机场 CRF]]</p>
+<h1 id="深度学习方法"><a href="#深度学习方法" class="headerlink" title="深度学习方法"></a>深度学习方法</h1><p>[[FCN结构]]</p>
+<p>[[U-Net系列]]<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/118540575">FCN和U-Net的区别</a></p>
+<p>[[Deeplab系列]]</p>
+<p>DenseASPP</p>
+<h1 id="几个坑"><a href="#几个坑" class="headerlink" title="几个坑"></a>几个坑</h1><p>mask要用png格式保存<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/457847520">https://zhuanlan.zhihu.com/p/457847520</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/1c23a6a3311b.html" data-id="cldzsk2am0036d8ncfbrl57xd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/c04d3dc65daa.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.846Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>医学智能预测<br>![[Pasted image 20230127120506.png]]</p>
+<p>遥感领域</p>
+<p>虚拟背景</p>
+<p>自动驾驶</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/c04d3dc65daa.html" data-id="cldzsk2al0034d8nc56mj43u4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/语义分割/metrics" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/6a8e7f8d20cd.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.843Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>IOU:用于评估语义分割算法性能的标准指标是平均 IOU（Intersection Over Union，交并比），IoU 定义如下：</p>
+<p>这样的评价指标可以判断目标的捕获程度（使预测标签与标注尽可能重合），也可以判断模型的精确程度（使并集尽可能重合）。</p>
+<p>IoU一般都是基于类进行计算的，也有基于图片计算的。一定要看清数据集的评价标准。</p>
+<p>基于类进行计算的IoU就是将每一类的IoU计算之后累加，再进行平均，得到的就是基于全局的评价，所以我们求的IoU其实是取了均值的IoU，也就是均交并比（mean IoU）</p>
+<p>pixcal-accuracy （PA，像素精度）：基于像素的精度计算是评估指标中最为基本也最为简单的指标，从字面上理解就可以知道，PA是指预测正确的像素占总像素的比例.</p>
+<p>VOC12<br>![[Pasted image 20230204152741.png]]</p>
+<p>CityScape<br>![[Pasted image 20230204152802.png]]</p>
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>dataset</th>
+<th>mIoU</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SegNet</td>
+<td>VOC12</td>
+<td>59.9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FCN</td>
+<td>VOC12</td>
+<td>62.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DeepLab v2</td>
+<td>VOC12</td>
+<td>79.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RefineNet</td>
+<td>VOC12</td>
+<td>84.2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DeepLab v3</td>
+<td>VOC12</td>
+<td>85.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DeepLab v3 pretrain on JFT</td>
+<td>VOC12</td>
+<td>86.9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Deeplabv3+（Xception）+COCO-Pre-training</td>
+<td>VOC12</td>
+<td>87.8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Deeplabv3+（Xception-JFT）+COCO+JFT-pre-training</td>
+<td>VOC12</td>
+<td>89.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/6a8e7f8d20cd.html" data-id="cldzsk2al0032d8nc82ir7biq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/目标检测/目标检测竞赛经验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/e45d12b1196a.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.839Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/422764914">DOTAv2遥感图像旋转目标检测竞赛经验分享 Swin Transformer + Anchor free/based方案</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102817180"># 目标检测比赛中的tricks（已更新更多代码解析）</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/e45d12b1196a.html" data-id="cldzsk2ak0030d8nc4upb2bfq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

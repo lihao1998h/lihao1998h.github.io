@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-时间序列预测/时序竞赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/ce3635813d32.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.694Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于：<br>[[时间序列预测]]</p>
+<h1 id="参加过的"><a href="#参加过的" class="headerlink" title="参加过的"></a>参加过的</h1><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>赛事名</th>
+<th>排名</th>
+<th>描述</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2022.5-6</td>
+<td><a target="_blank" rel="noopener" href="https://tianchi.aliyun.com/competition/entrance/531962/introduction">天池江苏气象AI算法挑战赛-AI助力强对流天气预报</a></td>
+<td>👍初赛Top 5%. 赛季1:95/1784</td>
+<td>任务：气象方向的[[视频预测]]任务， 有大风/雷达回波/降水三种类型的气象图像， 我们一方面找了视频预测的经典方法，即unet+lstm的方法，另一方面我们尝试了视频预测的方法SimVP，由于设备限制没成功，另外我们设计了一种按照数值大小加权的损失函数。</td>
+<td></td>
+</tr>
+<tr>
+<td>2022.8-9</td>
+<td><a target="_blank" rel="noopener" href="https://challenge.xfyun.cn/topic/info?type=electric-car">科大讯飞电动汽车永磁同步电机温度预测挑战赛</a></td>
+<td>👍top10</td>
+<td>气温时序预测任务，不提供未来特征，要求预测未来12个时刻的温度，这个任务我们用滑动窗口法构造训练数据，接着用lgb和5折交叉验证进行时序预测</td>
+<td></td>
+</tr>
+<tr>
+<td>2022.8-9</td>
+<td><a target="_blank" rel="noopener" href="https://challenge.xfyun.cn/topic/info?type=regional-temperature-forecast">科大讯飞地区温度预测挑战赛</a></td>
+<td>👍rank3</td>
+<td>气温时序预测任务，提供了未来特征，根据降水量、气温、湿球空气温度、露点空气温度、蒸气压、相对湿度等温度特征预测未来时刻的空气温度，我们首先学习了一些空气热力学知识，接着根据这些知识构造出了一些强力特征，使用LGB树模型和5折交叉验证进行时序预测</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/ce3635813d32.html" data-id="cldzsk29m000id8nc8kkn5u92" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-时间序列预测/RNNs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/cb14ad87cb2c.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.693Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-torch-nn"><a href="#1-torch-nn" class="headerlink" title="1 torch.nn"></a>1 torch.nn</h1><p>GRU/LSTM</p>
+<h2 id="1-1-参数"><a href="#1-1-参数" class="headerlink" title="1.1 参数"></a>1.1 参数</h2><ul>
+<li><strong>input_size</strong> – The number of expected features in the input x</li>
+<li><strong>hidden_size</strong> – The number of features in the hidden state h</li>
+<li><strong>num_layers</strong> – Number of recurrent layers. E.g., setting <code>num_layers=2</code> would mean stacking two GRUs together to form a stacked GRU, with the second GRU taking in outputs of the first GRU and computing the final results. Default: 1</li>
+<li><strong>bias</strong> – If <code>False</code>, then the layer does not use bias weights b_ih and b_hh. Default: <code>True</code></li>
+<li><strong>batch_first</strong> – If <code>True</code>, then the input and output tensors are provided as (batch, seq, feature) instead of (seq, batch, feature). Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details. Default: <code>False</code></li>
+<li><strong>dropout</strong> – If non-zero, introduces a Dropout layer on the outputs of each GRU layer except the last layer, with dropout probability equal to <code>dropout</code>. Default: 0</li>
+<li>  <strong>bidirectional</strong> – If <code>True</code>, becomes a bidirectional GRU. Default: <code>False</code><h2 id="1-2-input"><a href="#1-2-input" class="headerlink" title="1.2 input"></a>1.2 input</h2>(seq_len, batch_size, input_size)<br>若batch_first=True，则交换前俩输出的位置。</li>
+</ul>
+<p>seq_len：在文本处理中，如果一个句子有7个单词，则seq_len=7；在时间序列预测中，假设我们用前24个小时的负荷来预测下一时刻负荷，则seq_len=24。<br>batch_size：一次性输入LSTM中的样本个数。在文本处理中，可以一次性输入很多个句子；在时间序列预测中，也可以一次性输入很多条数据。<br>input_size：单词的embedding</p>
+<h2 id="1-3-output（output-h-n-c-n-）"><a href="#1-3-output（output-h-n-c-n-）" class="headerlink" title="1.3 output（output, (h_n, c_n)）"></a>1.3 output（output, (h_n, c_n)）</h2><p>output:<br>(seq_len,batch_size,hidden_size)<br>若batch_first=True，则交换前俩输出的位置。</p>
+<p>h_n:<br>（num_layers，batch_size，hidden_size）<br>GRU没有c_n，h_0和c_0的shape一致</p>
+<h2 id="1-4-计算过程"><a href="#1-4-计算过程" class="headerlink" title="1.4 计算过程"></a>1.4 计算过程</h2><h1 id="2-RNN-Attention"><a href="#2-RNN-Attention" class="headerlink" title="2 RNN-Attention"></a>2 RNN-Attention</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410031664">https://zhuanlan.zhihu.com/p/410031664</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/cb14ad87cb2c.html" data-id="cldzsk29m000gd8nchcv859me" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-推荐系统/推荐系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/4f36a66aa0a9.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.689Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于:<br>[[人工智能]]</p>
+<p>包括：<br>[[]]</p>
+<p>相关技术：<br>[[知识图谱]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/4f36a66aa0a9.html" data-id="cldzsk29h0006d8ncfwv5eabx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-强化学习/强化学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/789383425ede.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.685Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于：<br>[[人工智能]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/789383425ede.html" data-id="cldzsk29i0008d8nc9a3o43cz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-visual-language/VQA/VQA" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/bddd871dfcc0.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.680Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://toloka.ai/challenges/wsdm2023/">https://toloka.ai/challenges/wsdm2023/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/bddd871dfcc0.html" data-id="cldzsk29v0018d8nc0ko792co" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-算法竞赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/115a1690cbd6.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.674Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-竞赛平台"><a href="#1-竞赛平台" class="headerlink" title="1 竞赛平台"></a>1 竞赛平台</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://tianchi.aliyun.com/competition/gameList/activeList">天池</a></li>
+<li><a target="_blank" rel="noopener" href="https://challenge.xfyun.cn/">科大讯飞</a></li>
+<li><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/competition">百度AI Studio</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kaggle.com/competitions">kaggle</a></li>
+<li><a target="_blank" rel="noopener" href="https://coggle.club/">coggle</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.heywhale.com/home/competition">heywhale</a></li>
+<li><a target="_blank" rel="noopener" href="https://god.yanxishe.com/">AI研习社(凉)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.datafountain.cn/competitions">datafountain</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.flyai.com/">flyai(凉)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.huawei.com/consumer/cn/activity/digixActivity/digixList">华为开发者大赛</a></li>
+<li><a target="_blank" rel="noopener" href="https://dev.ehualu.com/dev/home/competition/index">开发者社区</a></li>
+<li><a target="_blank" rel="noopener" href="https://jdata.jd.com/html/list.html">京东JDATA</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.biendata.xyz/">biendata</a></li>
+<li><a href="https://algo.qq.com/index.html?htarget=DataAndProblem">腾讯广告算法大赛</a></li>
+<li><a target="_blank" rel="noopener" href="https://algo.weixin.qq.com/">微信大数据挑战赛</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.drivendata.org/">DrivenData</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.dcic-china.com/">DCIC</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.aicrowd.com/challenges">AIcrowd</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ikcest.org/index.htm">IKCEST(每年9月)</a></li>
+<li><a target="_blank" rel="noopener" href="https://cvmart.net/race">极市开发者平台</a></li>
+<li><a target="_blank" rel="noopener" href="http://contest.aicubes.cn/#/topics">同花顺挑战平台</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.atecup.cn/greenComputingContest">ATEC</a></li>
+</ol>
+<h1 id="2-进行中"><a href="#2-进行中" class="headerlink" title="2 进行中"></a>2 进行中</h1><h2 id="2-1-2022中国华录杯数据湖算法大赛—OCR识别赛道"><a href="#2-1-2022中国华录杯数据湖算法大赛—OCR识别赛道" class="headerlink" title="2.1 2022中国华录杯数据湖算法大赛—OCR识别赛道"></a>2.1 <a target="_blank" rel="noopener" href="https://dev.ehualu.com/dev/home/competition/competitionDetail?competitionId=195018023">2022中国华录杯数据湖算法大赛—OCR识别赛道</a></h2><p>任务: [[OCR]]</p>
+<h2 id="2-2-生活用纸抗张强度预测"><a href="#2-2-生活用纸抗张强度预测" class="headerlink" title="2.2 生活用纸抗张强度预测"></a>2.2 <a target="_blank" rel="noopener" href="https://www.datafountain.cn/competitions/614">生活用纸抗张强度预测</a></h2><p>任务：似乎是回归</p>
+<p><strong>赛题赛程</strong><br>2022年10月28日00:00 发布初赛赛题、训练数据，选手可登录大赛官网报名。<br>2022年12月31日24:00 截止报名及组队。<br>2023年01月01日00:00 发布A榜测试数据，开启A榜提交及评测。<br>2023年03月06日24:00 结束A榜提交及评测<br>2023年03月10日00:00 发布B榜测试数据，开启B榜提交及评测。<br>2023年03月10日24:00 结束B榜提交及评测。<br>2023年03月11日00:00 公布B榜评测结果。<br>2023年03月中下旬 对排行榜前排候选晋级团队进行作品代码复现审核。<br>2023年4月中下旬 举办决赛评审、颁奖典礼。</p>
+<h2 id="2-3-The-BioMassters"><a href="#2-3-The-BioMassters" class="headerlink" title="2.3 The BioMassters"></a>2.3 <a target="_blank" rel="noopener" href="https://www.drivendata.org/competitions/99/biomass-estimation/">The BioMassters</a></h2><p>任务：似乎是图像回归任务<br>![[Pasted image 20221129130153.png]]</p>
+<h1 id="3-待开始"><a href="#3-待开始" class="headerlink" title="3 待开始"></a>3 待开始</h1><h1 id="4-找方案"><a href="#4-找方案" class="headerlink" title="4 找方案"></a>4 找方案</h1><p><a target="_blank" rel="noopener" href="https://github.com/datawhalechina/competition-baseline">https://github.com/datawhalechina/competition-baseline</a><br><a target="_blank" rel="noopener" href="https://github.com/geekinglcq/CDCS">https://github.com/geekinglcq/CDCS</a></p>
+<p><a target="_blank" rel="noopener" href="https://paperswithcode.com/">https://paperswithcode.com/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/115a1690cbd6.html" data-id="cldzsk29g0005d8nc8nbqdx3o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-工具库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/0a9c88d0f6ba.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.672Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据库搜索：<br><a target="_blank" rel="noopener" href="https://datasetsearch.research.google.com/">https://datasetsearch.research.google.com/</a></p>
+<p>wandb:<br><a target="_blank" rel="noopener" href="https://wandb.ai/hhu_lh">https://wandb.ai/hhu_lh</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_29957455/article/details/126091479">https://blog.csdn.net/sinat_29957455/article/details/126091479</a><br>wandb全称Weights &amp; Biases，用来帮助我们跟踪机器学习的项目，通过wandb可以记录模型训练过程中指标的变化情况以及超参的设置，还能够将输出的结果进行可视化的比对，帮助我们更好的分析模型在训练过程中的问题，同时我们还可以通过它来进行团队协作</p>
+<p>wandb会将训练过程中的参数，上传到服务器上，然后通过登录wandb来进行实时过程模型训练过程中参数和指标的变化</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/0a9c88d0f6ba.html" data-id="cldzsk29e0004d8nca84k0l7a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-人工智能" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/395e1aac00ef.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.671Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于：</p>
+<p>包括：</p>
+<ul>
+<li>[[计算机视觉]]</li>
+<li>[[机器学习]]</li>
+<li>[[自然语言处理]]</li>
+</ul>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>弱人工智能<br>[[主动智能]]<br>强人工智能</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/395e1aac00ef.html" data-id="cldzsk29c0002d8nc9i8oacpl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-主动智能" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/89aee67bb43b.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.669Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IAM8jCQIII7JP92cyPX7iw">OPPO「小布」的主动式智能进化</a></p>
+<p>例如：[[ChatGPT]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/89aee67bb43b.html" data-id="cldzsk29a0001d8nc78fdcljn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/f6c8874c48d1.html" class="article-date">
+  <time datetime="2023-02-08T08:24:01.580Z" itemprop="datePublished">2023-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/f6c8874c48d1.html">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/f6c8874c48d1.html" data-id="cldzrp8q400005oncazyl7vf2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

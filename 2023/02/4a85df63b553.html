@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先生成了可能包含物体的候选区域Region Proposal 再对这个候选区域做进一步的分类和校准，得到最终的检测结果  R-CNN，2014  R-CNN即Region-based Convolutional Neural Networks，是一种结合区域提名（Region Proposal）和卷积神经网络（CNN）的目标检测方法。 实现细节 选择检测窗口 J. R. R. Uijlings在2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/4a85df63b553.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先生成了可能包含物体的候选区域Region Proposal 再对这个候选区域做进一步的分类和校准，得到最终的检测结果  R-CNN，2014  R-CNN即Region-based Convolutional Neural Networks，是一种结合区域提名（Region Proposal）和卷积神经网络（CNN）的目标检测方法。 实现细节 选择检测窗口 J. R. R. Uijlings在2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-11T09:45:54.836Z">
+<meta property="article:modified_time" content="2023-02-05T11:56:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机视觉/目标检测/two-stage models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/4a85df63b553.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.836Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先生成了可能包含物体的候选区域Region Proposal 再对这个候选区域做进一步的分类和校准，得到最终的检测结果</p>
+<ul>
+<li>R-CNN，2014  R-CNN即Region-based Convolutional Neural Networks，是一种结合区域提名（Region Proposal）和卷积神经网络（CNN）的目标检测方法。<ul>
+<li>实现细节<ul>
+<li>选择检测窗口<ul>
+<li>J. R. R. Uijlings在2012年提出了selective search方法，这种方法其实是利用了经典的图像分割方法Graphcut，首先对图像做初始分割，然后通过分层分组方法对分割的结果做筛选和归并，最终输出所有可能位置，将候选区域缩小到2000个左右ROI (region of interest) , 感兴趣区域。<ul>
+<li>首先通过将图像进行过分割得到若干等区域组成区域的集合S，这是一个初始化的集合；</li>
+<li>然后利用颜色、纹理、尺寸和空间交叠等特征，计算区域集里每个相邻区域的相似度； 找出相似度最高的两个区域，将其合并为新集并从区域集合中删除原来的两个子集。重复以上的迭代过程，直到最开始的集合S为空，得到了图像的分割结果，得到候选的区域边界，也就是初始框。</li>
+<li>不过，selective search方案仍然有计算量过大的问题。</li>
+<li><a target="_blank" rel="noopener" href="https://www.koen.me/research/selectivesearch/">https://www.koen.me/research/selectivesearch/</a></li>
+<li>Van dS K E A, Uijlings J R R, Gevers T, et al. Segmentation as SelectiveSearch forObject Recognition [C]. Proceedings IEEE International Conference onComputerVision. 2011:1879-1886.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用在ImageNet数据集上进行学习的参数对神经网络进行预处理，解决了在目标检测训练过程中标注数据不足的问题。<ul>
+<li>即仅用预训练-微调得到的最后一层特征向量来训练SVM</li>
+<li>Pre-train<ul>
+<li>使用ILVCR 2012数据集及简化版的Hinton 2012年在Image Net上的分类网络来进行预训练。(全连接层提取特征4096维，再使用全连接(4096-&gt;1000)实现1000类分类)。</li>
+</ul>
+</li>
+<li>Fine-tune<ul>
+<li>替换Pre-train的最后输出层，换为(4096-&gt;21)21分类的输出层，使用数据集PASCAL VOC 2007来训练网络。此处训练的正负样本的标定：IOU&gt;0.5则为正样本。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>这里有一个注意点，即正负样本如何确定（CNN 和SVM 都需要有监督的样本）。这里，也是采用了groundtruth（GT）和SS 的proposal 之间的IoU 来进行确定。如果一个proposal 和某个类别的GT 的IoU 大于某个阈值，那么，这个proposal 的样本就被视为该类别的正样本。</li>
+<li>利用非极大值抑制(Non-Maximun Suppresion) 方法，对最终得到的bbox 进行筛选。</li>
+<li>通过线性回归模型对边框进行校准，减少图像中的背景空白，得到更精确的定位。</li>
+</ul>
+</li>
+<li>网络框架</li>
+<li>缺陷。<ul>
+<li>其一是冗余计算，因为R-CNN的方法是先生成候选区域，再对区域进行卷积，其中候选区域会有一定程度的重叠，因为selective search方法仍然不够好，导致CNN对相同区域进行重复卷积提取特征。而且R-CNN方法将提取后的特征存储下来，然后使用传统的SVM分类器进行分类，导致需要很大的存储空间。</li>
+<li>其二是候选区域的尺度缩放问题，因为R-CNN方法将所有区域缩放到同一尺度进行网络训练，而实际selective search选取的目标框有各种尺寸，这可能导致目标的变形，无论是剪裁还是缩放都不能解决这个问题。<ul>
+<li>之所以要对图像进行缩放到固定的尺度，是因为全连接层的存在。全连接层的输入需要固定的大小，所以要使用不同大小的图片，就必须在输入全连接层之前进行统一变换。</li>
+<li>会使图片信息发生丢失</li>
+</ul>
+</li>
+<li>训练需要几个阶段</li>
+<li>每个region的都需要经过模型去提取，并存放至磁盘；</li>
+</ul>
+</li>
+<li>伪代码<ul>
+<li>ROIs = region_proposal(image) for ROI in ROIs patch = get_patch(image, ROI) results = detector(patch)</li>
+</ul>
+</li>
+<li>K. E. Van de Sande, J. R. Uijlings, T. Gevers, and A. W. Smeulders, “Segmentation as selective search for object recognition,” in Computer Vision (ICCV), 2011 IEEE International Conference on. IEEE, 2011, pp. 1879–1886.</li>
+<li>Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5)</li>
+</ul>
+</li>
+<li>SPP-Net  空间金字塔池化网络( Spatial Pyramid Pooling Networks，SPPNet)<ul>
+<li>K. He, X. Zhang, S. Ren, and J. Sun, “Spatial pyramid pooling in deep convolutional networks for visualrecognition,” in European conference on computer vision. Springer, 2014, pp. 346–361.</li>
+<li>其主要思想是去掉了原始图像上的crop/warp等操作，换成了在卷积特征上的空间金字塔池化层（Spatial Pyramid Pooling，SPP）<ul>
+<li>SPP层<ul>
+<li><ol start="3">
+<li>SPP 对于特定的CNN网络设计和结构是独立的。(也就是说，只要把SPP放在最后一层卷积层后面，对网络的结构是没有影响的， 它只是替换了原来的pooling层)</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>不仅可以用于图像分类而且可以用来目标检测</li>
+</ol>
+</li>
+<li>这样就是固定的256+16+1维度的fc层输入了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>利用SPPNet进行目标检测时，只对整个图像进行一次特征映射计算，然后生成任意区域的定长表示以训练检测器，避免了卷积特征的重复计算。SPPNet的速度是R-CNN的20多倍，并且没有牺牲任何检测精度</li>
+<li>不足<ul>
+<li>训练仍然是多阶段的</li>
+<li>SPPNet只对其全连接层进行微调，而忽略了之前的所有层。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fast R-CNN，2015<ul>
+<li>在VOC07数据集上，Fast RCNN将mAP从58.5%( RCNN)提高到70.0%，检测速度是R-CNN的200多倍。</li>
+<li>改进<ul>
+<li>卷积生成特征图，只需要提取一次特征就能完成操作</li>
+<li>提出ROI pooling layer，采用单层金字塔结构，其实就是在特征层只使用一个金字塔max-pooling，进一步简化了regions对应特征层的映射关系。</li>
+<li>提出梯度传递方法，实现整个网络网络结构的全部训练。</li>
+<li>在两层全连接中加入SVD降维，加快训练速度。</li>
+<li>输出使用两个softmax，一个用于class分类，一个用于bounding box回归。</li>
+</ul>
+</li>
+<li>ROI pooling layer<ul>
+<li>使用 ROI 池化将其转化为固定大小的特征图块</li>
+</ul>
+</li>
+<li>流程图</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = region_proposal(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) results = detector2(patch)</li>
+</ul>
+</li>
+<li>R. Girshick, “Fast r-cnn,” in Proceedings of the IEEE international conference on computer vision, 2015, pp. 1440–1448.</li>
+<li>我们能用CNN模型生成对象提案吗?</li>
+</ul>
+</li>
+<li>Faster R-CNN，2015<ul>
+<li>R-CNN，SPPNet，Fast R-CNN都没有解决一个问题，就是selective search方法低效率的滑动窗口选择问题，它仍然生成了大量无效区域，多了造成算力的浪费，少了则导致漏检。</li>
+<li>提出RPN(Region Proposal Networks)区域生成网络，使用神经网络生成regions，充分利用了feature maps的价值，代替RCNN中的Selective Search方法。节省regions proposal的时间。基本实现end to end训练。</li>
+<li>  流程图，仅SS变成RPN</li>
+<li>![[Pasted image 20221127223135.png]]</li>
+<li>  RPN</li>
+<li>![[Pasted image 20221127223141.png]]</li>
+<li>准确率<ul>
+<li>(COCO mAP@.5=42.7%，COCO mAP@[.5，.95]=21.9%， VOC07 mAP=73.2%，VOC12 mAP=70.4%)</li>
+</ul>
+</li>
+<li>速度<ul>
+<li>Faster R-CNN 在 PASCAL VOC 2007 测试集上每秒处理 7 帧的图像（7 FPS）</li>
+</ul>
+</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = rpn(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) class_scores, box = detector(patch) class_probabilities = softmax(class_scores)</li>
+</ul>
+</li>
+<li>虽然Faster RCNN突破了Fast RCNN的速度瓶颈，但是在后续的检测阶段仍然存在计算冗余。后来提出了多种改进方案，包括RFCN和 Light head RCNN。</li>
+<li>RenS, He K, Girshick R, et al. Faster R-CNN: Towards Real-Time ObjectDetectionwith Region Proposal Networks [OL]. arXiv:1506.01497, 2015.</li>
+</ul>
+</li>
+<li>R-FCN<ul>
+<li>R-FCN 通过减少每个 ROI 所需的工作量实现加速。上面基于区域的特征图与 ROI 是独立的，可以在每个 ROI 之外单独计算。剩下的工作就比较简单了，因此 R-FCN 的速度比 Faster R-CNN 快。</li>
+<li>  流程图</li>
+<li>![[Pasted image 20221127223151.png]]</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = region_proposal(feature_maps) score_maps = compute_score_map(feature_maps) for ROI in ROIs V = region_roi_pool(score_maps, ROI) class_scores, box = average(V) # Much simpler! class_probabilities = softmax(class_scores)</li>
+</ul>
+</li>
+<li>  DaiJ, Li Y, He K, et al. R-FCN: Object Detection via Region-basedFullyConvolutional Networks [OL]. arXiv: 1605.06409, 2016.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Feature-Pyramid-Networks（FPN）"><a href="#Feature-Pyramid-Networks（FPN）" class="headerlink" title="Feature Pyramid Networks（FPN）"></a>Feature Pyramid Networks（FPN）</h2><p>论文：feature pyramid networks for object detection<br>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.03144">https://arxiv.org/abs/1612.03144</a></p>
+<pre><code>-   2017年，T.-Y.Lin等人基于Faster RCNN提出了特征金字塔网络(FPN)[21]。在FPN之前，大多数基于深度学习的检测器只在网络的顶层进行检测。虽然CNN较深层的特征有利于分类识别，但不利于对象的定位。为此，开发了具有横向连接的自顶向下体系结构，用于在所有级别构建高级语义。由于CNN通过它的正向传播，自然形成了一个特征金字塔，FPN在检测各种尺度的目标方面显示出了巨大的进步。在基础的Faster RCNN系统中使用FPN骨架可在无任何修饰的条件下在MS-COCO数据集上以单模型实现state-of-the-art 的效果(COCO mAP@.5=59.1%，COCO mAP@[.5，.95]= 36.2%)。FPN现在已经成为许多最新探测器的基本组成部分。
+    
+</code></pre>
+<ul>
+<li>  Mask R-CNN</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/4a85df63b553.html" data-id="cldzsk2ai002wd8nch1yk2f7p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/ef02a4c91f4c.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/9dca2c4dc2b6.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

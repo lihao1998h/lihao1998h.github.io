@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 torch.nnGRU&#x2F;LSTM 1.1 参数 input_size – The number of expected features in the input x hidden_size – The number of features in the hidden state h num_layers – Number of recurrent layers. E.g., setting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/cb14ad87cb2c.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 torch.nnGRU&#x2F;LSTM 1.1 参数 input_size – The number of expected features in the input x hidden_size – The number of features in the hidden state h num_layers – Number of recurrent layers. E.g., setting">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-11T09:45:54.693Z">
+<meta property="article:modified_time" content="2023-02-05T11:56:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-时间序列预测/RNNs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/cb14ad87cb2c.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.693Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-torch-nn"><a href="#1-torch-nn" class="headerlink" title="1 torch.nn"></a>1 torch.nn</h1><p>GRU/LSTM</p>
+<h2 id="1-1-参数"><a href="#1-1-参数" class="headerlink" title="1.1 参数"></a>1.1 参数</h2><ul>
+<li><strong>input_size</strong> – The number of expected features in the input x</li>
+<li><strong>hidden_size</strong> – The number of features in the hidden state h</li>
+<li><strong>num_layers</strong> – Number of recurrent layers. E.g., setting <code>num_layers=2</code> would mean stacking two GRUs together to form a stacked GRU, with the second GRU taking in outputs of the first GRU and computing the final results. Default: 1</li>
+<li><strong>bias</strong> – If <code>False</code>, then the layer does not use bias weights b_ih and b_hh. Default: <code>True</code></li>
+<li><strong>batch_first</strong> – If <code>True</code>, then the input and output tensors are provided as (batch, seq, feature) instead of (seq, batch, feature). Note that this does not apply to hidden or cell states. See the Inputs/Outputs sections below for details. Default: <code>False</code></li>
+<li><strong>dropout</strong> – If non-zero, introduces a Dropout layer on the outputs of each GRU layer except the last layer, with dropout probability equal to <code>dropout</code>. Default: 0</li>
+<li>  <strong>bidirectional</strong> – If <code>True</code>, becomes a bidirectional GRU. Default: <code>False</code><h2 id="1-2-input"><a href="#1-2-input" class="headerlink" title="1.2 input"></a>1.2 input</h2>(seq_len, batch_size, input_size)<br>若batch_first=True，则交换前俩输出的位置。</li>
+</ul>
+<p>seq_len：在文本处理中，如果一个句子有7个单词，则seq_len=7；在时间序列预测中，假设我们用前24个小时的负荷来预测下一时刻负荷，则seq_len=24。<br>batch_size：一次性输入LSTM中的样本个数。在文本处理中，可以一次性输入很多个句子；在时间序列预测中，也可以一次性输入很多条数据。<br>input_size：单词的embedding</p>
+<h2 id="1-3-output（output-h-n-c-n-）"><a href="#1-3-output（output-h-n-c-n-）" class="headerlink" title="1.3 output（output, (h_n, c_n)）"></a>1.3 output（output, (h_n, c_n)）</h2><p>output:<br>(seq_len,batch_size,hidden_size)<br>若batch_first=True，则交换前俩输出的位置。</p>
+<p>h_n:<br>（num_layers，batch_size，hidden_size）<br>GRU没有c_n，h_0和c_0的shape一致</p>
+<h2 id="1-4-计算过程"><a href="#1-4-计算过程" class="headerlink" title="1.4 计算过程"></a>1.4 计算过程</h2><h1 id="2-RNN-Attention"><a href="#2-RNN-Attention" class="headerlink" title="2 RNN-Attention"></a>2 RNN-Attention</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410031664">https://zhuanlan.zhihu.com/p/410031664</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/cb14ad87cb2c.html" data-id="cldzsk29m000gd8nchcv859me" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/ce3635813d32.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/4f36a66aa0a9.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

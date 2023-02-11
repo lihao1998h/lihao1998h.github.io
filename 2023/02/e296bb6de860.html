@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="U-Nethttps:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1505.04597v1 Attention U-Net Paper: 《Attention U-Net: Learning Where to Look for the Pancreas》Accepted by MIDL 2018.文章解读：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;114471013  U-Net++ Pape">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/e296bb6de860.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="U-Nethttps:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1505.04597v1 Attention U-Net Paper: 《Attention U-Net: Learning Where to Look for the Pancreas》Accepted by MIDL 2018.文章解读：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;114471013  U-Net++ Pape">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zKjFoJGOlE6frG7yQlxmOMHrtsHmicVE89eNiaenwrELlBR00uicIccoMg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zTZN5npnYlBd97vEK0a4tBILlmA4hTGfibTNbVzEpdpGufrFVetMo2JA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="article:published_time" content="2023-02-11T09:45:54.855Z">
+<meta property="article:modified_time" content="2023-02-05T11:56:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zKjFoJGOlE6frG7yQlxmOMHrtsHmicVE89eNiaenwrELlBR00uicIccoMg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机视觉/语义分割/heads/U-Net系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/e296bb6de860.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.855Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>U-Net<br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1505.04597v1">https://arxiv.org/abs/1505.04597v1</a></p>
+<h4 id="Attention-U-Net"><a href="#Attention-U-Net" class="headerlink" title="Attention U-Net"></a>Attention U-Net</h4><blockquote>
+<p>Paper: 《Attention U-Net: Learning Where to Look for the Pancreas》Accepted by MIDL 2018.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114471013">https://zhuanlan.zhihu.com/p/114471013</a></p>
+</blockquote>
+<h4 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net++"></a>U-Net++</h4><blockquote>
+<p>Paper: 《UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation》Accepted by TMI 2019.文章解读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44958351">https://zhuanlan.zhihu.com/p/44958351</a></p>
+</blockquote>
+<h4 id="nnU-Net"><a href="#nnU-Net" class="headerlink" title="nnU-Net"></a>nnU-Net</h4><blockquote>
+<p>Paper: 《nnU-Net: Self-Adapting Framework for U-Net-Based Medical Image Segmentation》文章解读：<a target="_blank" rel="noopener" href="https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a">https://medium.com/miccai-educational-initiative/nnu-net-the-no-new-unet-for-automatic-segmentation-8d655f3f6d2a</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zKjFoJGOlE6frG7yQlxmOMHrtsHmicVE89eNiaenwrELlBR00uicIccoMg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>nnU-Net pipeline</p>
+<p><code>nnU-Net</code> 是医学图像十项全能比赛的冠军，目前在医学图像分割领域有着不可撼动的地位，相信目前研究该领域的人员应该无人不知，无人不晓。<code>nnU-Net</code> 本身并不侧重于网络结构的创新，更多的是提出一个统一的框架，包括针对医学影响设设计的一系列丰富的预处理、后处理和训练 <code>tricks</code> 等。</p>
+<h4 id="CPFNet"><a href="#CPFNet" class="headerlink" title="CPFNet"></a>CPFNet</h4><blockquote>
+<p>Paper: 《CPFNet: Context Pyramid Fusion Network for Medical Image Segmentation》Accepted by TMI 2020.</p>
+</blockquote>
+<p>究极乱连<br><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/vgev6PHxuZ2fU5ic36pric5NZKaXoXaC6zTZN5npnYlBd97vEK0a4tBILlmA4hTGfibTNbVzEpdpGufrFVetMo2JA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>CPFNet</p>
+<p><code>CPFNet</code>，即上下文金字塔融合网络，基于<code>U-Net</code>架构并结合两个金字塔模块来融合全局的多尺度上下文信息。</p>
+<ul>
+<li>全局金字塔引导(GPG)模块：通过重构跳跃连接为解码器提供不同层次的全局上下文信息；</li>
+<li>尺度感知金字塔融合(SAPF)模块：实现了多尺度上下文信息的动态高层次融合;</li>
+</ul>
+<p>实验结果表明，提出的方法在四个不同的挑战性任务，包括<strong>皮肤损伤的分割</strong>，<strong>视网膜线性损伤的分割</strong>，<strong>胸部器官的多分类分割</strong>和<strong>视网膜水肿损伤</strong>的分割任务上具有很强的竞争力。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/e296bb6de860.html" data-id="cldzsk2aq003md8nc0gfkgmvo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/2d9f1df2cef3.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/1618c040f1fa.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

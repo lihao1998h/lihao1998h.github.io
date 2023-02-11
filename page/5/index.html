@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机视觉/utils/loss汇总/CrossEntropyLoss" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/5c39819e8c1e.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.779Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分类、分割任务</p>
+<p>交叉熵：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45665708/article/details/111299919">https://blog.csdn.net/weixin_45665708/article/details/111299919</a></p>
+<p>交叉熵损失：<br>注意！与交叉熵不同。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/songhuangong123/article/details/125502262">https://blog.csdn.net/songhuangong123/article/details/125502262</a></p>
+<p>损失的输入：<br>GT：（batch_size, 1）<br>predict: (batch_size, class_num)  分别表示各个类的logit</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/5c39819e8c1e.html" data-id="cldzsk2an003ad8nc7uqrcejx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/README" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/aca397a48dbe.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.772Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OCR-master</p>
+<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>竞赛类型：</p>
+<ul>
+<li><p>普通文档识别与场景文字识别</p>
+</li>
+<li><p>倾斜、水平文字识别</p>
+</li>
+</ul>
+<p>算法：</p>
+<ul>
+<li>二阶段，检测+识别<ul>
+<li>检测</li>
+<li>识别：CTC、ACE、Attention<ul>
+<li>根据网上分享, 只用ACE loss可能存在收敛困难等问题, 而ACE loss结合CTC loss一起训练, 相较于CTC loss可以获得额外的提升</li>
+<li><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221113184114245.png" alt="image-20221113184114245"></li>
+</ul>
+</li>
+<li>水平文字检测个人认为比较好的算法是2016 ECCV乔宇老师团队的CTPN，倾斜文字检测个人比较喜欢的方法是2017 CVPR的EAST和Seglink、PixelLink</li>
+<li>语义不连续的文本可以考虑不用RNN，直接DenseNet分类</li>
+</ul>
+</li>
+<li>end-to-end<ul>
+<li>FOTS</li>
+<li>SVTR：PaddleOCR的PP-OCRv3（2022）钦定模型, 模型小, 效果好。主要就是利用Transformer替代了RNN, 得益于self-attention机制, 这样面对不规则文本图像的时候应该有更好的信息抽取能力, 可以更好的抽取有序后验概率矩阵.</li>
+</ul>
+</li>
+</ul>
+<p>metric:</p>
+<ul>
+<li>编辑距离</li>
+</ul>
+<p>且样本严重不均衡，使用Center loss约束类内类间关系，使用Focal loss缓解样本不均问题，并实现难样本挖掘；</p>
+<ul>
+<li>IoU+F1-score</li>
+</ul>
+<p>trick：</p>
+<ul>
+<li>文字类别不均衡<ul>
+<li>极不均衡的类别分布使得端到端的文字检测识别性能极差。因此，本团队采用了先检测文字，后识别的方案框架。</li>
+</ul>
+</li>
+<li>数据增强方案<ul>
+<li>经典图像增强</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/aca397a48dbe.html" data-id="cldzsk2a0001sd8nc2dyicqcu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/PaddleOCR" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/26148f9ec5bf.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.771Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-直接推理"><a href="#1-直接推理" class="headerlink" title="1 直接推理"></a>1 直接推理</h1><h2 id="1-1-model-zoo"><a href="#1-1-model-zoo" class="headerlink" title="1.1 model zoo"></a>1.1 model zoo</h2><p><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/models_list.md#%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/models_list.md#%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B</a><br>首先下载预训练的推理模型，</p>
+<h2 id="1-2-推理"><a href="#1-2-推理" class="headerlink" title="1.2 推理"></a>1.2 推理</h2><p>然后用predict_system推理</p>
+<p>参数解释如下：<br><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/inference_args.md">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/inference_args.md</a></p>
+<h1 id="2-fine-tune方法"><a href="#2-fine-tune方法" class="headerlink" title="2 fine-tune方法"></a>2 fine-tune方法</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/26148f9ec5bf.html" data-id="cldzsk29z001od8nc9wwvhtgj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/OCR" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/f28e24fb2066.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.769Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[[models]]通常需要分为文本检测和文本识别两个部分<br>[[技术栈/人工智能/计算机视觉/图像分类/metrics]]<br>[[datasets]]</p>
+<h1 id="SOTA"><a href="#SOTA" class="headerlink" title="SOTA"></a>SOTA</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2205.00159v2.pdf">https://arxiv.org/pdf/2205.00159v2.pdf</a><br><a target="_blank" rel="noopener" href="https://paperswithcode.com/task/scene-text-detection">https://paperswithcode.com/task/scene-text-detection</a><br><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/algorithm_overview.md">https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/algorithm_overview.md</a></p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR">Paddle Paddle</a> &gt; <a target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmocr">MMOCR</a><br><a target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/">https://www.paddlepaddle.org.cn/</a><br><a target="_blank" rel="noopener" href="https://github.com/frotms/PaddleOCR2Pytorch">https://github.com/frotms/PaddleOCR2Pytorch</a> 没必要，大厂出品必属精品</p>
+<h1 id="垂直应用"><a href="#垂直应用" class="headerlink" title="垂直应用"></a>垂直应用</h1><p><a target="_blank" rel="noopener" href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/applications/%E6%89%8B%E5%86%99%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB.md">手写文字识别</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/f28e24fb2066.html" data-id="cldzsk2a0001qd8ncczxibnkl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/03d736fdd0a4.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.767Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-文本检测-文本识别"><a href="#1-文本检测-文本识别" class="headerlink" title="1 文本检测+文本识别"></a>1 文本检测+文本识别</h1><h2 id="1-1-CRNN-CTC-2006"><a href="#1-1-CRNN-CTC-2006" class="headerlink" title="1.1 CRNN-CTC(2006)"></a>1.1 CRNN-CTC(2006)</h2><p><a target="_blank" rel="noopener" href="https://static.aminer.org/pdf/PDF/000/334/929/connectionist_temporal_classification_labelling_unsegmented_sequence_data_with_recurrent_neural.pdf">Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks</a></p>
+<p>CTC:<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43534801">https://zhuanlan.zhihu.com/p/43534801</a></p>
+<ul>
+<li>电话面试中如何跟面试官阐述CTC loss是什么？</li>
+<li>主要说清楚几点：</li>
+</ul>
+<p>1.loss的背景</p>
+<p>2.ctc是如何简化问题的<br>CTC提出一种对不需要对齐的Loss计算方法</p>
+<p>3.ctc的path 优化，forward和backward的大致过程</p>
+<p>4.最终的结果的形式.</p>
+<h2 id="1-2-DenseNet-CTC"><a href="#1-2-DenseNet-CTC" class="headerlink" title="1.2 DenseNet + CTC"></a>1.2 DenseNet + CTC</h2><ul>
+<li>  文本检测：CTPN<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34757009">https://zhuanlan.zhihu.com/p/34757009</a></li>
+<li>  文本识别：DenseNet + CTC<br><a target="_blank" rel="noopener" href="https://github.com/eragonruan/text-detection-ctpn">https://github.com/eragonruan/text-detection-ctpn</a> no<br><a target="_blank" rel="noopener" href="https://github.com/YCG09/chinese_ocr">https://github.com/YCG09/chinese_ocr</a> failed ctpn</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/opconty/pytorch_ctpn">https://github.com/opconty/pytorch_ctpn</a> failed</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yizt/keras-ctpn">https://github.com/yizt/keras-ctpn</a> failed</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/03d736fdd0a4.html" data-id="cldzsk2a50020d8nca5pk9oh2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/metrics" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/0fecfe3fb8c2.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.766Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CTC-loss"><a href="#CTC-loss" class="headerlink" title="CTC loss"></a>CTC loss</h1><p>criterion = nn.CTCLoss(blank=blank_label, reduction=’mean’, zero_infinity=True)</p>
+<h1 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h1><p>![[Pasted image 20221211223141.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/0fecfe3fb8c2.html" data-id="cldzsk2a2001wd8ncf55o47hk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/OCR/datasets" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/3a17dbafd341.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.764Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h1><h2 id="繁体"><a href="#繁体" class="headerlink" title="繁体"></a>繁体</h2><h3 id="TCSynth-TC-STR-7k-word-不带框"><a href="#TCSynth-TC-STR-7k-word-不带框" class="headerlink" title="TCSynth+TC-STR 7k-word (不带框)"></a>TCSynth+TC-STR 7k-word (不带框)</h3><p>generated over 20 million synthetic data + collected over 7,000 manually labeled data<br><a target="_blank" rel="noopener" href="https://github.com/esun-ai/traditional-chinese-text-recogn-dataset">https://github.com/esun-ai/traditional-chinese-text-recogn-dataset</a></p>
+<h1 id="简体"><a href="#简体" class="headerlink" title="简体"></a>简体</h1><p><a target="_blank" rel="noopener" href="https://github.com/YCG09/chinese_ocr">https://github.com/YCG09/chinese_ocr</a> (带框)<br>数据集：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw">https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw</a> (密码：lu7m)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/FudanVI/benchmarking-chinese-text-recognition">https://github.com/FudanVI/benchmarking-chinese-text-recognition</a> (带框，但不需要检测，已经是小块的了)</p>
+<h1 id="英文"><a href="#英文" class="headerlink" title="英文"></a>英文</h1><h2 id="Synth"><a href="#Synth" class="headerlink" title="Synth"></a>Synth</h2><p><a target="_blank" rel="noopener" href="https://github.com/Belval/TextRecognitionDataGenerator">https://github.com/Belval/TextRecognitionDataGenerator</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1759567?from=15425">https://cloud.tencent.com/developer/article/1759567?from=15425</a></p>
+<h1 id="文本检测"><a href="#文本检测" class="headerlink" title="文本检测"></a>文本检测</h1><p>ICDAR2015<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60459597">https://zhuanlan.zhihu.com/p/60459597</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/3a17dbafd341.html" data-id="cldzsk2a1001ud8nc7qtfd6g0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/fake detection/fake detetion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/675aa8a3cf31.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.760Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="相关竞赛"><a href="#相关竞赛" class="headerlink" title="相关竞赛"></a>相关竞赛</h1><p><a target="_blank" rel="noopener" href="https://tianchi.aliyun.com/competition/entrance/531945/introduction">https://tianchi.aliyun.com/competition/entrance/531945/introduction</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/675aa8a3cf31.html" data-id="cldzsk2a4001yd8nc4ir34w45" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/计算机视觉" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/eb78ddb1bcac.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.756Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>属于：</p>
+<ul>
+<li>[[人工智能]]<br>包括：</li>
+<li>[[目标检测]]</li>
+<li>[[语义分割]]<br>应用：</li>
+<li>[[图像审核]]</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/eb78ddb1bcac.html" data-id="cldzsk29u0016d8nc4cs1dj02" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/提升性能的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/93bf85745a1c.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.754Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="backbone"><a href="#backbone" class="headerlink" title="backbone"></a>backbone</h1><ul>
+<li>conv 转 resnet</li>
+<li>conv 转空洞卷积</li>
+<li></li>
+<li><h1 id="model"><a href="#model" class="headerlink" title="model"></a>model</h1>unet+空间注意力</li>
+</ul>
+<h1 id="amp"><a href="#amp" class="headerlink" title="amp"></a>amp</h1><p>AMP：Automatic mixed precision，自动混合精度，可以在神经网络推理过程中，针对不同的层，采用不同的数据精度进行计算，从而实现节省显存和加快速度的目的。在Pytorch 1.5版本及以前，通过NVIDIA提供的apex库可以实现amp功能。但是在使用过程中会伴随着一些版本兼容和奇怪的报错问题。从1.6版本开始，Pytorch原生支持自动混合精度训练，并已进入稳定阶段，AMP 训练能在 Tensor Core GPU 上实现更高的性能并节省多达 50％ 的内存。<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348554267">https://zhuanlan.zhihu.com/p/348554267</a></p>
+<h1 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h1><h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><p>《Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift》<br>资料：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24810318">https://zhuanlan.zhihu.com/p/24810318</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/435507061">https://zhuanlan.zhihu.com/p/435507061</a> 👍<br>![[Pasted image 20221202183350.png]]<br>![[Pasted image 20221202190522.png]]<br>作用：</p>
+<ol>
+<li>加快模型的收敛速度</li>
+<li>在一定程度上缓解了<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%B7%B1%E5%BA%A6&spm=1001.2101.3001.7020">深度</a>网络中的“梯度弥散”问题，从而使得训练深层网络模型更加容易和稳定。</li>
+<li>网络一旦train起来，那么参数就要发生更新，除了输入层的数据外(因为输入层数据，我们已经人为的为每个样本归一化)，后面网络每一层的输入数据分布是一直在发生变化的，因为在训练的时候，前面层训练参数的更新将导致后面层输入数据分布的变化。我们把网络中间层在训练过程中，数据分布的改变称之为：“Internal Covariate Shift”。BN的提出，就是要解决在训练过程中，中间层数据分布发生改变的情况。</li>
+<li><ul>
+<li>  可以选择比较大的初始学习率，<strong>加快网络的收敛</strong>。实验结果表明，就算你使用小的学习率，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22435507061%22%7D">收敛速度</a>也会很快。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>  减少正则化参数的Dropout、L2正则项参数的选择问题，<strong>BN具有提高网络泛化能力的特性</strong>。</li>
+<li>  不需要使用局部响应归一化层（局部响应归一化是Alexnet网络用到的方法），因为BN本身就是一个<strong>归一化<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%BD%91%E7%BB%9C%E5%B1%82&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22435507061%22%7D">网络层</a>。</strong></li>
+<li><strong>可以把训练数据彻底打乱</strong>，防止每批训练的时候，某一个样本经常被挑选到，在ImageNet上提高1%的精度。</li>
+<li><strong>BN的核心思想</strong>不是为了防止梯度消失或者防止过拟合，其核心是通过对系统参数搜索空间进行约束来增加系统鲁棒性，这种约束压缩了搜索空间，约束也改善了系统的结构合理性，这会带来一系列的性能改善，比如加速收敛，保证梯度，缓解过拟合等。</li>
+</ul>
+<p>BN在训练过程中主要分为4步：</p>
+<ol>
+<li>求每一个训练批次数据的均值</li>
+<li>求每一个训练批次数据的方差</li>
+<li>使用求得的均值和方差对该批次的训练数据做归一化，获得0-1分布。其中ε是为了避免除数为0时所使用的微小正数。</li>
+<li>尺度变换和偏移：将xi乘以γ调整数值大小，再加上β增加偏移后得到yi，这里的γ是尺度因子，β是平移因子。这一步是BN的精髓，由于归一化后的xi基本会被限制在正态分布下，使得网络的表达能力下降。为解决该问题，我们引入两个新的参数：γ,β。 γ和β是在训练时网络自己学习得到的。</li>
+</ol>
+<h1 id="bad-tricks"><a href="#bad-tricks" class="headerlink" title="bad tricks"></a>bad tricks</h1><ol>
+<li>预训练过程根据目标设定验证集，并选择在验证集上最好的模型，参考[[原型补全.pdf]]</li>
+</ol>
+<h1 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/591958176">https://zhuanlan.zhihu.com/p/591958176</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/93bf85745a1c.html" data-id="cldzsk29t0014d8nc0dge06c8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

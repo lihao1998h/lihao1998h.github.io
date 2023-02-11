@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 常规卷积![[Pasted image 20221130204019.png]] nn.Conv2dhttps:&#x2F;&#x2F;pytorch.org&#x2F;docs&#x2F;stable&#x2F;generated&#x2F;torch.nn.Conv2d.html?highlight&#x3D;nn+conv2d#torch.nn.Conv2d 1.1 特殊性质  7 x 7 的卷积层的正则等效于 3 个 3 x 3 的卷积层的叠加。 能够对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/7301e97151ef.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 常规卷积![[Pasted image 20221130204019.png]] nn.Conv2dhttps:&#x2F;&#x2F;pytorch.org&#x2F;docs&#x2F;stable&#x2F;generated&#x2F;torch.nn.Conv2d.html?highlight&#x3D;nn+conv2d#torch.nn.Conv2d 1.1 特殊性质  7 x 7 的卷积层的正则等效于 3 个 3 x 3 的卷积层的叠加。 能够对">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-11T09:45:54.715Z">
+<meta property="article:modified_time" content="2023-02-05T11:56:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-深度学习/backbones/卷积" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/7301e97151ef.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.715Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-常规卷积"><a href="#1-常规卷积" class="headerlink" title="1 常规卷积"></a>1 常规卷积</h1><p>![[Pasted image 20221130204019.png]]</p>
+<p>nn.Conv2d<br><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=nn+conv2d#torch.nn.Conv2d">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=nn+conv2d#torch.nn.Conv2d</a></p>
+<h2 id="1-1-特殊性质"><a href="#1-1-特殊性质" class="headerlink" title="1.1 特殊性质"></a>1.1 特殊性质</h2><ul>
+<li> 7 x 7 的卷积层的正则等效于 3 个 3 x 3 的卷积层的叠加。</li>
+<li>能够对连续特征很好的提取。<br>![[Pasted image 20221130222516.png]]</li>
+</ul>
+<h2 id="1-2-存在的问题"><a href="#1-2-存在的问题" class="headerlink" title="1.2 存在的问题"></a>1.2 存在的问题</h2><ul>
+<li>  Up-sampling / pooling layer (e.g. bilinear interpolation) is deterministic. (a.k.a. not learnable)</li>
+<li>  内部<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:323880412%7D">数据结构</a>丢失；空间层级化信息丢失。</li>
+<li>  小物体信息无法重建 (假设有四个pooling layer 则 任何小于 2^4 = 16 pixel 的物体信息将理论上无法重建。)<br>在这样问题的存在下，语义分割问题一直处在瓶颈期无法再明显提高精度， 而 dilated convolution 的设计就良好的避免了这些问题。<h1 id="2-空洞卷积"><a href="#2-空洞卷积" class="headerlink" title="2 空洞卷积"></a>2 空洞卷积</h1><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/54149221">https://www.zhihu.com/question/54149221</a><br>![[Pasted image 20221130224255.png]]<h2 id="2-1-Hybrid-Dilated-Convolution-HDC"><a href="#2-1-Hybrid-Dilated-Convolution-HDC" class="headerlink" title="2.1 Hybrid Dilated Convolution (HDC)"></a>2.1 Hybrid Dilated Convolution (HDC)</h2>即常规卷积与空洞卷积的混合</li>
+</ul>
+<h2 id="2-2-多尺度分割的另类解：Atrous-Spatial-Pyramid-Pooling-ASPP"><a href="#2-2-多尺度分割的另类解：Atrous-Spatial-Pyramid-Pooling-ASPP" class="headerlink" title="2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)"></a>2.2 多尺度分割的另类解：Atrous Spatial Pyramid Pooling (ASPP)</h2><p>并行融合各种尺度的空洞卷积</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ASPP_module</span>(nn.Module):  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_channels, out_channels</span>):  </span><br><span class="line">        <span class="built_in">super</span>(ASPP_module, self).__init__()  </span><br><span class="line">        <span class="comment"># 定义空洞率，根据图示空洞率为1 6 12 18 ，说明：当空洞率为1时为普通卷积  </span></span><br><span class="line">        dilations = [<span class="number">1</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">18</span>]  </span><br><span class="line">  </span><br><span class="line">        self.Aspp1 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), padding=<span class="number">0</span>,  </span><br><span class="line">                      dilation=dilations[<span class="number">0</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU())  </span><br><span class="line">  </span><br><span class="line">        self.Aspp2 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      <span class="comment"># padding与dilation相同原因：当原始卷积核为3x3时，使输入输出尺寸大小相同，计算见3中说明。  </span></span><br><span class="line">                      padding=dilations[<span class="number">1</span>], dilation=dilations[<span class="number">1</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.Aspp3 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      padding=dilations[<span class="number">2</span>], dilation=dilations[<span class="number">2</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.Aspp4 = nn.Sequential(  </span><br><span class="line">            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">3</span>, <span class="number">3</span>),  </span><br><span class="line">                      padding=dilations[<span class="number">3</span>], dilation=dilations[<span class="number">3</span>], bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(out_channels),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        self.global_avg_pool = nn.Sequential(  </span><br><span class="line">            nn.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>)),  </span><br><span class="line">            <span class="comment"># 输入通道2048，原因：deeplab v3+ 在进去ASPP前为2048  </span></span><br><span class="line">            nn.Conv2d(<span class="number">2048</span>, <span class="number">256</span>, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), stride=<span class="number">1</span>, bias=<span class="literal">False</span>),  </span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),  </span><br><span class="line">            nn.ReLU()  </span><br><span class="line">        )  </span><br><span class="line">        <span class="comment"># concat后通道为1280，用1x1卷积改变通道数  </span></span><br><span class="line">        self.conv1 = nn.Conv2d(<span class="number">1280</span>, <span class="number">256</span>, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), bias=<span class="literal">False</span>)  </span><br><span class="line">        self.bn1 = nn.BatchNorm2d(<span class="number">256</span>)  </span><br><span class="line">        <span class="comment"># 初始化卷积核权重  </span></span><br><span class="line">        self._init_weight()  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):  </span><br><span class="line">        x1 = self.Aspp1(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X1.shape&quot;</span>, x1.size())  </span><br><span class="line">        x2 = self.Aspp2(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X2.shape&quot;</span>, x2.size())  </span><br><span class="line">        x3 = self.Aspp3(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X3.shape&quot;</span>, x3.size())  </span><br><span class="line">        x4 = self.Aspp4(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;X4.shape&quot;</span>, x4.size())  </span><br><span class="line">        x5 = self.global_avg_pool(x);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;x5.shape&#x27;</span>, x5.size())  </span><br><span class="line">        <span class="comment"># 利用双线性插值恢复x5的尺寸，再进行concat  </span></span><br><span class="line">        x5 = F.interpolate(x5, size=x4.size()[<span class="number">2</span>:], mode=<span class="string">&#x27;bilinear&#x27;</span>, align_corners=<span class="literal">True</span>)  </span><br><span class="line">        cat = torch.cat((x1, x2, x3, x4, x5), dim=<span class="number">1</span>);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;cat.shape&#x27;</span>, cat.size())  </span><br><span class="line">  </span><br><span class="line">        <span class="comment"># 此处的output，包含后面1x1卷积进行的通道数调整  </span></span><br><span class="line">        output = self.conv1(cat)  </span><br><span class="line">        output = self.bn1(output);  </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;output.shape&#x27;</span>, output.size())  </span><br><span class="line">        <span class="keyword">return</span> output  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_init_weight</span>(<span class="params">self</span>):  </span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> self.modules():  </span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">isinstance</span>(m, nn.Conv2d):  </span><br><span class="line">                n = m.kernel_size[<span class="number">0</span>] * m.kernel_size[<span class="number">1</span>] * m.out_channels  </span><br><span class="line">                m.weight.data.normal_(<span class="number">0</span>, math.sqrt(<span class="number">2.</span> / n))  <span class="comment"># 初始化卷积核方式  </span></span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">isinstance</span>(m, nn.BatchNorm2d):  </span><br><span class="line">                m.weight.data.fill_(<span class="number">1</span>)  </span><br><span class="line">                m.bias.data.zero_()  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  </span><br><span class="line">    <span class="comment"># 测试输出尺寸使用  </span></span><br><span class="line">    aspp = ASPP_module(<span class="number">2048</span>, <span class="number">256</span>)  </span><br><span class="line">    <span class="built_in">input</span> = torch.randn(<span class="number">2</span>, <span class="number">2048</span>, <span class="number">176</span>, <span class="number">240</span>);  </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;input_size:&#x27;</span>, <span class="built_in">input</span>.size())  </span><br><span class="line">    out = aspp(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/7301e97151ef.html" data-id="cldzsk29w001cd8ncb5nc93g7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/a5d90880cdf9.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/243856db583c.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

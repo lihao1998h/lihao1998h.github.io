@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="单阶段检测算法直接给出最终的检测结果，没有经过生成候选区域的步骤  YOLO系列 You Only Look Once (YOLO)v1，2016 思想 仅把目标检测看做一个回归问题 将一幅图像分成SxS个网格(grid cell), 如果某个object的中心落在这个网格中，则这个网格 就负责预测这个object。 每个bounding box要预测(x, y, w, h)和confidence">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/02/9dca2c4dc2b6.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="单阶段检测算法直接给出最终的检测结果，没有经过生成候选区域的步骤  YOLO系列 You Only Look Once (YOLO)v1，2016 思想 仅把目标检测看做一个回归问题 将一幅图像分成SxS个网格(grid cell), 如果某个object的中心落在这个网格中，则这个网格 就负责预测这个object。 每个bounding box要预测(x, y, w, h)和confidence">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-11T09:45:54.835Z">
+<meta property="article:modified_time" content="2023-02-05T11:56:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机视觉/目标检测/one-stage models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/9dca2c4dc2b6.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.835Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>单阶段检测算法直接给出最终的检测结果，没有经过生成候选区域的步骤</p>
+<ul>
+<li>YOLO系列<ul>
+<li>You Only Look Once (YOLO)v1，2016<ul>
+<li>思想<ul>
+<li>仅把目标检测看做一个回归问题</li>
+<li>将一幅图像分成SxS个网格(grid cell), 如果某个object的中心落在这个网格中，则这个网格 就负责预测这个object。</li>
+<li>每个bounding box要预测(x, y, w, h)和confidence共5个值，每个网格还要预测一个类别信 息，记为C类。则SxS个网格, 每个网格要预测B个bounding box还要预测C个categories。 输出就是Sx S x (5*B+ C)的一-个tensor。<ul>
+<li>confidence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实现细节<ul>
+<li>resize到448x448</li>
+<li>每个grid有30维，这30维中，8维是回归box的坐标，2维是box的confidence,还有20维是类别。</li>
+<li>S=7，B=2</li>
+<li>其中坐标的x,y用对应网格的offset归-一化到0-1之间，w,h用图像的width和height归-一化到0-1之间。</li>
+<li>YOLO检测网络包括24个卷积层和2个全连接层,卷积层用来提取图像特征，全连接层用来预测图像位置和类别概率值。<ul>
+<li>网络输出7_7_30</li>
+</ul>
+</li>
+<li>预训练<ul>
+<li>imagenet</li>
+</ul>
+</li>
+<li>在实现中，最主要的就是怎么设计损失函数，让这个三个方面得到很好的平衡。作者简单粗暴的全部采用了sum-squared error loss来做这件事。<ul>
+<li>不足<ul>
+<li>第一，8维的localization error和20维的classification error同等重要显然是不合理的;</li>
+<li>第二，如果一个网格中没有object (一幅图中这种网格很多)， 那么就会将这些网格中的box的confidence push到0，相比于较少的有object的网格,这种做法是overpowering的，这会导致网络不稳定甚至发散。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>先使用NMS，然后再确定各个box的类别</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>YOLO对相互靠的很近的物体，还有很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一-类。</li>
+<li>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱。</li>
+<li>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</li>
+</ul>
+</li>
+<li>YOLO非常快：YOLO的一个快速版本运行速度为155fps, VOC07 mAP=52.7%，而它的增强版本运行速度为45fps, VOC07 mAP=63.4%， VOC12 mAP=57.9%。<ul>
+<li>fast YOLO，它只有9个卷积层和2个全连接层。</li>
+</ul>
+</li>
+<li>必须指出的是，尽管与双级探测器相比YOLO的探测速度有了很大的提高，但它的定位精度有所下降，特别是对于一些小目标而言。YOLO的后续版本及在它之后提出的SSD更关注这个问题。</li>
+<li>后来R. Joseph在 YOLO 的基础上进行了一系列改进，其中包括以路径聚合网络（Path aggregation Network, PAN）取代FPN，定义新的损失函数等，陆续提出了其 v2、v3及v4版本(截止本文的2020年7月，Ultralytics发布了“YOLO v5”，但并没有得到官方承认)，在保持高检测速度的同时进一步提高了检测精度。</li>
+<li>Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified,Real-TimeObject Detection [OL]. arXiv: 1506.02640, 2016.<ul>
+<li>论文下载：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1506.02640">http://arxiv.org/abs/1506.02640</a></li>
+</ul>
+</li>
+<li>解读<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaohu2022/article/details/79211732/">https://blog.csdn.net/xiaohu2022/article/details/79211732/</a></li>
+</ul>
+</li>
+<li>Yolo在PASCAL VOC 2007上与其他算法的对比</li>
+</ul>
+</li>
+<li>YOLO9000/v2，2016<ul>
+<li>论文<ul>
+<li>Joseph Redmon, Ali Farhadi. YOLO9000: Better, Faster, Stronger. arXiv:1612.08242<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.08242">https://arxiv.org/abs/1612.08242</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yolov2和Yolo9000算法内核相同，区别是训练方式不同：Yolov2用coco数据集训练后，可以识别80个种类。而Yolo9000可以使用coco数据集 + ImageNet数据集联合训练，可以识别9000多个种类。</li>
+<li>Better<ul>
+<li>BN</li>
+<li>High Resolution Classifier（分类网络高分辨率预训练）</li>
+<li>更多的Anchor box</li>
+</ul>
+</li>
+<li>YOLO9000的训练策略<ul>
+<li>联合训练方法思路简单清晰，Yolo v2中物体矩形框生成，不依赖于物理类别预测，二者同时独立进行。当输入是检测数据集时，标注信息有类别、有位置，那么对整个loss函数计算loss，进行反向传播；当输入图片只包含分类信息时，loss函数只计算分类loss，其余部分loss为零。当然，一般的训练策略为，先在检测数据集上训练一定的epoch，待预测框的loss基本稳定后，再联合分类数据集、检测数据集进行交替训练，同时为了分类、检测数据量平衡，作者对coco数据集进行了上采样，使得coco数据总数和ImageNet大致相同。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>YOLOv3，2018<ul>
+<li>[14] Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement. arXiv:1804.02767<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1804.02767.pdf">https://arxiv.org/pdf/1804.02767.pdf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>codes<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/pjreddie/darknet">https://github.com/pjreddie/darknet</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/AlexeyAB/darknet">https://github.com/AlexeyAB/darknet</a><ul>
+<li>解读<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xieqi/p/9818056.html">https://www.cnblogs.com/xieqi/p/9818056.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/luoying_ontheroad/article/details/81136973">https://blog.csdn.net/luoying_ontheroad/article/details/81136973</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ning_yi/article/details/119385309">https://blog.csdn.net/ning_yi/article/details/119385309</a></li>
+</ul>
+</li>
+<li>C写的</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/eriklindernoren/PyTorch-YOLOv3">https://github.com/eriklindernoren/PyTorch-YOLOv3</a><ul>
+<li>不能检测视频</li>
+<li>简化版本</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov3">https://github.com/ultralytics/yolov3</a><ul>
+<li>最好的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Single Shot MultiBox Detector (SSD),ECCV2016<ul>
+<li>YOLO的做法是速度快，但是会有许多漏检，尤其是小的目标。所以SSD就在 YOLO的基础上添加了Faster R-CNN的Anchor 概念，并融合不同卷积层的特征做出预测。虽然YOLO和SSD系列的方法没有了region proposal的提取，速度更快，但是必定会损失信息和精度。</li>
+<li>SSD由W. Liu等人于2015年提出[23]。这是深度学习时代的第二款单级探测器。SSD的主要贡献是引入了多参考和多分辨率检测技术，这大大提高了单级检测器的检测精度，特别是对于一些小目标。SSD在检测速度和准确度上都有优势(VOC07 mAP=76.8%，VOC12 mAP=74.9%， COCO mAP@.5=46.5%，mAP@[.5，.95]=26.8%，快速版本运行速度为59fps) 。SSD与其他的检测器的主要区别在于，前者在网络的不同层检测不同尺度的对象，而后者仅在其顶层运行检测。</li>
+<li>Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, and Alexander C.Berg. SSD: Single shot multibox detector. In ECCV, 2016</li>
+</ul>
+</li>
+<li>RetinaNet<ul>
+<li>  单级检测器有速度快、结构简单的优点，但在精度上多年来一直落后于双级检测器。T.-Y.Lin等人发现了背后的原因，并在2017年提出了RetinaNet[24]。他们的观点为精度不高的原因是在密集探测器训练过程中极端的前景-背景阶层不平衡（the extreme foreground-background class imbalance）现象。为此，他们在RetinaNet中引入了一个新的损失函数 “ 焦点损失（focal loss）”，通过对标准交叉熵损失的重构，使检测器在训练过程中更加关注难分类的样本。焦损耗使得单级检测器在保持很高的检测速度的同时，可以达到与双级检测器相当的精度。(COCO mAP@.5=59.1%，mAP@[.5, .95]=39.1% )。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/9dca2c4dc2b6.html" data-id="cldzsk2ah002ud8ncg5wrbxhy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/4a85df63b553.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/5319be07cf86.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

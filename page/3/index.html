@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/fluid.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机视觉/目标检测/目标检测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/ef02a4c91f4c.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.838Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="相关领域"><a href="#相关领域" class="headerlink" title="相关领域"></a>相关领域</h1><p>[[关键点检测]]</p>
+<h1 id="子领域"><a href="#子领域" class="headerlink" title="子领域"></a>子领域</h1><p>[[行人检测]]</p>
+<h2 id="其它概念"><a href="#其它概念" class="headerlink" title="其它概念"></a>其它概念</h2><h3 id="Anchor-Box"><a href="#Anchor-Box" class="headerlink" title="Anchor Box"></a>Anchor Box</h3><p>![[Anchor box.png]]</p>
+<ul>
+<li>一个对象分配到多个Anchor Box</li>
+<li>处理对象出现在同一个格子里的情况</li>
+</ul>
+<h2 id="分支领域"><a href="#分支领域" class="headerlink" title="分支领域"></a>分支领域</h2><h3 id="姿势估计Pose-Estimation"><a href="#姿势估计Pose-Estimation" class="headerlink" title="姿势估计Pose Estimation"></a>姿势估计Pose Estimation</h3><ul>
+<li>Metrics<ul>
+<li>Object Keypoint Similarity (OKS)</li>
+</ul>
+</li>
+<li>SOTA<ul>
+<li>HRNET<ul>
+<li>Sun, K. , Xiao, B. , Liu, D. , and Wang, J: Deep High-Resolution Representation Learning for Human Pose Estimation, in CVPR, 2019.</li>
+</ul>
+</li>
+<li>EMpose<ul>
+<li>Li X, Zhong Z, Wu J, et al: Expectation-maximization attention networks for semantic segmentation, in ICCV, 2019.</li>
+</ul>
+</li>
+<li>CIposeNet<ul>
+<li>HRNET+因果干预</li>
+<li>ACPR’21</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="行人检测"><a href="#行人检测" class="headerlink" title="行人检测"></a>行人检测</h3><h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><h3 id="MSCOCO"><a href="#MSCOCO" class="headerlink" title="MSCOCO"></a>MSCOCO</h3><ul>
+<li>包含超过200000张图片以及超过250000个人类实例</li>
+<li>3种标注类型<ul>
+<li>object instances（目标实例）,</li>
+<li>object keypoints（目标上的关键点）,</li>
+<li>和image captions（看图说话）</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29393415">https://zhuanlan.zhihu.com/p/29393415</a></li>
+</ul>
+</li>
+<li>Lin T Y, Maire M, Belongie S, et al: Microsoft coco: Common objects in context, in CVPR, 2014.</li>
+<li>2017<ul>
+<li>COCO train2017<ul>
+<li>57K images</li>
+<li>150K person instances<br>  ![[Pasted image 20221127223044.png]]</li>
+</ul>
+</li>
+<li>val2017<ul>
+<li>5000 images<br>  ![[Pasted image 20221127223051.png]]</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012505617/article/details/106517073/">https://blog.csdn.net/u012505617/article/details/106517073/</a></li>
+</ul>
+</li>
+<li>COCO处理<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/donkey_1993/article/details/106279988">https://blog.csdn.net/donkey_1993/article/details/106279988</a></li>
+</ul>
+</li>
+<li>annotation<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29393415">https://zhuanlan.zhihu.com/p/29393415</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="the-PASCAL-VOC-data-sets"><a href="#the-PASCAL-VOC-data-sets" class="headerlink" title="the PASCAL VOC data sets"></a>the PASCAL VOC data sets</h3><ul>
+<li>M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The PASCAL Visual Object Classes (VOC) Challenge,” Int’l J. Computer Vision, vol. 88, no. 2, pp. 303-338, June 2010.</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/mzpmzk/article/details/88065416">https://blog.csdn.net/mzpmzk/article/details/88065416</a></li>
+<li>1.VOC2007 总共：9963 test： 4952 trainval：5011（train： 2501 ; val： 2510）</li>
+</ul>
+<p>2.VOC2012 trainval： 11540 ( train：5717 ; val：5823) 只是有11540张用于检测任务，下载VOC数据集中JPEGImages文件夹存储了17125张图片，没有全部用到检测</p>
+<ul>
+<li>数据下载<ul>
+<li><a target="_blank" rel="noopener" href="https://pjreddie.com/projects/pascal-voc-dataset-mirror/">https://pjreddie.com/projects/pascal-voc-dataset-mirror/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="OpenImages"><a href="#OpenImages" class="headerlink" title="OpenImages"></a>OpenImages</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010167269/article/details/52717394/">https://blog.csdn.net/u010167269/article/details/52717394/</a></li>
+<li><a target="_blank" rel="noopener" href="https://research.googleblog.com/2016/09/introducing-open-images-dataset.html">https://research.googleblog.com/2016/09/introducing-open-images-dataset.html</a></li>
+</ul>
+<h2 id="相关库"><a href="#相关库" class="headerlink" title="相关库"></a>相关库</h2><h3 id="MMDetection"><a href="#MMDetection" class="headerlink" title="MMDetection"></a>MMDetection</h3><h3 id="https-github-com-tensorflow-models-tree-master-research-object-detection"><a href="#https-github-com-tensorflow-models-tree-master-research-object-detection" class="headerlink" title="https://github.com/tensorflow/models/tree/master/research/object_detection"></a><a target="_blank" rel="noopener" href="https://github.com/tensorflow/models/tree/master/research/object_detection">https://github.com/tensorflow/models/tree/master/research/object_detection</a></h3><h2 id="物体位置检测"><a href="#物体位置检测" class="headerlink" title="物体位置检测"></a>物体位置检测</h2><h3 id="检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。"><a href="#检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。" class="headerlink" title="检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。"></a>检测任务包含两个子任务，其一是这一目标的类别信息和概率，它是一个分类任务。其二是目标的具体位置信息，这是一个定位任务。</h3><p>![[Pasted image 20221127223318.png]]</p>
+<h3 id="输出y"><a href="#输出y" class="headerlink" title="输出y"></a>输出y</h3><ul>
+<li>bounding box<ul>
+<li>[bx,by,bh,bw]</li>
+<li>bx,by对应中心点坐标<ul>
+<li>左上角为（0,0）</li>
+</ul>
+</li>
+<li>bh，bw<ul>
+<li>高和宽</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[c1,c2,c3,…]<ul>
+<li>分类信息</li>
+</ul>
+</li>
+<li>pc<ul>
+<li>图像中有物体的概率</li>
+</ul>
+</li>
+</ul>
+<h2 id="分类及算法"><a href="#分类及算法" class="headerlink" title="分类及算法"></a>分类及算法</h2><h3 id="传统算法"><a href="#传统算法" class="headerlink" title="传统算法"></a>传统算法</h3><ul>
+<li>暴力检测/滑动窗口<ul>
+<li>for window in windows: patchs = get_patch(image, window) results = detector(patchs)</li>
+<li>从左到右，从上到下</li>
+<li>计算量太大</li>
+</ul>
+</li>
+<li>Viola Jones检测器<ul>
+<li>18年前，P. Viola和M. Jones在没有任何约束(如肤色分割)的情况下首次实现了人脸的实时检测<a href="#">8</a>。他们所设计的检测器在一台配备700MHz Pentium III CPU的电脑上运行，在保持同等检测精度的条件下的运算速度是其他算法的数十甚至数百倍。这种检测算法以共同作者的名字命名为“Viola-Jones (VJ) 检测器”以纪念他们的重大贡献。</li>
+<li>VJ检测器采用最直接的检测方法，即滑动窗口(slide window)：查看一张图像中所有可能的窗口尺寸和位置并判断是否有窗口包含人脸。这一过程虽然听上去简单，但它背后所需的计算量远远超出了当时计算机的算力。VJ检测器结合了 “ 积分图像 ”、“ 特征选择 ” 和 “ 检测级联 ” 三种重要技术，大大提高了检测速度。</li>
+<li>1）积分图像：这是一种计算方法，以加快盒滤波或卷积过程。与当时的其他目标检测算法一样[10]，在VJ检测器中使用Haar小波作为图像的特征表示。积分图像使得VJ检测器中每个窗口的计算复杂度与其窗口大小无关。</li>
+<li>2）特征选择：作者没有使用一组手动选择的Haar基过滤器，而是使用Adaboost算法从一组巨大的随机特征池 (大约18万维) 中选择一组对人脸检测最有帮助的小特征。</li>
+<li>3）检测级联：在VJ检测器中引入了一个多级检测范例 ( 又称“检测级联”，detection cascades )，通过减少对背景窗口的计算，而增加对人脸目标的计算，从而减少了计算开销。</li>
+</ul>
+</li>
+<li>HOG 检测器  DalalN, Triggs B. Histograms of Oriented Gradients for Human Detection [C].IEEEComputer Society Conference on Computer Vision &amp; Pattern Recognition.IEEEComputer Society, 2005:886-893. 3</li>
+<li>Harr  P.Viola and M.Jones. Rapid object detection using a boosted cascade of simple features. In Proceedings IEEE Conf. on Computer Vision and Pattern Recognition, 2001</li>
+<li>基于可变形部件的模型(DPM)<ul>
+<li>DPM作为voco -07、-08、-09届检测挑战赛的优胜者，它曾是传统目标检测方法的巅峰。DPM最初是由P. Felzenszwalb提出的[12]，于2008年作为HOG检测器的扩展，之后R. Girshick进行了各种改进<a href="#">13</a>。<ul>
+<li>P. F. Felzenszwalb, R. B. Girshick, D. McAllester, and D. Ramanan. Object detection with discriminatively trained part based models. IEEE Transactions on Pattern Analysis and Machine Intelligence, 32(9):1627–1645, 2010</li>
+</ul>
+</li>
+<li>DPM遵循“分而治之”的检测思想，训练可以简单地看作是学习一种正确的分解对象的方法，推理可以看作是对不同对象部件的检测的集合。例如，检测“汽车”的问题可以看作是检测它的窗口、车身和车轮。工作的这一部分，也就是“star model”由P.Felzenszwalb等人完成。后来，R. Girshick进一步将star model扩展到 “ 混合模型 ”，以处理更显著变化下的现实世界中的物体。</li>
+<li>一个典型的DPM检测器由一个根过滤器（root-filter）和一些零件滤波器（part-filters）组成。该方法不需要手动设定零件滤波器的配置（如尺寸和位置），而是在开发了一种弱监督学习方法并使用到了DPM中，所有零件滤波器的配置都可以作为潜在变量自动学习。R. Girshick将这个过程进一步表述为一个多实例学习的特殊案例，同时还应用了“困难负样本挖掘（hard-negative mining）”、“边界框回归”、“语境启动”等重要技术以提高检测精度。而为了加快检测速度，Girshick开发了一种技术，将检测模型“ 编译 ”成一个更快的模型，实现了级联结构，在不牺牲任何精度的情况下实现了超过10倍的加速。</li>
+<li>虽然今天的目标探测器在检测精度方面已经远远超过了DPM，但仍然受到DPM的许多有价值的见解的影响，如混合模型、困难负样本挖掘、边界框回归等。2010年，P. Felzenszwalb和R. Girshick被授予PASCAL VOC的 “终身成就奖”。</li>
+</ul>
+</li>
+</ul>
+<h3 id="非极大值抑制（Non-max-suppression-algorithm-算法"><a href="#非极大值抑制（Non-max-suppression-algorithm-算法" class="headerlink" title="非极大值抑制（Non-max suppression algorithm)算法"></a>非极大值抑制（Non-max suppression algorithm)算法</h3><ul>
+<li>首先选择最大概率为目标的框，让它高亮，并删除和它高交并比的框，重复选择和删除即可。</li>
+<li>直到所有边界框被选择</li>
+<li>用于筛选边界框</li>
+</ul>
+<h3 id="子主题-5"><a href="#子主题-5" class="headerlink" title="子主题 5"></a>子主题 5</h3><ul>
+<li>RPN (NeurIPS’2015)</li>
+<li>Fast R-CNN (ICCV’2015)</li>
+<li>Faster R-CNN (NeurIPS’2015)</li>
+<li>Mask R-CNN (ICCV’2017)</li>
+<li>Cascade R-CNN (CVPR’2018)</li>
+<li>Cascade Mask R-CNN (CVPR’2018)</li>
+<li>SSD (ECCV’2016)</li>
+<li>RetinaNet (ICCV’2017)</li>
+<li>GHM (AAAI’2019)</li>
+<li>Mask Scoring R-CNN (CVPR’2019)</li>
+<li>Double-Head R-CNN (CVPR’2020)</li>
+<li>Hybrid Task Cascade (CVPR’2019)</li>
+<li>Libra R-CNN (CVPR’2019)</li>
+<li>Guided Anchoring (CVPR’2019)</li>
+<li>FCOS (ICCV’2019)</li>
+<li>RepPoints (ICCV’2019)</li>
+<li>Foveabox (TIP’2020)</li>
+<li>FreeAnchor (NeurIPS’2019)</li>
+<li>NAS-FPN (CVPR’2019)</li>
+<li>ATSS (CVPR’2020)</li>
+<li>FSAF (CVPR’2019)</li>
+<li>PAFPN (CVPR’2018)</li>
+<li>Dynamic R-CNN (ECCV’2020)</li>
+<li>PointRend (CVPR’2020)</li>
+<li>CARAFE (ICCV’2019)</li>
+<li>DCNv2 (CVPR’2019)</li>
+<li>Group Normalization (ECCV’2018)</li>
+<li>Weight Standardization (ArXiv’2019)</li>
+<li>OHEM (CVPR’2016)</li>
+<li>Soft-NMS (ICCV’2017)</li>
+<li>Generalized Attention (ICCV’2019)</li>
+<li>GCNet (ICCVW’2019)</li>
+<li>Mixed Precision (FP16) Training (ArXiv’2017)</li>
+<li>InstaBoost (ICCV’2019)</li>
+<li>GRoIE (ICPR’2020)</li>
+<li>DetectoRS (ArXiv’2020)</li>
+<li>Generalized Focal Loss (NeurIPS’2020)</li>
+<li>CornerNet (ECCV’2018)</li>
+<li>Side-Aware Boundary Localization (ECCV’2020)</li>
+<li>YOLOv3 (ArXiv’2018)</li>
+<li>PAA (ECCV’2020)</li>
+<li>YOLACT (ICCV’2019)</li>
+<li>CentripetalNet (CVPR’2020)</li>
+<li>VFNet (ArXiv’2020)</li>
+<li>DETR (ECCV’2020)</li>
+<li>Deformable DETR (ICLR’2021)</li>
+<li>CascadeRPN (NeurIPS’2019)</li>
+<li>SCNet (AAAI’2021)</li>
+<li>AutoAssign (ArXiv’2020)</li>
+<li>YOLOF (CVPR’2021)</li>
+<li>Seasaw Loss (CVPR’2021)</li>
+<li>CenterNet (CVPR’2019)</li>
+<li>YOLOX (ArXiv’2021)</li>
+<li>SOLO (ECCV’2020)</li>
+</ul>
+<h2 id="难题"><a href="#难题" class="headerlink" title="难题"></a>难题</h2><h3 id="目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。"><a href="#目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。" class="headerlink" title="目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。"></a>目标检测方向有一些固有的难题，比如小脸，遮挡，大姿态。</h3><h3 id="而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向"><a href="#而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向" class="headerlink" title="而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向"></a>而在方法上，多尺度与级联网络的设计，难样本的挖掘，多任务loss等都是比较大的研究小方向</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/ef02a4c91f4c.html" data-id="cldzsk2aj002yd8nc0w98eac7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/目标检测/two-stage models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/4a85df63b553.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.836Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先生成了可能包含物体的候选区域Region Proposal 再对这个候选区域做进一步的分类和校准，得到最终的检测结果</p>
+<ul>
+<li>R-CNN，2014  R-CNN即Region-based Convolutional Neural Networks，是一种结合区域提名（Region Proposal）和卷积神经网络（CNN）的目标检测方法。<ul>
+<li>实现细节<ul>
+<li>选择检测窗口<ul>
+<li>J. R. R. Uijlings在2012年提出了selective search方法，这种方法其实是利用了经典的图像分割方法Graphcut，首先对图像做初始分割，然后通过分层分组方法对分割的结果做筛选和归并，最终输出所有可能位置，将候选区域缩小到2000个左右ROI (region of interest) , 感兴趣区域。<ul>
+<li>首先通过将图像进行过分割得到若干等区域组成区域的集合S，这是一个初始化的集合；</li>
+<li>然后利用颜色、纹理、尺寸和空间交叠等特征，计算区域集里每个相邻区域的相似度； 找出相似度最高的两个区域，将其合并为新集并从区域集合中删除原来的两个子集。重复以上的迭代过程，直到最开始的集合S为空，得到了图像的分割结果，得到候选的区域边界，也就是初始框。</li>
+<li>不过，selective search方案仍然有计算量过大的问题。</li>
+<li><a target="_blank" rel="noopener" href="https://www.koen.me/research/selectivesearch/">https://www.koen.me/research/selectivesearch/</a></li>
+<li>Van dS K E A, Uijlings J R R, Gevers T, et al. Segmentation as SelectiveSearch forObject Recognition [C]. Proceedings IEEE International Conference onComputerVision. 2011:1879-1886.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用在ImageNet数据集上进行学习的参数对神经网络进行预处理，解决了在目标检测训练过程中标注数据不足的问题。<ul>
+<li>即仅用预训练-微调得到的最后一层特征向量来训练SVM</li>
+<li>Pre-train<ul>
+<li>使用ILVCR 2012数据集及简化版的Hinton 2012年在Image Net上的分类网络来进行预训练。(全连接层提取特征4096维，再使用全连接(4096-&gt;1000)实现1000类分类)。</li>
+</ul>
+</li>
+<li>Fine-tune<ul>
+<li>替换Pre-train的最后输出层，换为(4096-&gt;21)21分类的输出层，使用数据集PASCAL VOC 2007来训练网络。此处训练的正负样本的标定：IOU&gt;0.5则为正样本。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>这里有一个注意点，即正负样本如何确定（CNN 和SVM 都需要有监督的样本）。这里，也是采用了groundtruth（GT）和SS 的proposal 之间的IoU 来进行确定。如果一个proposal 和某个类别的GT 的IoU 大于某个阈值，那么，这个proposal 的样本就被视为该类别的正样本。</li>
+<li>利用非极大值抑制(Non-Maximun Suppresion) 方法，对最终得到的bbox 进行筛选。</li>
+<li>通过线性回归模型对边框进行校准，减少图像中的背景空白，得到更精确的定位。</li>
+</ul>
+</li>
+<li>网络框架</li>
+<li>缺陷。<ul>
+<li>其一是冗余计算，因为R-CNN的方法是先生成候选区域，再对区域进行卷积，其中候选区域会有一定程度的重叠，因为selective search方法仍然不够好，导致CNN对相同区域进行重复卷积提取特征。而且R-CNN方法将提取后的特征存储下来，然后使用传统的SVM分类器进行分类，导致需要很大的存储空间。</li>
+<li>其二是候选区域的尺度缩放问题，因为R-CNN方法将所有区域缩放到同一尺度进行网络训练，而实际selective search选取的目标框有各种尺寸，这可能导致目标的变形，无论是剪裁还是缩放都不能解决这个问题。<ul>
+<li>之所以要对图像进行缩放到固定的尺度，是因为全连接层的存在。全连接层的输入需要固定的大小，所以要使用不同大小的图片，就必须在输入全连接层之前进行统一变换。</li>
+<li>会使图片信息发生丢失</li>
+</ul>
+</li>
+<li>训练需要几个阶段</li>
+<li>每个region的都需要经过模型去提取，并存放至磁盘；</li>
+</ul>
+</li>
+<li>伪代码<ul>
+<li>ROIs = region_proposal(image) for ROI in ROIs patch = get_patch(image, ROI) results = detector(patch)</li>
+</ul>
+</li>
+<li>K. E. Van de Sande, J. R. Uijlings, T. Gevers, and A. W. Smeulders, “Segmentation as selective search for object recognition,” in Computer Vision (ICCV), 2011 IEEE International Conference on. IEEE, 2011, pp. 1879–1886.</li>
+<li>Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5)</li>
+</ul>
+</li>
+<li>SPP-Net  空间金字塔池化网络( Spatial Pyramid Pooling Networks，SPPNet)<ul>
+<li>K. He, X. Zhang, S. Ren, and J. Sun, “Spatial pyramid pooling in deep convolutional networks for visualrecognition,” in European conference on computer vision. Springer, 2014, pp. 346–361.</li>
+<li>其主要思想是去掉了原始图像上的crop/warp等操作，换成了在卷积特征上的空间金字塔池化层（Spatial Pyramid Pooling，SPP）<ul>
+<li>SPP层<ul>
+<li><ol start="3">
+<li>SPP 对于特定的CNN网络设计和结构是独立的。(也就是说，只要把SPP放在最后一层卷积层后面，对网络的结构是没有影响的， 它只是替换了原来的pooling层)</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>不仅可以用于图像分类而且可以用来目标检测</li>
+</ol>
+</li>
+<li>这样就是固定的256+16+1维度的fc层输入了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>利用SPPNet进行目标检测时，只对整个图像进行一次特征映射计算，然后生成任意区域的定长表示以训练检测器，避免了卷积特征的重复计算。SPPNet的速度是R-CNN的20多倍，并且没有牺牲任何检测精度</li>
+<li>不足<ul>
+<li>训练仍然是多阶段的</li>
+<li>SPPNet只对其全连接层进行微调，而忽略了之前的所有层。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fast R-CNN，2015<ul>
+<li>在VOC07数据集上，Fast RCNN将mAP从58.5%( RCNN)提高到70.0%，检测速度是R-CNN的200多倍。</li>
+<li>改进<ul>
+<li>卷积生成特征图，只需要提取一次特征就能完成操作</li>
+<li>提出ROI pooling layer，采用单层金字塔结构，其实就是在特征层只使用一个金字塔max-pooling，进一步简化了regions对应特征层的映射关系。</li>
+<li>提出梯度传递方法，实现整个网络网络结构的全部训练。</li>
+<li>在两层全连接中加入SVD降维，加快训练速度。</li>
+<li>输出使用两个softmax，一个用于class分类，一个用于bounding box回归。</li>
+</ul>
+</li>
+<li>ROI pooling layer<ul>
+<li>使用 ROI 池化将其转化为固定大小的特征图块</li>
+</ul>
+</li>
+<li>流程图</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = region_proposal(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) results = detector2(patch)</li>
+</ul>
+</li>
+<li>R. Girshick, “Fast r-cnn,” in Proceedings of the IEEE international conference on computer vision, 2015, pp. 1440–1448.</li>
+<li>我们能用CNN模型生成对象提案吗?</li>
+</ul>
+</li>
+<li>Faster R-CNN，2015<ul>
+<li>R-CNN，SPPNet，Fast R-CNN都没有解决一个问题，就是selective search方法低效率的滑动窗口选择问题，它仍然生成了大量无效区域，多了造成算力的浪费，少了则导致漏检。</li>
+<li>提出RPN(Region Proposal Networks)区域生成网络，使用神经网络生成regions，充分利用了feature maps的价值，代替RCNN中的Selective Search方法。节省regions proposal的时间。基本实现end to end训练。</li>
+<li>  流程图，仅SS变成RPN</li>
+<li>![[Pasted image 20221127223135.png]]</li>
+<li>  RPN</li>
+<li>![[Pasted image 20221127223141.png]]</li>
+<li>准确率<ul>
+<li>(COCO mAP@.5=42.7%，COCO mAP@[.5，.95]=21.9%， VOC07 mAP=73.2%，VOC12 mAP=70.4%)</li>
+</ul>
+</li>
+<li>速度<ul>
+<li>Faster R-CNN 在 PASCAL VOC 2007 测试集上每秒处理 7 帧的图像（7 FPS）</li>
+</ul>
+</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = rpn(feature_maps) for ROI in ROIs patch = roi_pooling(feature_maps, ROI) class_scores, box = detector(patch) class_probabilities = softmax(class_scores)</li>
+</ul>
+</li>
+<li>虽然Faster RCNN突破了Fast RCNN的速度瓶颈，但是在后续的检测阶段仍然存在计算冗余。后来提出了多种改进方案，包括RFCN和 Light head RCNN。</li>
+<li>RenS, He K, Girshick R, et al. Faster R-CNN: Towards Real-Time ObjectDetectionwith Region Proposal Networks [OL]. arXiv:1506.01497, 2015.</li>
+</ul>
+</li>
+<li>R-FCN<ul>
+<li>R-FCN 通过减少每个 ROI 所需的工作量实现加速。上面基于区域的特征图与 ROI 是独立的，可以在每个 ROI 之外单独计算。剩下的工作就比较简单了，因此 R-FCN 的速度比 Faster R-CNN 快。</li>
+<li>  流程图</li>
+<li>![[Pasted image 20221127223151.png]]</li>
+<li>伪代码<ul>
+<li>feature_maps = process(image) ROIs = region_proposal(feature_maps) score_maps = compute_score_map(feature_maps) for ROI in ROIs V = region_roi_pool(score_maps, ROI) class_scores, box = average(V) # Much simpler! class_probabilities = softmax(class_scores)</li>
+</ul>
+</li>
+<li>  DaiJ, Li Y, He K, et al. R-FCN: Object Detection via Region-basedFullyConvolutional Networks [OL]. arXiv: 1605.06409, 2016.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Feature-Pyramid-Networks（FPN）"><a href="#Feature-Pyramid-Networks（FPN）" class="headerlink" title="Feature Pyramid Networks（FPN）"></a>Feature Pyramid Networks（FPN）</h2><p>论文：feature pyramid networks for object detection<br>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.03144">https://arxiv.org/abs/1612.03144</a></p>
+<pre><code>-   2017年，T.-Y.Lin等人基于Faster RCNN提出了特征金字塔网络(FPN)[21]。在FPN之前，大多数基于深度学习的检测器只在网络的顶层进行检测。虽然CNN较深层的特征有利于分类识别，但不利于对象的定位。为此，开发了具有横向连接的自顶向下体系结构，用于在所有级别构建高级语义。由于CNN通过它的正向传播，自然形成了一个特征金字塔，FPN在检测各种尺度的目标方面显示出了巨大的进步。在基础的Faster RCNN系统中使用FPN骨架可在无任何修饰的条件下在MS-COCO数据集上以单模型实现state-of-the-art 的效果(COCO mAP@.5=59.1%，COCO mAP@[.5，.95]= 36.2%)。FPN现在已经成为许多最新探测器的基本组成部分。
+    
+</code></pre>
+<ul>
+<li>  Mask R-CNN</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/4a85df63b553.html" data-id="cldzsk2ai002wd8nch1yk2f7p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/目标检测/one-stage models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/9dca2c4dc2b6.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.835Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>单阶段检测算法直接给出最终的检测结果，没有经过生成候选区域的步骤</p>
+<ul>
+<li>YOLO系列<ul>
+<li>You Only Look Once (YOLO)v1，2016<ul>
+<li>思想<ul>
+<li>仅把目标检测看做一个回归问题</li>
+<li>将一幅图像分成SxS个网格(grid cell), 如果某个object的中心落在这个网格中，则这个网格 就负责预测这个object。</li>
+<li>每个bounding box要预测(x, y, w, h)和confidence共5个值，每个网格还要预测一个类别信 息，记为C类。则SxS个网格, 每个网格要预测B个bounding box还要预测C个categories。 输出就是Sx S x (5*B+ C)的一-个tensor。<ul>
+<li>confidence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实现细节<ul>
+<li>resize到448x448</li>
+<li>每个grid有30维，这30维中，8维是回归box的坐标，2维是box的confidence,还有20维是类别。</li>
+<li>S=7，B=2</li>
+<li>其中坐标的x,y用对应网格的offset归-一化到0-1之间，w,h用图像的width和height归-一化到0-1之间。</li>
+<li>YOLO检测网络包括24个卷积层和2个全连接层,卷积层用来提取图像特征，全连接层用来预测图像位置和类别概率值。<ul>
+<li>网络输出7_7_30</li>
+</ul>
+</li>
+<li>预训练<ul>
+<li>imagenet</li>
+</ul>
+</li>
+<li>在实现中，最主要的就是怎么设计损失函数，让这个三个方面得到很好的平衡。作者简单粗暴的全部采用了sum-squared error loss来做这件事。<ul>
+<li>不足<ul>
+<li>第一，8维的localization error和20维的classification error同等重要显然是不合理的;</li>
+<li>第二，如果一个网格中没有object (一幅图中这种网格很多)， 那么就会将这些网格中的box的confidence push到0，相比于较少的有object的网格,这种做法是overpowering的，这会导致网络不稳定甚至发散。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>先使用NMS，然后再确定各个box的类别</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>YOLO对相互靠的很近的物体，还有很小的群体检测效果不好，这是因为一个网格中只预测了两个框，并且只属于一-类。</li>
+<li>同一类物体出现的新的不常见的长宽比和其他情况时，泛化能力偏弱。</li>
+<li>由于损失函数的问题，定位误差是影响检测效果的主要原因。尤其是大小物体的处理上，还有待加强。</li>
+</ul>
+</li>
+<li>YOLO非常快：YOLO的一个快速版本运行速度为155fps, VOC07 mAP=52.7%，而它的增强版本运行速度为45fps, VOC07 mAP=63.4%， VOC12 mAP=57.9%。<ul>
+<li>fast YOLO，它只有9个卷积层和2个全连接层。</li>
+</ul>
+</li>
+<li>必须指出的是，尽管与双级探测器相比YOLO的探测速度有了很大的提高，但它的定位精度有所下降，特别是对于一些小目标而言。YOLO的后续版本及在它之后提出的SSD更关注这个问题。</li>
+<li>后来R. Joseph在 YOLO 的基础上进行了一系列改进，其中包括以路径聚合网络（Path aggregation Network, PAN）取代FPN，定义新的损失函数等，陆续提出了其 v2、v3及v4版本(截止本文的2020年7月，Ultralytics发布了“YOLO v5”，但并没有得到官方承认)，在保持高检测速度的同时进一步提高了检测精度。</li>
+<li>Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified,Real-TimeObject Detection [OL]. arXiv: 1506.02640, 2016.<ul>
+<li>论文下载：<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1506.02640">http://arxiv.org/abs/1506.02640</a></li>
+</ul>
+</li>
+<li>解读<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaohu2022/article/details/79211732/">https://blog.csdn.net/xiaohu2022/article/details/79211732/</a></li>
+</ul>
+</li>
+<li>Yolo在PASCAL VOC 2007上与其他算法的对比</li>
+</ul>
+</li>
+<li>YOLO9000/v2，2016<ul>
+<li>论文<ul>
+<li>Joseph Redmon, Ali Farhadi. YOLO9000: Better, Faster, Stronger. arXiv:1612.08242<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.08242">https://arxiv.org/abs/1612.08242</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yolov2和Yolo9000算法内核相同，区别是训练方式不同：Yolov2用coco数据集训练后，可以识别80个种类。而Yolo9000可以使用coco数据集 + ImageNet数据集联合训练，可以识别9000多个种类。</li>
+<li>Better<ul>
+<li>BN</li>
+<li>High Resolution Classifier（分类网络高分辨率预训练）</li>
+<li>更多的Anchor box</li>
+</ul>
+</li>
+<li>YOLO9000的训练策略<ul>
+<li>联合训练方法思路简单清晰，Yolo v2中物体矩形框生成，不依赖于物理类别预测，二者同时独立进行。当输入是检测数据集时，标注信息有类别、有位置，那么对整个loss函数计算loss，进行反向传播；当输入图片只包含分类信息时，loss函数只计算分类loss，其余部分loss为零。当然，一般的训练策略为，先在检测数据集上训练一定的epoch，待预测框的loss基本稳定后，再联合分类数据集、检测数据集进行交替训练，同时为了分类、检测数据量平衡，作者对coco数据集进行了上采样，使得coco数据总数和ImageNet大致相同。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>YOLOv3，2018<ul>
+<li>[14] Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement. arXiv:1804.02767<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1804.02767.pdf">https://arxiv.org/pdf/1804.02767.pdf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>codes<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/pjreddie/darknet">https://github.com/pjreddie/darknet</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/AlexeyAB/darknet">https://github.com/AlexeyAB/darknet</a><ul>
+<li>解读<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xieqi/p/9818056.html">https://www.cnblogs.com/xieqi/p/9818056.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/luoying_ontheroad/article/details/81136973">https://blog.csdn.net/luoying_ontheroad/article/details/81136973</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ning_yi/article/details/119385309">https://blog.csdn.net/ning_yi/article/details/119385309</a></li>
+</ul>
+</li>
+<li>C写的</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/eriklindernoren/PyTorch-YOLOv3">https://github.com/eriklindernoren/PyTorch-YOLOv3</a><ul>
+<li>不能检测视频</li>
+<li>简化版本</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov3">https://github.com/ultralytics/yolov3</a><ul>
+<li>最好的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Single Shot MultiBox Detector (SSD),ECCV2016<ul>
+<li>YOLO的做法是速度快，但是会有许多漏检，尤其是小的目标。所以SSD就在 YOLO的基础上添加了Faster R-CNN的Anchor 概念，并融合不同卷积层的特征做出预测。虽然YOLO和SSD系列的方法没有了region proposal的提取，速度更快，但是必定会损失信息和精度。</li>
+<li>SSD由W. Liu等人于2015年提出[23]。这是深度学习时代的第二款单级探测器。SSD的主要贡献是引入了多参考和多分辨率检测技术，这大大提高了单级检测器的检测精度，特别是对于一些小目标。SSD在检测速度和准确度上都有优势(VOC07 mAP=76.8%，VOC12 mAP=74.9%， COCO mAP@.5=46.5%，mAP@[.5，.95]=26.8%，快速版本运行速度为59fps) 。SSD与其他的检测器的主要区别在于，前者在网络的不同层检测不同尺度的对象，而后者仅在其顶层运行检测。</li>
+<li>Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, and Alexander C.Berg. SSD: Single shot multibox detector. In ECCV, 2016</li>
+</ul>
+</li>
+<li>RetinaNet<ul>
+<li>  单级检测器有速度快、结构简单的优点，但在精度上多年来一直落后于双级检测器。T.-Y.Lin等人发现了背后的原因，并在2017年提出了RetinaNet[24]。他们的观点为精度不高的原因是在密集探测器训练过程中极端的前景-背景阶层不平衡（the extreme foreground-background class imbalance）现象。为此，他们在RetinaNet中引入了一个新的损失函数 “ 焦点损失（focal loss）”，通过对标准交叉熵损失的重构，使检测器在训练过程中更加关注难分类的样本。焦损耗使得单级检测器在保持很高的检测速度的同时，可以达到与双级检测器相当的精度。(COCO mAP@.5=59.1%，mAP@[.5, .95]=39.1% )。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/9dca2c4dc2b6.html" data-id="cldzsk2ah002ud8ncg5wrbxhy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/目标检测/nms" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/5319be07cf86.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.833Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50126479">https://zhuanlan.zhihu.com/p/50126479</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/5319be07cf86.html" data-id="cldzsk2ag002sd8nc8rm0996a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/目标检测/metrics" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/3f074b983978.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.831Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mAP"><a href="#mAP" class="headerlink" title="mAP"></a>mAP</h1><h3 id="边界框"><a href="#边界框" class="headerlink" title="边界框"></a>边界框</h3><ul>
+<li>IoU（intersection over union）交并比<ul>
+<li>计算两个边界框交集和并集之比</li>
+<li>一般大于等于0.5就是正确</li>
+</ul>
+</li>
+</ul>
+<h3 id="mAP-1"><a href="#mAP-1" class="headerlink" title="mAP"></a>mAP</h3><ul>
+<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/makefile/p/metrics-mAP.html">https://www.cnblogs.com/makefile/p/metrics-mAP.html</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>dataset</th>
+<th>mAP@.5</th>
+<th>mAP@[.5, .95]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[[two-stage models#Feature Pyramid Networks（FPN）]]</td>
+<td>COCO</td>
+<td>59.1</td>
+<td>36.2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/3f074b983978.html" data-id="cldzsk2af002od8nc3fc1ejc7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/应用/图像审核" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/aa926de53269.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.828Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/aa926de53269.html" data-id="cldzsk2ag002qd8nc5l2y3ame" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/实例分割/增量小样本实例分割/增量小样本实例分割" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/dcb867ece58d.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.824Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Incremental-Few-Shot-Instance-Segmentation（CVPR-2021"><a href="#Incremental-Few-Shot-Instance-Segmentation（CVPR-2021" class="headerlink" title="Incremental Few-Shot Instance Segmentation（CVPR 2021)"></a>Incremental Few-Shot Instance Segmentation（CVPR 2021)</h1><p>![[2105.05312v1.pdf]]</p>
+<p>评价：在增量小样本实例分割上确实比较新颖，但和增量学习的思想不一致，居然不微调mask predictor，感觉更像是一篇叫做增量小样本目标检测。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/dcb867ece58d.html" data-id="cldzsk2ao003ed8ncaep43219" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/实例分割/未命名" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/8c0ccf74cc62.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.821Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/8c0ccf74cc62.html" data-id="cldzsk2ae002md8nc9jnuc8vw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/图像分类/小样本分类/基于度量的/原型/基于原型的小样本分类" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/477dacfe6935.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.816Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>![[2106.05517.pdf]]</p>
+<p>![[NIPS-2017-prototypical-networks-for-few-shot-learning-Paper.pdf]]</p>
+<h1 id="原型补全网络"><a href="#原型补全网络" class="headerlink" title="原型补全网络"></a>原型补全网络</h1><p>![[原型补全.pdf]]</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/zhangbq-research/Prototype_Completion_for_FSL">code</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/477dacfe6935.html" data-id="cldzsk2ax004dd8nchjdy1vs9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机视觉/图像分类/datasets/miniimagenet" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/52be89de33c1.html" class="article-date">
+  <time datetime="2023-02-11T09:45:54.809Z" itemprop="datePublished">2023-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通常用于小样本分类任务</p>
+<p>miniImageNet包含100类共60000张彩色图片，其中每类有600个样本。通常而言,这个数据集的训练集和测试集的类别划分为：80 : 20。相比于CIFAR10数据集，miniImageNet数据集更加复杂，但更适合进行原型设计和实验研究。</p>
+<p>训练:验证 = 64：16=8:2</p>
+<p>code<br>![[mini_imagenet.py]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/52be89de33c1.html" data-id="cldzsk2an003cd8nc5d70b4ua" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/47c93aa5802a.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/57a6e32ff281.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/e306f9f8860c.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/d42e9f60b4b0.html">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/7411c7521421.html">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
